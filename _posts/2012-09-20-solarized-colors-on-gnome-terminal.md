@@ -12,7 +12,7 @@ tags:
 
 > Solarized is a sixteen color palette (eight monotones, eight accent colors) designed for use with terminal and gui applications. It has several unique properties. I designed this color scheme with both precise CIELAB lightness relationships and a refined set of hues based on fixed color wheel relationships. It has been tested extensively in real world use on color calibrated displays (as well as uncalibrated/intentionally miscalibrated displays) and in a variety of lighting conditions.
 
-![solarized-palette](/content/img/solarized-palette.png)
+![solarized-palette](/assets/img/solarized-palette.png)
 
 Install git-core on Ubuntu/Deb. Adjust according to your distribution installer.
 

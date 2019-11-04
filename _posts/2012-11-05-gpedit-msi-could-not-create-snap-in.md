@@ -12,7 +12,7 @@ When opening `gpedit.msc` you receive the following error:
 
 MMC could not create the snap-in. The snap-in might not have been installed correctly.
 
-![gpedit-msc-error](/content/img/gpedit-msc-error.png)
+![gpedit-msc-error](/assets/img/gpedit-msc-error.png)
 
 Verify that **"%SystemRoot%\System32\Wbem"** is in the PATH environment variable.
 

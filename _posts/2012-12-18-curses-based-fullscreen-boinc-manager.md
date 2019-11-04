@@ -15,4 +15,4 @@ Boinctui source code along with deb and rpm binaries are available for download.
     wget http://code.google.com/p/boinctui/downloads/detail?name=boinctui_1.0.0-0_i386.deb
     sudo dpkg -i boinctui_1.0.0-0_i386.deb
 
-![boincui](/content/img/boinctui.png)
+![boincui](/assets/img/boinctui.png)

@@ -23,6 +23,6 @@ Head on over to [Userstyles.org](http://userstyles.org/) and browse the style co
 
 Examples of vanilla vs styled Google Reader:
 
-![google-reader](/content/img/google_reader.png)
+![google-reader](/assets/img/google_reader.png)
 
-![stylish](/content/img/stylish.png)
+![stylish](/assets/img/stylish.png)

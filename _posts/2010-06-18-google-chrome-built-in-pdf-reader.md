@@ -13,8 +13,8 @@ tags:
 > * To further protect users, PDF functionality will be contained within the security [sandbox](href="http://seclab.stanford.edu/websec/chromium/) Chrome uses for web page rendering.
 > * Users will automatically receive the latest version of Chrome’s PDF support; they won’t have to worry about manually updating any plug-ins or programs.
 
-![chrome-pdf](/content/img/chrome-pdf.jpg)
+![chrome-pdf](/assets/img/chrome-pdf.jpg)
 
 The latest dev release of Google’s Chrome browser contains a built-in PDF reader. The plug-in can be enabled by going to **chrome://plugins/** and clicking on **"Enable"** for the **"Chrome PDF Viewer"** plug-in.
 
-![chrome-pdf-pluggins](/content/img/chrome-pdf-pluggins.jpg)
+![chrome-pdf-pluggins](/assets/img/chrome-pdf-pluggins.jpg)

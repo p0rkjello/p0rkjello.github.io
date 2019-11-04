@@ -21,4 +21,4 @@ Add a new `String Value` with the name `destination,mask,gateway,metric`
 
 ### Example:
 
-![registry-route](/content/img/registry-route.png)
+![registry-route](/assets/img/registry-route.png)

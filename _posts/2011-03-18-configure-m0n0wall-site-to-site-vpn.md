@@ -22,7 +22,7 @@ The **Local subnet** should be set to "LAN subnet"
 As the name implies, set the **Remote subnet** to the remote subnet in the form of "192.168.0.0" (verify the subnet in the Interfaces: LAN page of the remote firewall).
 Set the **Remote gateway** to either the public IP or FQDN of the remote box.
 
-![m0n0wall-vpn-tunnel](/content/img/m0n0wall-vpn-tunnel.jpg)
+![m0n0wall-vpn-tunnel](/assets/img/m0n0wall-vpn-tunnel.jpg)
 
 **Important:** Using the settings Local &amp; Remote subnet settings above both ends will have complete access to each others LAN. Modify these settings and/or your firewall rules accordingly.
 
@@ -36,7 +36,7 @@ For **My identifier** choose the appropriate item from the drop down list. I am 
 * **Authentication method** = Pre-shared key
 * **Pre-Shared Key** = A password you will be using on both ends.
 
-![m0n0wall-vpn-phase1](/content/img/m0n0wall-vpn-phase1.jpg)
+![m0n0wall-vpn-phase1](/assets/img/m0n0wall-vpn-phase1.jpg)
 
 * **Protocol** = ESP
 * **Encryption algorithms** check Blowfish
@@ -44,6 +44,6 @@ For **My identifier** choose the appropriate item from the drop down list. I am 
 * **PFS key group** = 2
 * **Lifetime** default 86400
 
-![m0n0wall-vpn-phase2](/content/img/m0n0wall-vpn-phase2.jpg)
+![m0n0wall-vpn-phase2](/assets/img/m0n0wall-vpn-phase2.jpg)
 
 Once completed you will need to apply the same settings to the other m0n0wall system. **Remote subnet**, **Remote gateway** and My **Identifier** will need to be reversed.

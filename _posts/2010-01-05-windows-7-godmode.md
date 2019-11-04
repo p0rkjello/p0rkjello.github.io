@@ -15,4 +15,4 @@ Create a new folder and rename it to the following:
 
     GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}
 
-![godmode](/content/img/godmode.png)
+![godmode](/assets/img/godmode.png)
