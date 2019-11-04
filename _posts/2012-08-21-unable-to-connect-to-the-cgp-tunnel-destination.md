@@ -9,10 +9,10 @@ tags:
 
 Citrix users are receiving an error on login.
 
-![citrix-error](/content/img/citrix-error.png)
+![citrix-error](/assets/img/citrix-error.png)
 
 The Citrix server is reporting a number of Event ID: 118 errors.
 
-![event-id-118](/content/img/event-id-118.png)
+![event-id-118](/assets/img/event-id-118.png)
 
 Open the Terminal Services Manager and check for disconnected listeners. In my case the ICA Listener was down (disconnected). Resetting the listener resolved the issue.

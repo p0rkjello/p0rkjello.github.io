@@ -21,4 +21,4 @@ Thanks goes out to the editor of the thread below. DNS-O-Matic service can be us
 
 [m0nowall DNS-O-Matic Topic](http://forum.m0n0.ch/index.php/topic,1357.0.html")
 
-![dnsomatic](/content/img/dnsomatic.png)
+![dnsomatic](/assets/img/dnsomatic.png)

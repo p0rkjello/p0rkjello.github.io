@@ -14,6 +14,6 @@ Past the following text into the Internet Explorer address bar.
 
     javascript:alert(navigator.userAgent)
 
-![useragent](/content/img/useragent.png)
+![useragent](/assets/img/useragent.png)
 
 ***Note:*** Be aware that the userAgent response can be modified.

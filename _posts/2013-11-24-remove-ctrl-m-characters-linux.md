@@ -7,7 +7,7 @@ tags:
 - linux
 ---
 
-![ctrl-m](/content/img/ctrl-m.png)
+![ctrl-m](/assets/img/ctrl-m.png)
 
 Use `CTRL`+`V` `CTRL`+`M` to type ^M
 

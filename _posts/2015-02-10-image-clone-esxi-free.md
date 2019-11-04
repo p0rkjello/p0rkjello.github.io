@@ -181,8 +181,8 @@ Log into the **vSphere Client** and add a **New Virtual Machine**
 Step through the **New Virtual Machine Wizard** taking note of
 **Configuration** and **Select a Disk** pages. Select *Custom* from the
 Configuration step of the Configuration wizard.
-![vsphere-config-custom](/content/img/vsphere-config-custom.png)
+![vsphere-config-custom](/assets/img/vsphere-config-custom.png)
 
 Select *Use an existing virtual disk.* from the Select a Disk step of
 the Configuration wizrd.
-![vsphere-config-existing](/content/img/vsphere-config-existing.png)
+![vsphere-config-existing](/assets/img/vsphere-config-existing.png)

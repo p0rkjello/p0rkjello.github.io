@@ -13,7 +13,7 @@ In Windows the Chrome browser uses your system wide proxy settings. This can be 
 
 To get around the Chrome system wide proxy settings, use a command line switch. Open or create a shortcut to [Chrome](http://www.google.com/chrome/)/[Chromium](http://www.chromium.org/Home)
 
-![chrome-socks5-cmd](/content/img/chrome-socks5-proxy-command-line-switch.jpg)
+![chrome-socks5-cmd](/assets/img/chrome-socks5-proxy-command-line-switch.jpg)
 
     --proxy-server="socks5://127.0.0.1:8080"
 

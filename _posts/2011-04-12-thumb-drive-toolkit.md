@@ -11,7 +11,7 @@ tags:
 A Windows Administrator USB toolkit. The following is a collection of free and/or open source tools I like to keep on hand.
 ### [Portable Apps collection](http://portableapps.com)
 
-![portable-apps](/content/img/portableapps-com-logo.png)
+![portable-apps](/assets/img/portableapps-com-logo.png)
 
 > PortableApps.com Suite™ is a complete collection of portable apps including a web browser, email client, office suite, calendar/scheduler, instant messaging client, antivirus, audio player, sudoku game, password manager, PDF reader, minesweeper clone, backup utility and integrated menu, all preconfigured to work portably. Just drop it on your portable device and you're ready to go.
 
@@ -30,7 +30,7 @@ PortableApps has a huge number of programs available. Some more useful than othe
 * WinSCP - Secure copy client.
 * Windows Error Lookup Tool
 
-![sysinternals](/content/img/sysinternals-logo.jpg)
+![sysinternals](/assets/img/sysinternals-logo.jpg)
 
 An useful set of tools made my [Mark Russinovich](http://blogs.technet.com/markrussinovich/about.aspx) now available through Microsoft. Take some time and browse through the available tools. I find I use the Sysinternal tools almost everyday. Not sure how someone would administer Windows without them.
 
@@ -41,7 +41,7 @@ The PsTools suite includes command-line utilities for listing the processes runn
 
 Keep your Sysinternals tools up to date with using a [Portable Apps](http://portableapps.com/) compatible tool [WSCC](http://www.kls-soft.com/wscc/index.php)
 
-![wscc](/content/img/wscc.jpg)
+![wscc](/assets/img/wscc.jpg)
 
 Found a nice batch file to keep your Sysinternals tools updated over at [SysadminGeek.com](http://www.howtogeek.com/50356/batch-script-to-auto-update-sysinternals-tools/)
 
@@ -118,7 +118,7 @@ MS recently added Sysinternals Live. Description below from their site.
 
 > You can view the entire Sysinternals Live tools directory in a browser at [http://live.sysinternals.com](http://live.sysinternals.com/).
 
-![dban](/content/img/dban-logo.png)
+![dban](/assets/img/dban-logo.png)
 
 ### [Darik's Boot And Nuke](href="http://www.dban.org/)
 

@@ -11,11 +11,11 @@ Ran into an issue with Microsoft Windows Update Service on two Windows 2003 serv
 
 While exploring solutions I ran into the following error message when opening Add/Remove Windows Components via **appwiz.cpl**.
 
-![sysocmgr-error](/content/img/sysocmgr-error.png)
+![sysocmgr-error](/assets/img/sysocmgr-error.png)
 
 I tried checking the backup to find when the file changed or went missing. However the backup software failed to launch. Windows Search found a copy of the file in **"%SystemRoot%\ServicePackFiles\i386"**. Copy and pasted it into **"%SystemRoot%\System32"**.
 
-![advpack-dll](/content/img/advpack-dll-search.png)
+![advpack-dll](/assets/img/advpack-dll-search.png)
 
 In order to repair Windows Update I also needed to stop the bits and Windows Update service, rename the **"%SystemRoot%\SoftwareDistribution"** directory then restart the services.
 

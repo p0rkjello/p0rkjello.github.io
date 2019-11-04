@@ -10,7 +10,7 @@ tags:
 
 As of version 7.0.40 [BOINC](http://boinc.berkeley.edu/) has the ability to split GPU tasks across multiple work units.
 
-![boinc_manager_gpu_tasks](/content/img/boinc_manager_gpu_tasks.png)
+![boinc_manager_gpu_tasks](/assets/img/boinc_manager_gpu_tasks.png)
 
 >*Preliminary Change Log 7.0.39 --> 7.0.40:*
 >

@@ -21,9 +21,9 @@ tags:
 
 [http://live.gnome.org/GnomeShell](href="http://live.gnome.org/GnomeShell)
 
-![gnomeshell](/content/img/gnomeshell.png)
+![gnomeshell](/assets/img/gnomeshell.png)
 
-![gnomeshell-tab](/content/img/gnomeshell-tab.png)
+![gnomeshell-tab](/assets/img/gnomeshell-tab.png)
 
 Gnome-shell is still a work in progress, however it is quite usable.
 
@@ -38,7 +38,7 @@ After testing if you would like to make it persistent:
 	$ sudo update-alternatives --config x-window-manager
 
 Select **"mutter"**
-![gnomeshell-term](/content/img/gnomeshell-term.png)
+![gnomeshell-term](/assets/img/gnomeshell-term.png)
 
 	$ sudo cp /usr/share/applications/gnome-shell.desktop /etc/xdg/autostart
 

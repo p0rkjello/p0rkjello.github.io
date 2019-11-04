@@ -8,7 +8,7 @@ tags:
 - debian
 ---
 
-![debian-logo](/content/img/debian-logo.png)
+![debian-logo](/assets/img/debian-logo.png)
 apt-get is the package management utility behind Debian-based Linux systems Ubuntu, Mint and Mepis.
 
 A complete list of distributions based on Debian can be found on [Distrowatch](http://distrowatch.com/search.php?ostype=Linux&category=All&origin=All&basedon=Debian&notbasedon=None&desktop=All&architecture=All&status=Active).

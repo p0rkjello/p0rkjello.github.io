@@ -16,7 +16,7 @@ Stop the TSM Client Scheduler service.
 
 Delete (or rename) the `adsm.sys` directory. It will be recreated by TSM.
 
-![adsm-sys](/content/img/adsm-sys.png)
+![adsm-sys](/assets/img/adsm-sys.png)
 
 Restart the TSM Client Scheduler service.
 

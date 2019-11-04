@@ -14,6 +14,6 @@ Download the [Sysinternals tool](http://technet.microsoft.com/en-us/sysinternals
 
 Using Process Explorer locate the `svchost.exe -k termsvcs` process. There will be a number of running svchost.exe processes. Hover your mouse over them to identify the correct one. Once you find it, right click and kill it. The Terminal Services service will now be stopped.
 
-![sysinternals-process-explorerer](/content/img/sysinternals-process-explorerer.jpg)
+![sysinternals-process-explorerer](/assets/img/sysinternals-process-explorerer.jpg)
 
 Restart the service (no longer greyed out) and your good to go.

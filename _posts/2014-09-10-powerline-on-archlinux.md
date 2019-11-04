@@ -18,7 +18,7 @@ I recently switched from GNU Screen to Tmux. While reviewing random tmux.confs o
 
 [https://github.com/gpakosz/.tmux](https://github.com/gpakosz/.tmux)
 
-![powerline-tmux](/content/img/powerline-tmux.png)
+![powerline-tmux](/assets/img/powerline-tmux.png)
 
 An [AUR package](https://aur.archlinux.org/packages/python-powerline-git/) available for `Powerline`. However for this document I am going to detail the standard installation.
 
@@ -67,7 +67,7 @@ Edit your various dotfiles to run their powershell configuration scripts.
 
 Patched fonts are required on remote systems used to connect to your powerline/tmux box. Download and install a patched font for your system. [https://github.com/Lokaltog/powerline-fonts](https://github.com/Lokaltog/powerline-fonts)
 
-![powerline](/content/img/powerline.png)
+![powerline](/assets/img/powerline.png)
 
 ### Failure / Nothing works!
 Should nothing above work as expected and/or you give up.
