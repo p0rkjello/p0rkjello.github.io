@@ -3,12 +3,12 @@ layout: post
 title: Archlinux Kernel Repair
 permalink: archlinux-kernel-repair
 redirect_from: "2014-09-15-archlinux-kernel-repair/"
-tags:
-- linux
-- archlinux
+tags: [linux, archlinux]
 ---
 
-### So I managed to uninstall my kernel.
+{%- include toc.html -%}
+
+### So I managed to uninstall my kernel
 
 In an effort to get VMware Workstation running I needed to downgrade my kernel. I installed the new kernel and got everything setup. Sometime later the system reverted to the newer version.
 
@@ -17,6 +17,7 @@ I already had the package exclusion `IgnorePjg = linux, linux-headers` in `pacma
 Thankfully everything I needed was on the system. Just need to get into it. So I boot into the [archlinux.iso](https://www.archlinux.org/download/) and setup a `chroot` into the existing system.
 
 ### System Repair
+
 My partion layout is as follows:
 
 * sda1 = /boot
@@ -25,7 +26,7 @@ My partion layout is as follows:
 
 Boot into the live CD and create a new directory for the mount point. Mount the /root then /boot file systems onto the new mount point.
 
-```console
+```bash
 # mkdir /mnt/arch
 # mount /dev/sda3 /mnt/arch
 # mount /dev/sda1 /mnt/arch/boot
@@ -33,7 +34,7 @@ Boot into the live CD and create a new directory for the mount point. Mount the 
 
 Change directory into `/mnt/arch` and `chroot` the mounted filesystem.
 
-```console
+```bash
 # cd /mnt/arch
 # mount -t proc proc proc/
 # mount -t sysfs sys sys/
@@ -46,13 +47,15 @@ Inside the `chroot` you have access to your broken system. I have the kernel and
 
 Reinstall the kernel..
 
-	pacman -U --force linux-3.13.7-1-x86_64.pkg.tar.xz linux-headers-3.13.7-1-x86_64.pkg.tar.xz
+```bash
+pacman -U --force linux-3.13.7-1-x86_64.pkg.tar.xz linux-headers-3.13.7-1-x86_64.pkg.tar.xz
+```
 
 ### Verify
 
 This time I double checked `/boot`.
 
-```console
+```bash
 # ls /boot
 total 23568
 drwxr-xr-x 6 root root     1024 Sep 15 07:54 grub
