@@ -3,11 +3,11 @@ layout: post
 title: BOINC cli for World Community Grid
 permalink: boinc-cli-for-world-community-grid
 redirect_from: "2010-06-15-boinc-cli-for-world-community-grid/"
-tags:
-- linux
-- boinc
-- wcg
+tags: [linux, boinc, wcg]
 ---
+
+{%- include toc.html %}
+
 
 ### BOINC - Berkeley Open Infrastructure for Network Computing
 
@@ -16,9 +16,9 @@ BOINC is a distributed [grid] computing client that uses idle time on your compu
 [World Community Grid](http://www.worldcommunitygrid.org)
 
 > World Community Grid's mission is to create the world's largest public computing grid to tackle projects that benefit humanity.
-
+>
 > Our work has developed the technical infrastructure that serves as the grid's foundation for scientific research. Our success depends upon individuals collectively contributing their unused computer time to change the world for the better.
-
+>
 > World Community Grid is making technology available only to public and not-for-profit organizations to use in humanitarian research that might otherwise not be completed due to the high cost of the computer infrastructure required in the absence of a public grid. As part of our commitment to advancing human welfare, all results will be in the public domain and made public to the global research community.
 
 ### Installation & Configuration
@@ -26,8 +26,10 @@ BOINC is a distributed [grid] computing client that uses idle time on your compu
 This is a description of how to run BOINC on Ubuntu without Xorg.
 Install the boinc-client, boinc-manager is not required.
 
-	$ sudo apt-get update
-	$ sudo apt-get install boinc-client
+```bash
+$ sudo apt-get update
+$ sudo apt-get install boinc-client
+```
 
 You will need your &lt;account key&gt; to connect to the project. The account key can be obtained either from the command line or the World Community Grid site.
 
@@ -35,18 +37,24 @@ If you do not already have an account you will need to set one up before proceed
 
 Account Key via boinccmd:
 
-	$ boinccmd --lookup_account http://www.worldcommunitygrid.org <username> <password>
+```bash
+$ boinccmd --lookup_account http://www.worldcommunitygrid.org <username> <password>
+```
 
 If everything went well you should see the following output:
 
-	usename@computer:~$ boinccmd --lookup_account http://www.worldcommunitygrid.org username password
-	status: Success
-	poll status: operation in progress
-	account key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+usename@computer:~$ boinccmd --lookup_account http://www.worldcommunitygrid.org username password
+status: Success
+poll status: operation in progress
+account key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
 
 If you have an existing account or just set one up the key can be found under your profile in the [World Community Grid](http://www.worldcommunitygrid.org) site.
 
-	$ boinccmd --host localhost --project_attach http://www.worldcommunitygrid.org account key
+```bash
+$ boinccmd --host localhost --project_attach http://www.worldcommunitygrid.org account key
+```
 
 Everything should be up and running.
 
