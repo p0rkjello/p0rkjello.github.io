@@ -21,7 +21,7 @@ layout: default
 
   <div class="relatedPosts">
 
-    <h4>Related Posts</h4>
+    <h3>Related Posts</h3>
     
     {% assign maxRelated = 4 %}
     {% assign minCommonTags =  2 %}
@@ -44,7 +44,7 @@ layout: default
     
         {% if sameTagCount >= minCommonTags %}
           <div>
-          <h5><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}{{ commonTags }}</a></h5>
+          <h4><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}{{ commonTags }}</a></h4>
           </div>
           {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
           {% if maxRelatedCounter >= maxRelated %}
@@ -55,6 +55,15 @@ layout: default
       {% endfor %}
     
   </div>
+
+  <script src="https://utteranc.es/client.js"
+        repo="p0rkjello/p0rkjello.github.io"
+        issue-term="title"
+        label="💬"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
