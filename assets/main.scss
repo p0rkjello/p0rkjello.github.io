@@ -5,3 +5,11 @@
     "minima",
     "zenburn"
 ;
+
+.tags-links a {
+	display: inline-block;
+	line-height: 1;
+	padding: 2px 3px;
+	margin-right: 5px;
+	border: 1px solid;
+}

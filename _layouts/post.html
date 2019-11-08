@@ -11,8 +11,15 @@ layout: default
         {{ page.date | date: date_format }}
       </time>
       {%- if page.author -%}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author | escape }}</span></span>
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
       {%- endif -%}</p>
+      <div class="post-tags">
+        {%- if page.tags -%}
+          {%- for tag in page.tags -%}
+            <a href="/tags/{{ tag }}/">{{ tag }} </a>
+         {%- endfor -%}
+        {%- endif -%}
+      </div>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
