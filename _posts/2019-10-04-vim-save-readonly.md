@@ -1,14 +1,15 @@
 ---
 layout: post
-title: Save readonly file in vim
-tags: [vim, linux, oneliner]
+title: 'Save readonly file in vim'
+author: 'Andrew Bounds'
+tags: ['vim', 'linux']
 ---
 
 ## vim [readonly]
 
-Forgot to run `sudo` when opening the file and met with the following error?
+Forget to run `sudo` when opening the file and met with the following error?
 
-```
+```text
 E45: 'readonly' option is set (add ! to override)
 ```
 

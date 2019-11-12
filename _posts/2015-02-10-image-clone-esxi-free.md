@@ -1,10 +1,8 @@
 ---
 layout: post
-title: Image cloning in VMware ESX shell
-permalink: image-cloning-in-vmware-esx-shell
-tags:
-  - vmware
-  - esxi
+title: 'Image cloning in VMware ESX shell'
+author: 'Andrew Bounds'
+tags: ['vmware', 'esxi']
 ---
 
 ### VMware image clone via ESX shell and vmkfstools

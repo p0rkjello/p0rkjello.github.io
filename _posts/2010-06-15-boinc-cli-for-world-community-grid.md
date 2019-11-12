@@ -6,8 +6,7 @@ redirect_from: "2010-06-15-boinc-cli-for-world-community-grid/"
 tags: [linux, boinc, wcg]
 ---
 
-{%- include toc.html %}
-
+{%- include toc.html -%}
 
 ### BOINC - Berkeley Open Infrastructure for Network Computing
 
@@ -43,7 +42,7 @@ $ boinccmd --lookup_account http://www.worldcommunitygrid.org <username> <passwo
 
 If everything went well you should see the following output:
 
-```
+```bash
 usename@computer:~$ boinccmd --lookup_account http://www.worldcommunitygrid.org username password
 status: Success
 poll status: operation in progress
@@ -60,7 +59,7 @@ Everything should be up and running.
 
 Below is a list of boinccmd options.
 
-```
+```text
 usage: boinccmd [--host hostname] [--passwd passwd] command
 
 Commands:

@@ -1,12 +1,8 @@
 ---
 layout: post
-title: Persistent static route via Windows registry
-permalink: persistant-static-route-via-Windows-registry
-redirect_from: "2009-10-26-linux-hardware-detection-tool-dmidecode/"
-tags:
-- windows
-- registry
-- route
+title: 'Persistent static route via Windows registry'
+author: 'Andrew Bounds'
+tags: ['windows', 'registry', 'route']
 ---
 
 For whatever reason I was unable to set a static route via the `route` command.
@@ -19,6 +15,6 @@ Persistent static routed are stored in the following registry key:
 
 Add a new `String Value` with the name `destination,mask,gateway,metric`
 
-### Example:
+### Example
 
 ![registry-route](/assets/img/registry-route.png)

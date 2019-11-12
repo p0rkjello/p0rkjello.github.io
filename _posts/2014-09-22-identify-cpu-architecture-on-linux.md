@@ -1,10 +1,8 @@
 ---
 layout: post
-title: Identify CPU architecture on Linux
-permalink: identify-cpu-architecture-on-linux
-redirect_from: "2014-09-22-identify-cpu-architecture-on-linux/"
-tags:
-- linux
+title: 'Identify CPU architecture on Linux'
+author: 'Andrew Bounds'
+tags: ['linux']
 ---
 
 Using `lscpu` is a quick and easy way to determine your CPU architecture.
