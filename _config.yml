@@ -3,10 +3,6 @@ email: asbounds@gmail.com
 description: "notebook for projects, problems, and solutions"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://misctechmusings.com" # the base hostname & protocol for your site, e.g. http://example.com
-
-github_username: p0rkjello
-twitter_username: p0rkjello
-rss: rss
 author: "Andrew Bounds"
 
 google_analytics_id: UA-15151002-2
@@ -14,6 +10,19 @@ google_analytics_id: UA-15151002-2
 permalink: "/:categories/:slug"
 
 theme: minima
+minima:
+  skin: "primer"
+# generate social links in footer
+  social_links:
+    github: p0rkjello
+    twitter: p0rkjello
+    rss: rss
+
+utterances:
+  repo: "p0rkjello/p0rkjello.github.io"
+  theme: "github-light"
+  issue_term: "title"
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag

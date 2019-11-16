@@ -1,9 +1,10 @@
 ---
 layout: post
-title: Linux Hardware Detection Tool Dmidecode
-permalink: linux-hardware-detection-tool-dmidecode
-redirect_from: 2009-10-26-linux-hardware-detection-tool-dmidecode/
-tags: [linux, dmidecode]
+title: 'Linux Hardware Detection Tool Dmidecode'
+author: 'Andrew Bounds'
+tags:
+- linux
+- dmidecode
 ---
 
 {%- include toc.html -%}
@@ -12,7 +13,7 @@ While searching for a quick method of checking a systems memory type, I stumbled
 
 ### Usage
 
-```text
+```console
 Usage: dmidecode [OPTIONS]
 
 Options are:
@@ -31,7 +32,7 @@ Options are:
 
 ### DMI Types
 
-```text
+```console
 DMI TYPES
        The SMBIOS specification defines the following DMI types:
        Type   Information
@@ -84,7 +85,7 @@ DMI TYPES
 
 Using the **-t** option, I have queried the dmi for type **"17"** **"Memory Device"**.
 
-```bash
+```shell
 $ sudo dmidecode -t 17
 # dmidecode 2.10
 SMBIOS 2.3 present.
