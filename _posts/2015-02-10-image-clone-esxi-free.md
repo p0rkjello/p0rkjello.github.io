@@ -12,7 +12,7 @@ templates from existing vms. You can clone an image using `vmkfstools` within th
 
 ### vmkfstools
 
-```text
+```console
 OPTIONS FOR FILE SYSTEMS:
 vmkfstools -C --createfs [vmfs3|vmfs5]
                -b --blocksize #[mMkK]
@@ -74,7 +74,7 @@ vmkfstools -H --help
 Log into the ESX sever and identify the location of the source image. In
 this example I will be cloning image `centos-0` on `datastore-1`
 
-```text
+```shell
 cd vmfs/volumes/datastore-1/
 /vmfs/volumes/datastore-1 # ls
 centos-0
@@ -83,7 +83,7 @@ centos-0
 I am going to create 3 additional CentOS vm images. Create the
 destination directory/s prior to running `vmkfstools`.
 
-```text
+```shell
 /vmfs/volumes/datastore-1 # mkdir centos-1 centos-2 centos-3
 /vmfs/volumes/datastore-1 # ls
 centos-0  centos-1  centos-2  centos-3
@@ -94,7 +94,9 @@ the new image will be *thick* provisioned. The first will use the
 `vmkfstools` command without additional options. The 2nd and 3rd will
 `thin` provision.
 
-> Thin - These virtual disks do not reserve space on the VMFS
+***Thin***
+
+> These virtual disks do not reserve space on the VMFS
 > filesystem, nor do they reserve space on the back-end storage. They
 > only consume blocks when data is written to disk from within the
 > VM/Guest OS. The amount of actual space consumed by the VMDK starts
@@ -102,15 +104,19 @@ the new image will be *thick* provisioned. The first will use the
 > up to a maximum size set at VMDK creation time. The Guest OS believes
 > that it has the maximum disk size available to it as storage space
 > from the start.
->
-> Thick (aka LazyZeroedThick) – These disks reserve space on the VMFS
+
+***Thick (aka LazyZeroedThick)***
+
+> These disks reserve space on the VMFS
 > filesystem but there is an interesting caveat. Although they are
 > called thick disks, they behave similar to thinly provisioned disks.
 > Disk blocks are only used on the back-end (array) when they get
 > written to inside in the VM/Guest OS. Again, the Guest OS inside this
 > VM thinks it has this maximum size from the start.
->
-> EagerZeroedThick – These virtual disks reserve space on the VMFS
+
+***EagerZeroedThick***
+
+> These virtual disks reserve space on the VMFS
 > filesystem and zero out the disk blocks at creation time. This disk
 > type may take a little longer to create as it zeroes out the blocks,
 > but its performance should be optimal from deployment time (no
@@ -120,7 +126,7 @@ the new image will be *thick* provisioned. The first will use the
 > array, then the additional time to create the zeroed out VMDK should
 > be minimal.
 
-```text
+```shell
 /vmfs/volumes/datastore-1 # vmkfstools -i centos-0/centos-0.vmdk centos-1/centos-1.vmdk
 Destination disk format: VMFS zeroedthick
 Cloning disk 'centos-0/centos-0.vmdk'...
@@ -137,7 +143,7 @@ drwxr-xr-t    1 root     root          1820 Feb  3 18:17 ..
 Clone a 2nd copy to the centos-2 directory. Specify `-d thin` to *thin*
 provision this image.
 
-```text
+```shell
 /vmfs/volumes/datastore-1 # vmkfstools -i centos-0/centos-0.vmdk centos-2/centos-2.vmdk -d thin
 Destination disk format: VMFS thin-provisioned
 Cloning disk 'centos-0/centos-0.vmdk'...
@@ -152,7 +158,7 @@ drwxr-xr-t    1 root     root          1820 Feb  3 18:17   ..
 
 Clone a 3rd copy to the centos-3 directory
 
-```text
+```shell
 /vmfs/volumes/datastore-1 # vmkfstools -i centos-0/centos-0.vmdk centos-3/centos-3.vmdk -d thin
 Destination disk format: VMFS thin-provisioned
 Cloning disk 'centos-0/centos-0.vmdk'...
