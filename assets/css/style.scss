@@ -2,3 +2,8 @@
 ---
 
 @import "minima-{{ site.minima.skin | default: 'classic' }}";
+
+// replace header border-top
+body {
+border-top: 5px solid #424242;
+}
