@@ -8,6 +8,8 @@ tags:
 - ruby
 ---
 
+{% octicon globe %}
+
 ### Chef helpers / Custom modules
 
 Found myself in need of a custom [guard](https://docs.chef.io/resource_common.html) for a Chef recipe using the [registry_key](https://docs.chef.io/resource_registry_key.html) resouce. There isn't a `chef generate` for [libraries](https://docs.chef.io/libraries.html). You will need to manually create the `libraries` directory and a new file. In this exmaple I have created a file named `my_helper.rb`.

@@ -5,7 +5,7 @@ permalink: detect-net-version-using-internet-explorer
 redirect_from: "2013-01-04-detect-net-version-using-internet-explorer/"
 tags:
 - windows
-- .net
+- dotnet
 ---
 
 Here is a quick method of getting the .NET versions running on a system.
