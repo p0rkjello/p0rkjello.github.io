@@ -1,8 +1,7 @@
-<p>
-  {% for tag in site.tags %}
-  <!-- Here's a hack to generate a "tag cloud" where the size of
-  the word is directly proportional to the number of posts with
-  that tag. -->
-    <a href="/tags/{{ tag[0] }}/">{{ tag[0] }}</a>
-  {% endfor %}
+<p class="post-tags">
+  {% if page.tags %}
+    {% for tag in site.tags %}
+      <a class="btn btn-sm" href="/tags/{{ tag[0] }}/">{{ tag[0] }} {% octicon tag %}</a>
+    {% endfor %}
+  {% endif %}
 </p>

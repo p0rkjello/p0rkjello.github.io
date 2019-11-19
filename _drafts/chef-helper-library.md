@@ -8,16 +8,18 @@ tags:
 - ruby
 ---
 
-{% octicon globe %}
-
 ### Chef helpers / Custom modules
 
-Found myself in need of a custom [guard](https://docs.chef.io/resource_common.html) for a Chef recipe using the [registry_key](https://docs.chef.io/resource_registry_key.html) resouce. There isn't a `chef generate` for [libraries](https://docs.chef.io/libraries.html). You will need to manually create the `libraries` directory and a new file. In this exmaple I have created a file named `my_helper.rb`.
+Found myself in need of a custom [guard](https://docs.chef.io/resource_common.html) for a Chef recipe using the [registry_key](https://docs.chef.io/resource_registry_key.html) resource. I was able to create a module to eliminate code repetition. The following is a simplified example.
 
-In the helper module we will create a new method called `in_file?`. The `in_file?` method will search the text file `'c:\temp\my_helper.txt'` for a specific word and return true if found.
-Additionally the method will need to be included in the recipe, resource, etc. In order to prevent clobbering an existing method include it only where needed.
+To get started, generate a new cookbook `chef generate cookbook example_helper`.
 
-***cookbook > libraries > my_helper.rb***
+There isn't a `chef generate` for [libraries](https://docs.chef.io/libraries.html). Manually create the `libraries` directory and a new ruby file. In this example I have created a file named `my_helper.rb`.
+
+Within the `my_helper.rb` file I created a new method called `in_file?`. The `in_file?` method will search the text file `'c:\temp\my_helper.txt'` for a specific word and return true if found.
+Additionally the method will need to be included in the recipe, resource, etc. In order to prevent clobbering any existing method with the same name include it only where needed.
+
+***example_helper > libraries > my_helper.rb***
 
 ```ruby
 # libraries/my_helper.rb
@@ -40,7 +42,9 @@ Chef::Resource::RegistryKey.send(:include, My::Helper)
 
 ### Attribute file
 
-***cookbook > attributes > default.rb***
+Create a new attribute file `chef generate attribute default`. I populated the attribute file with some values to loop over.
+
+***example_helper > attributes > default.rb***
 
 ```ruby
 # attribute/default.rb
@@ -53,7 +57,9 @@ default['example_helper']['regkey']['key4'] = 'value4'
 
 ### Cookbook recipe
 
-***cookbook > recipes > default.rb***
+The recipe iterates through the cookbook attributes and creates a new registry key. The guard uses the `in_file?` method created above. If the text file contains the attribute name the __registry_key__ resource will be skipped for that iteration.
+
+***example_helper > recipes > default.rb***
 
 ```ruby
 # recipe/default.rb

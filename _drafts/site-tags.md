@@ -1,7 +1,8 @@
 ---
 layout: post
-title: 'tag cloud' 
-author: 'Andrew Bounds'
+title: 'Tag Cloud' 
 ---
 
-{% include tagcloud.html %}
+<div class="wrapper">
+  {% include tagcloud.html %}
+</div>

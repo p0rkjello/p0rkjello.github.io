@@ -4,14 +4,16 @@
   {%- include head.html -%}
 
   <body>
-    <div class="Box markdown-body">
-      {%- include header.html -%}
 
+    {%- include header.html -%}
+    
+    <div class="Box markdown-body">
         <div class="wrapper">
           {{ content }}
         </div>
-
-      {%- include footer.html -%}
-    </div>
+      </div>
+    
+    {%- include footer.html -%}
+  
   </body>
 </html>
