@@ -11,12 +11,16 @@ Details on setting up network bonding. This is going to be used as a Snort senso
 
 Install ifenslave
 
-	$ sudo apt-get install ifenslave
+```shell
+$ sudo apt-get install ifenslave
+```
 
 Create the file `/etc/modprobe.d/bonding.conf` with the following:
 
-	alias bond0 bonding
-	options bonding mode=0 miimon=100
+```console
+alias bond0 bonding
+options bonding mode=0 miimon=100
+```
 
 A note about promiscuous mode regarding the bonding mode:
 
@@ -37,22 +41,30 @@ promiscuous mode setting is propagated only to the active slave.
 
 Time to load the module:
 
-	$ sudo modprobe bonding
+```shell
+$ sudo modprobe bonding
+```
 
 Add the new interface into your `/etc/network/interfaces` file:
 
-	auto bond0
-	iface bond0 inet manual
-	slaves eth2 eth3
-	up ifconfig $IFACE 0.0.0.0 up
-	up ip link set $IFACE promisc on
-	down ip link set $IFACE promisc off
-	down ifconfig $IFACE down
+```console
+auto bond0
+iface bond0 inet manual
+slaves eth2 eth3
+up ifconfig $IFACE 0.0.0.0 up
+up ip link set $IFACE promisc on
+down ip link set $IFACE promisc off
+down ifconfig $IFACE down
+```
 
 Restart networking to bring up the new interface:
 
-	$ sudo /etc/init.d/networking restart
+```shell
+$ sudo /etc/init.d/networking restart
+```
 
 Connect to your passive ethernet tap and verify with tcpdump
 
-	$ sudo tcpdump -i bond0
+```shell
+$ sudo tcpdump -i bond0
+```

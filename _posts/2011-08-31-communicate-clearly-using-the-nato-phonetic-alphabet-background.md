@@ -3,6 +3,7 @@ layout: post
 title: NATO phonetic alphabet background
 permalink: communicate-clearly-using-the-nato-phonetic-alphabet-background
 redirect_from: "2011-08-31-communicate-clearly-using-the-nato-phonetic-alphabet-background/"
+author: 'Andrew Bounds'
 tags:
 - windows
 ---

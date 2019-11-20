@@ -3,6 +3,11 @@
 
 @import "minima-{{ site.minima.skin | default: 'classic' }}";
 
+body {
+    border-top: 5px solid #424242;
+    border-bottom: 5px solid #424242;
+}
+
 .markdown-body {
     flex: 1 0 auto;
 }

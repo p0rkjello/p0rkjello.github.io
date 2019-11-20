@@ -2,7 +2,7 @@
 layout: post
 title: BOINC Linux GPU
 permalink: boinc-linux-gpu
-redirect_from: "2013-01-07-boinc-linux-gpu/"
+author: 'Andrew Bounds'
 tags:
 - linux
 - boinc
@@ -28,7 +28,7 @@ Details are found under [ClientAppConfig](http://boinc.berkeley.edu/trac/wiki/Cl
 On Ubuntu the project directory is found:
 `/var/lib/boinc-client/projects/ProjectName`
 
-```
+```xml
 <app_config>
    <app>
       <name>hcc1</name>
@@ -45,7 +45,7 @@ On Ubuntu the project directory is found:
 * **max\_concurrent:** This specifies the maximum number of tasks the app can run at a time. Set this to the number of total HCC1 tasks your computer will be doing at a time.
 * **gpu\_usage:** This specifies the % use of the GPU per task. Set this according to how many tasks you want to run per GPU.
 
-	**Tasks per GPU = gpu_usage**
+   **Tasks per GPU = gpu_usage**
 * **cpu\_usage:** This specifies the % use of CPU threads per GPU task. The default value is 1, but if you want to run more GPU tasks than you have CPU cores edit it accordingly.
 
-	**Total CPU Threads / Total GPU Task = cpu_usage**
+   **Total CPU Threads / Total GPU Task = cpu_usage**
