@@ -1,8 +1,9 @@
 ---
 layout: post
-title: Windows 7 GodMode
+title: 'Windows 7 GodMode'
 permalink: windows-7-godmode
 redirect_from: 2010-01-05-windows-7-godmode/
+author: 'Andrew Bounds'
 tags:
   - windows
 ---
