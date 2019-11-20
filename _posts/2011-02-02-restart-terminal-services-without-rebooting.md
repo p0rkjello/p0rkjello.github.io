@@ -7,7 +7,7 @@ tags:
 - windows
 ---
 
-### Restart Terminal Services Without Rebooting
+## Restart Terminal Services Without Rebooting
 Microsoft Windows 2003 and lower does not allow you start or stop the Terminal Services service. However if you can't schedule a server reboot there is an alternative.
 
 Download the [Sysinternals tool](http://technet.microsoft.com/en-us/sysinternals) Process Explorer  

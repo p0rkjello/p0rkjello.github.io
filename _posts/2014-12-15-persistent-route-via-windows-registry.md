@@ -15,6 +15,6 @@ Persistent static routed are stored in the following registry key:
 
 Add a new `String Value` with the name `destination,mask,gateway,metric`
 
-### Example
+## Example
 
 ![registry-route](/assets/img/registry-route.png)

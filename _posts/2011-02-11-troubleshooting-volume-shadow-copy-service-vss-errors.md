@@ -8,7 +8,7 @@ tags:
 - vss
 ---
 
-### Identification and resolution of Volume Shadow Copy Service errors.
+## Identification and resolution of Volume Shadow Copy Service errors.
 
 Identify the problem writers using vssadmin
 

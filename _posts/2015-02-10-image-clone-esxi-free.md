@@ -5,12 +5,12 @@ author: 'Andrew Bounds'
 tags: ['vmware', 'esxi']
 ---
 
-### VMware image clone via ESX shell and vmkfstools
+## VMware image clone via ESX shell and vmkfstools
 
 The free version of the VMware vSphere Hypervisor has a reduced feature set. One of the missing features is the ability to clone or create
 templates from existing vms. You can clone an image using `vmkfstools` within the ESX shell.
 
-### vmkfstools
+## vmkfstools
 
 ```console
 OPTIONS FOR FILE SYSTEMS:
@@ -69,7 +69,7 @@ OPTIONS FOR DEVICES:
 vmkfstools -H --help
 ```
 
-### Identify source image and destination location
+## Identify source image and destination location
 
 Log into the ESX sever and identify the location of the source image. In
 this example I will be cloning image `centos-0` on `datastore-1`
@@ -177,7 +177,7 @@ within the source directory. I will add some details on this at a later
 time. For this example the cloned images will be added via the vSphere
 Client.
 
-### Add the newly cloned images to the vSphere inventory.
+## Add the newly cloned images to the vSphere inventory.
 
 Log into the **vSphere Client** and add a **New Virtual Machine**
 (Ctrl-N).

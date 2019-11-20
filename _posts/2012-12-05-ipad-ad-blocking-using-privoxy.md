@@ -45,7 +45,7 @@ listen-address 192.168.1.1:8118
 
 Restart Privoxy after editing the config file. Privoxy will now be listening on port 8118 with the default settings.
 
-### AdblockPlus lists for Privoxy.
+## AdblockPlus lists for Privoxy.
 
 There is a script that will convert the AdblockPlus lists for Privoxy.
 [http://andrwe.org/scripting/bash/privoxy-blocklist](http://andrwe.org/scripting/bash/privoxy-blocklist)
@@ -66,7 +66,7 @@ Verify Privoxy is running and listening on port 8118:
 	tcp        0      0 192.168.1.1:8118    0.0.0.0:*               LISTEN      15152/privoxy
 
 
-### Configure the Ipad proxy settings
+## Configure the Ipad proxy settings
 
 * Tap Settings > General > Network > WiFi.
 * Modify the network settings for the SSID at the location by pressing on the blue icon with the right arrow in it.

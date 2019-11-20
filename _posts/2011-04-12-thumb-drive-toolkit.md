@@ -9,7 +9,7 @@ tags:
 ---
 
 A Windows Administrator USB toolkit. The following is a collection of free and/or open source tools I like to keep on hand.
-### [Portable Apps collection](http://portableapps.com)
+## [Portable Apps collection](http://portableapps.com)
 
 ![portable-apps](/assets/img/portableapps-com-logo.png)
 
@@ -120,7 +120,7 @@ MS recently added Sysinternals Live. Description below from their site.
 
 ![dban](/assets/img/dban-logo.png)
 
-### [Darik's Boot And Nuke](href="http://www.dban.org/)
+## [Darik's Boot And Nuke](href="http://www.dban.org/)
 
 > Darik's Boot and Nuke ("DBAN") is a self-contained boot disk that securely wipes the hard disks of most computers. DBAN will automatically and completely delete the contents of any hard disk that it can detect, which makes it an appropriate utility for bulk or emergency data destruction.
 

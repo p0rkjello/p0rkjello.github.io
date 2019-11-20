@@ -8,7 +8,7 @@ tags: [linux, boinc, wcg]
 
 {%- include toc.html -%}
 
-### BOINC - Berkeley Open Infrastructure for Network Computing
+## BOINC - Berkeley Open Infrastructure for Network Computing
 
 BOINC is a distributed [grid] computing client that uses idle time on your computer. There are a number of projects that you can attach to and assist with. I will cover how to connect to the World Community Grid via CLI on Ubuntu.
 
@@ -20,7 +20,7 @@ BOINC is a distributed [grid] computing client that uses idle time on your compu
 >
 > World Community Grid is making technology available only to public and not-for-profit organizations to use in humanitarian research that might otherwise not be completed due to the high cost of the computer infrastructure required in the absence of a public grid. As part of our commitment to advancing human welfare, all results will be in the public domain and made public to the global research community.
 
-### Installation & Configuration
+## Installation & Configuration
 
 This is a description of how to run BOINC on Ubuntu without Xorg.
 Install the boinc-client, boinc-manager is not required.

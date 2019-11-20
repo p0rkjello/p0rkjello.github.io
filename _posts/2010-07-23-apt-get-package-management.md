@@ -12,7 +12,7 @@ tags:
 apt-get is the package management utility behind Debian-based Linux systems Ubuntu, Mint and Mepis.
 
 A complete list of distributions based on Debian can be found on [Distrowatch](http://distrowatch.com/search.php?ostype=Linux&category=All&origin=All&basedon=Debian&notbasedon=None&desktop=All&architecture=All&status=Active).
-### Basic Package Management:
+## Basic Package Management:
 ***apt-get update***
 
 Used to resynchronize the package index files from their sources. The indexes of available packages are fetched from the location(s) specified in /etc/apt/sources.list. For example, when using a Debian archive, this command retrieves and scans the Packages.gz files, so that information about new and updated packages is available.
@@ -57,7 +57,7 @@ Like <em>clean</em>, <em>autoclean</em> clears out the local repository of retri
 
 <em>autoremove</em> is used to remove packages that were automatically installed to satisfy dependencies for some package and that are no more needed.
 
-### Compiling Packages:
+## Compiling Packages:
 ***apt-get source xxx***
 
 source causes ***apt-get*** to fetch source packages. APT will examine the available packages to decide which source package to fetch. It will then find and download into the current directory the newest available version of that source package. Source packages are tracked separately from binary packages via deb-src type lines in the sources.list file. This probably will mean that you will not get the same source as the package you have installed or as you could install.

@@ -7,7 +7,7 @@ tags:
 - archlinux
 ---
 
-### Arch Linux Powerpill Setup
+## Arch Linux Powerpill Setup
 
 Powerpill is a wrapper for Archlinux package management tool, pacman. This is a short tutorial on setting up powerpill for concurrent downloads without using the <a href="http://wiki.archlinux.org/index.php/Reflector">reflector</a>
 

@@ -8,7 +8,7 @@ tags:
 - cli
 ---
 
-### Determine if your processor is 64bit capable
+## Determine if your processor is 64bit capable
 Grep the output of `/proc/cpuinfo` for the lm (long mode) flag.
 
  

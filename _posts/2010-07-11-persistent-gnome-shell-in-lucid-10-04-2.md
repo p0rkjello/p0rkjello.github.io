@@ -43,12 +43,12 @@ Select **"mutter"**
 	$ sudo cp /usr/share/applications/gnome-shell.desktop /etc/xdg/autostart
 
 The gnome-shell is now the default interface. Enjoy
-### UPDATE: (07/12/2010)
+## UPDATE: (07/12/2010)
 The most recent update of Gnome-shell has a dependency of GTK+ 3.0 and will not work.
 > With the GNOME Shell 2.31.5 release, this GNOME 3.0 desktop shell is dependent upon GTK+ 3.0. GNOME Shell will no longer work with the GTK+ 2.x library. Other changes since the previous GNOME Shell release include various bug and build fixes. Lastly, Mutter 2.31.5 has also picked up support for building against GTK+ 3.0.
 via <a href="http://www.phoronix.com/scan.php?page=news_item&amp;px=ODQwOA">Phoronox</a>
 
-### UPDATE: (07/15/2010)
+## UPDATE: (07/15/2010)
 Per <a href="https://launchpad.net/~ricotz/+archive/testing">Rico Tzschichholz</a>
 
 > ## WARNING

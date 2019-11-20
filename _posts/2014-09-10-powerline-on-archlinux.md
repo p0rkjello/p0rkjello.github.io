@@ -10,7 +10,7 @@ tags:
 - tmux
 ---
 
-### Powerline on Archlinux
+## Powerline on Archlinux
 
 I recently switched from GNU Screen to Tmux. While reviewing random tmux.confs on Github I stumbled onto the screenshot below of tmux & powerline.
 
@@ -22,7 +22,7 @@ I recently switched from GNU Screen to Tmux. While reviewing random tmux.confs o
 
 An [AUR package](https://aur.archlinux.org/packages/python-powerline-git/) available for `Powerline`. However for this document I am going to detail the standard installation.
 
-### Powerline Installation:
+## Powerline Installation:
 
 Install python-pip (and if you don't aleady have it, git):
 
@@ -45,7 +45,7 @@ Install the Powerline patched fonts:
     $ sudo fc-cache -vf
     $ sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/
 
-### Dotfile Configuration:
+## Dotfile Configuration:
 Edit your various dotfiles to run their powershell configuration scripts.
 
 **~/.tmux.conf**
@@ -69,7 +69,7 @@ Patched fonts are required on remote systems used to connect to your powerline/t
 
 ![powerline](/assets/img/powerline.png)
 
-### Failure / Nothing works!
+## Failure / Nothing works!
 Should nothing above work as expected and/or you give up.
 
 **Uninstall Powerline:**
