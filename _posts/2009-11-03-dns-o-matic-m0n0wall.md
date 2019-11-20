@@ -1,8 +1,7 @@
 ---
 layout: post
-title: dns-o-matic on m0n0wall
-permalink: dns-o-matic-m0n0wall
-redirect_from: "2009-11-03-dns-o-matic-m0n0wall/"
+title: 'dns-o-matic on m0n0wall'
+author: 'Andrew Bounds'
 tags:
 - opendns
 - dnsomatic
@@ -21,4 +20,4 @@ Thanks goes out to the editor of the thread below. DNS-O-Matic service can be us
 
 [m0nowall DNS-O-Matic Topic](http://forum.m0n0.ch/index.php/topic,1357.0.html")
 
-![dnsomatic](/assets/img/dnsomatic.png)
+![dnsomatic](/assets/img/dnsomatic.png "Dynamic DNS Client")

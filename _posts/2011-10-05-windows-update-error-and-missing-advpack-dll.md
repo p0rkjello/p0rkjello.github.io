@@ -1,8 +1,7 @@
 ---
 layout: post
-title: Windows Update error - Missing advpack.dll
-permalink: windows-update-error-and-missing-advpack-dll
-redirect_from: "2011-10-05-windows-update-error-and-missing-advpack-dll/"
+title: 'Windows Update error - Missing advpack.dll'
+author: 'Andrew Bounds'
 tags:
 - windows
 ---
@@ -19,7 +18,7 @@ I tried checking the backup to find when the file changed or went missing. Howev
 
 In order to repair Windows Update I also needed to stop the bits and Windows Update service, rename the **"%SystemRoot%\SoftwareDistribution"** directory then restart the services.
 
-{% highlight batch %}
+```console
 %Windir%\system32\net.exe stop bits
 %Windir%\system32\net.exe stop wuauserv
 
@@ -28,6 +27,6 @@ rd /s /q %windir%\SoftwareDistribution
 
 %Windir%\system32\net.exe start bits
 %Windir%\system32\net.exe start wuauserv
-{% endhighlight %}
+```
 
 Everything works like a charm. Now to figure out what happened to my DLL.

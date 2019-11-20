@@ -1,10 +1,8 @@
 ---
 layout: post
 title: Remove ctrl-m characters on Linux
-permalink: remove-ctrl-m-characters-linux
-redirect_from: "2013-11-24-remove-ctrl-m-characters-linux/"
-tags:
-- linux
+author: 'Andrew Bounds'
+tags: ['linux']
 ---
 
 ![ctrl-m](/assets/img/ctrl-m.png)
@@ -13,12 +11,18 @@ Use `CTRL`+`V` `CTRL`+`M` to type ^M
 
 **vi:**
 
-	:%s/^M//g
+```text
+:%s/^M//g
+```
 
 **tr:**
 
-	tr -d ^M < file > newfile
+```text
+tr -d ^M < file > newfile
+```
 
 **sed:**
 
+```text
     sed 's/^M//g' file > newfile
+```
