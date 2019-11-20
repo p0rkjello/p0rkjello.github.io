@@ -9,7 +9,7 @@ tags:
 - vagrant
 ---
 
-### SATA Wanted
+## SATA Wanted
 
 Many of the public [Vagrant boxes](https://app.vagrantup.com/boxes/search) are configured with an IDE controller. I assume this is for compatibility reasons. The SATA controller on VirtualBox performs better, so that is what I want.
 
@@ -17,11 +17,11 @@ Many of the public [Vagrant boxes](https://app.vagrantup.com/boxes/search) are c
 
 >Like a real SATA controller, Oracle VM VirtualBox's virtual SATA controller operates faster and also consumes fewer CPU resources than the virtual IDE controller. Also, this enables you to connect up to 30 virtual hard disks to one machine instead of just three, when compared to the Oracle VM VirtualBox IDE controller with a DVD drive attached.
 
-### Getting started
+## Getting started
 
 To start the process of building your Vagrant box using Packer. Create a working directory. Within that directory start the [Packer template](#packer-json-file). The template which I named centos-7.7-x86_64.json`  is a file that describes how to build the image.
 
-### Packer json file
+## Packer json file
 
 Within the `json` file we define the builder type [virtualbox-iso](https://www.packer.io/docs/builders/virtualbox-iso.html). This builder will create a new image from an ISO file. Here is where we can define the __hard_drive_interface__ as SCSI.
 
@@ -101,7 +101,7 @@ Within the `json` file we define the builder type [virtualbox-iso](https://www.p
 
 {% endraw %}
 
-### CentOS kickstart file
+## CentOS kickstart file
 
 ```conf
 # RHEL7 - Vagrant lab system
@@ -206,7 +206,7 @@ sudo chmod 440 /etc/sudoers.d/vagrant
 %end
 ```
 
-### Project directory
+## Project directory
 
 ```text
 📦centos-packer-virtualbox
