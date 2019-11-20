@@ -10,14 +10,14 @@ tags:
 
 ### Chef helpers / Custom modules
 
-Found myself in need of a custom [guard](https://docs.chef.io/resource_common.html) for a Chef recipe using the [registry_key](https://docs.chef.io/resource_registry_key.html) resource. I was able to create a module to eliminate code repetition. The following is a simplified example.
+I found myself in need of a custom [guard](https://docs.chef.io/resource_common.html) for a Chef recipe using the [registry_key](https://docs.chef.io/resource_registry_key.html) resource. I was able to create a module to eliminate code repetition. The following is a simplified example.
 
 To get started, generate a new cookbook `chef generate cookbook example_helper`.
 
-There isn't a `chef generate` for [libraries](https://docs.chef.io/libraries.html). Manually create the `libraries` directory and a new ruby file. In this example I have created a file named `my_helper.rb`.
+There isn't a `chef generate` for [libraries](https://docs.chef.io/libraries.html). Manually create the `libraries` directory and a new ruby file. In this example, I have created a file named `my_helper.rb`.
 
 Within the `my_helper.rb` file I created a new method called `in_file?`. The `in_file?` method will search the text file `'c:\temp\my_helper.txt'` for a specific word and return true if found.
-Additionally the method will need to be included in the recipe, resource, etc. In order to prevent clobbering any existing method with the same name include it only where needed.
+Additionally, the method will need to be included in the recipe, resource, etc. To prevent clobbering any existing method with the same name include it only where needed.
 
 ***example_helper > libraries > my_helper.rb***
 
@@ -78,7 +78,7 @@ end
 
 ### Example word list file
 
-Add the words we want to trigger the `in_file?` method. In this case we will add two of the four attribute values.
+Add the words we want to trigger the `in_file?` method. In this case, we will add two of the four attribute values.
 
 ***c:\temp\my_helper.txt***
 

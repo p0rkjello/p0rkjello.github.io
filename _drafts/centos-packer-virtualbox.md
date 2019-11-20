@@ -9,11 +9,26 @@ tags:
 - vagrant
 ---
 
-I neede a CentOS Vagrant box for VirtualBox with a SCSI controller.
+### SATA Wanted
+
+Many of the public [Vagrant boxes](https://app.vagrantup.com/boxes/search) are configured with an IDE controller. I assume this is for compatibility reasons. The SATA controller on VirtualBox performs better, so that is what I want.
+
+***[Serial ATA (SATA)](https://www.virtualbox.org/manual/ch05.html#harddiskcontrollers)***
+
+>Like a real SATA controller, Oracle VM VirtualBox's virtual SATA controller operates faster and also consumes fewer CPU resources than the virtual IDE controller. Also, this enables you to connect up to 30 virtual hard disks to one machine instead of just three, when compared to the Oracle VM VirtualBox IDE controller with a DVD drive attached.
+
+### Getting started
+
+To start the process of building your Vagrant box using Packer. Create a working directory. Within that directory start the [Packer template](#packer-json-file). The template which I named centos-7.7-x86_64.json`  is a file that describes how to build the image.
 
 ### Packer json file
 
+Within the `json` file we define the builder type [virtualbox-iso](https://www.packer.io/docs/builders/virtualbox-iso.html). This builder will create a new image from an ISO file. Here is where we can define the __hard_drive_interface__ as SCSI.
+
+> hard_drive_interface (string) - The type of controller that the primary hard drive is attached to, defaults to ide. When set to sata, the drive is attached to an AHCI SATA controller. When set to scsi, the drive is attached to an LsiLogic SCSI controller.
+
 {% raw %}
+
 ```json
 {
   "builders": [
@@ -83,6 +98,7 @@ I neede a CentOS Vagrant box for VirtualBox with a SCSI controller.
   }
 }
 ```
+
 {% endraw %}
 
 ### CentOS kickstart file
@@ -188,4 +204,18 @@ EOF
 # Change permissions on vagrant sudo file
 sudo chmod 440 /etc/sudoers.d/vagrant
 %end
+```
+
+### Project directory
+
+```text
+📦centos-packer-virtualbox
+ ┃ ┣ 📂http
+ ┃ ┗ 📜ks.cfg
+ ┣ 📂scripts
+ ┃ ┣ 📜cleanup.sh
+ ┃ ┣ 📜sshd.sh
+ ┃ ┗ 📜virtualbox.sh
+ ┣ 📜.gitignore
+ ┗ 📜centos-7.7-x86_64.json
 ```
