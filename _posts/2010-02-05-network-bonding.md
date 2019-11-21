@@ -1,8 +1,7 @@
 ---
 layout: post
-title: Network Bonding
-permalink: network-bonding
-redirect_from: "2010-02-05-network-bonding/"
+title: 'Network Bonding'
+author: 'Andrew Bounds'
 tags:
 - linux
 ---
@@ -24,20 +23,13 @@ options bonding mode=0 miimon=100
 
 A note about promiscuous mode regarding the bonding mode:
 
-> Promiscuous mode
-
-> When running network monitoring tools, e.g., tcpdump, it is
-common to enable promiscuous mode on the device, so that all traffic
-is seen (instead of seeing only traffic destined for the local host).
-The bonding driver handles promiscuous mode changes to the bonding
-master device (e.g., bond0), and propagates the setting to the slave
-devices.
-
-> For the balance-rr, balance-xor, broadcast, and 802.3ad modes,
-the promiscuous mode setting is propagated to all slaves.
-
-> For the active-backup, balance-tlb and balance-alb modes, the
-promiscuous mode setting is propagated only to the active slave.
+> **Promiscuous mode**
+>
+> When running network monitoring tools, e.g., tcpdump, it is common to enable promiscuous mode on the device, so that all traffic is seen (instead of seeing only traffic destined for the local host). The bonding driver handles promiscuous mode changes to the bonding master device (e.g., bond0), and propagates the setting to the slave devices.
+>
+> For the balance-rr, balance-xor, broadcast, and 802.3ad modes, the promiscuous mode setting is propagated to all slaves.
+>
+> For the active-backup, balance-tlb and balance-alb modes, the promiscuous mode setting is propagated only to the active slave.
 
 Time to load the module:
 

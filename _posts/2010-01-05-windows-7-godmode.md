@@ -1,12 +1,13 @@
 ---
 layout: post
 title: 'Windows 7 GodMode'
-permalink: windows-7-godmode
-redirect_from: 2010-01-05-windows-7-godmode/
 author: 'Andrew Bounds'
 tags:
-  - windows
+- windows
 ---
+
+**Update:** This works on all Windows systems newer than Windows 7.
+{: .flash }
 
 Found on
 [cnet.com](http://news.cnet.com/8301-13860_3-10423985-56.html?tag=mncol)

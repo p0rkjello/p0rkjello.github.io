@@ -1,9 +1,11 @@
 ---
 layout: post
-title: BOINC cli for World Community Grid
-permalink: boinc-cli-for-world-community-grid
-redirect_from: "2010-06-15-boinc-cli-for-world-community-grid/"
-tags: [linux, boinc, wcg]
+title: 'BOINC cli for World Community Grid'
+author: 'Andrew Bounds'
+tags:
+- linux
+- boinc
+- wcg
 ---
 
 {%- include toc.html -%}
@@ -25,7 +27,7 @@ BOINC is a distributed [grid] computing client that uses idle time on your compu
 This is a description of how to run BOINC on Ubuntu without Xorg.
 Install the boinc-client, boinc-manager is not required.
 
-```bash
+```shell
 $ sudo apt-get update
 $ sudo apt-get install boinc-client
 ```
@@ -36,13 +38,13 @@ If you do not already have an account you will need to set one up before proceed
 
 Account Key via boinccmd:
 
-```bash
+```shell
 $ boinccmd --lookup_account http://www.worldcommunitygrid.org <username> <password>
 ```
 
 If everything went well you should see the following output:
 
-```bash
+```shell
 usename@computer:~$ boinccmd --lookup_account http://www.worldcommunitygrid.org username password
 status: Success
 poll status: operation in progress
@@ -51,7 +53,7 @@ account key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 If you have an existing account or just set one up the key can be found under your profile in the [World Community Grid](http://www.worldcommunitygrid.org) site.
 
-```bash
+```shell
 $ boinccmd --host localhost --project_attach http://www.worldcommunitygrid.org account key
 ```
 
@@ -59,7 +61,7 @@ Everything should be up and running.
 
 Below is a list of boinccmd options.
 
-```text
+```console
 usage: boinccmd [--host hostname] [--passwd passwd] command
 
 Commands:
