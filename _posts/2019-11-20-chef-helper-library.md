@@ -8,7 +8,7 @@ tags:
 - ruby
 ---
 
-### Chef helpers / Custom modules
+## Chef helpers / Custom modules
 
 I found myself in need of a custom [guard](https://docs.chef.io/resource_common.html) for a Chef recipe using the [registry_key](https://docs.chef.io/resource_registry_key.html) resource. I was able to create a module to eliminate code repetition. The following is a simplified example.
 
@@ -40,7 +40,7 @@ end
 Chef::Resource::RegistryKey.send(:include, My::Helper)
 ```
 
-### Attribute file
+## Attribute file
 
 Create a new attribute file `chef generate attribute default`. I populated the attribute file with some values to loop over.
 
@@ -55,7 +55,7 @@ default['example_helper']['regkey']['key3'] = 'value3'
 default['example_helper']['regkey']['key4'] = 'value4'
 ```
 
-### Cookbook recipe
+## Cookbook recipe
 
 The recipe iterates through the cookbook attributes and creates a new registry key. The guard uses the `in_file?` method created above. If the text file contains the attribute name the __registry_key__ resource will be skipped for that iteration.
 
@@ -76,7 +76,7 @@ node['example_helper']['regkey']&.each do |name, val|
 end
 ```
 
-### Example word list file
+## Example word list file
 
 Add the words we want to trigger the `in_file?` method. In this case, we will add two of the four attribute values.
 
@@ -87,7 +87,7 @@ key2
 key4
 ```
 
-### Run the Chef Client
+## Run the Chef Client
 
 Run the Chef cookbook `chef-client -z -o example_helper`. Using the helper along with the guard registry keys key2 and key4 will be skipped.
 

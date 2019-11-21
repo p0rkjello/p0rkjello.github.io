@@ -2,7 +2,8 @@
 layout: post
 title: Remove ctrl-m characters on Linux
 author: 'Andrew Bounds'
-tags: ['linux']
+tags:
+- linux
 ---
 
 ![ctrl-m](/assets/img/ctrl-m.png)
@@ -24,5 +25,5 @@ tr -d ^M < file > newfile
 **sed:**
 
 ```text
-    sed 's/^M//g' file > newfile
+sed 's/^M//g' file > newfile
 ```

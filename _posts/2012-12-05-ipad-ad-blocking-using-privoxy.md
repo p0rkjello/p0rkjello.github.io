@@ -14,13 +14,17 @@ Assuming you have an extra computer running on your network. One method of block
 
 In the example below we are going to install and setup Privoxy on Ubuntu.
 
-	sudo apt-get install privoxy
+```shell
+sudo apt-get install privoxy
+```
 
 Edit the configuration file and change the `listen-address` from 127.0.0.1 to your servers IP address. In the example below we will use 192.168.1.1.
 
-	sudo vim /etc/privoxy/config
-
+```shell
+sudo vim /etc/privoxy/config
 ```
+
+```conf
 #  Example:
 #
 #      Suppose you are running Privoxy on a machine which has the
@@ -45,7 +49,7 @@ listen-address 192.168.1.1:8118
 
 Restart Privoxy after editing the config file. Privoxy will now be listening on port 8118 with the default settings.
 
-### AdblockPlus lists for Privoxy.
+## AdblockPlus lists for Privoxy.
 
 There is a script that will convert the AdblockPlus lists for Privoxy.
 [http://andrwe.org/scripting/bash/privoxy-blocklist](http://andrwe.org/scripting/bash/privoxy-blocklist)
@@ -53,20 +57,25 @@ Development version can be found on [Github](http://github.com/Andrwe/privoxy-bl
 
 Download the script:
 
-	wget http://andrwe.org/_export/code/scripting/bash/privoxy-blocklist
+```shell
+wget http://andrwe.org/_export/code/scripting/bash/privoxy-blocklist
+```
 
 Make it executable and run:
 
-	$ chmod +x privoxy-blocklist.sh
-	$ sudo ./privoxy-blocklist.sh
+```shell
+$ chmod +x privoxy-blocklist.sh
+$ sudo ./privoxy-blocklist.sh
+```
 
 Verify Privoxy is running and listening on port 8118:
 
-	$ sudo netstat -anp | grep privoxy
-	tcp        0      0 192.168.1.1:8118    0.0.0.0:*               LISTEN      15152/privoxy
+```shell
+$ sudo netstat -anp | grep privoxy
+tcp        0      0 192.168.1.1:8118    0.0.0.0:*               LISTEN      15152/privoxy
+```
 
-
-### Configure the Ipad proxy settings
+## Configure the Ipad proxy settings
 
 * Tap Settings > General > Network > WiFi.
 * Modify the network settings for the SSID at the location by pressing on the blue icon with the right arrow in it.

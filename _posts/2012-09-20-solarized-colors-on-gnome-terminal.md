@@ -16,16 +16,22 @@ tags:
 
 Install git-core on Ubuntu/Deb. Adjust according to your distribution installer.
 
-	$ sudo apt-get install git-core
-	$ git clone https://github.com/sigurdga/gnome-terminal-colors-solarized.git
+```shell
+$ sudo apt-get install git-core
+$ git clone https://github.com/sigurdga/gnome-terminal-colors-solarized.git
+```
 
 Change directory into the downloaded Solarized directory
 
-	$ cd gnome-terminal-colors-solarized
+```shell
+$ cd gnome-terminal-colors-solarized
+```
 
 Run one of the following scripts for either the dark or light color theme.
 
-	$ ./set_dark.sh
-	$ ./set_light.sh
+```shell
+$ ./set_dark.sh
+$ ./set_light.sh
+```
 
 There are [Solarized](http://ethanschoonover.com/solarized) color palettes available for terminals, editors, IDEs etc. Easy to set up and beautiful to look at. I highly recommend checking it out.

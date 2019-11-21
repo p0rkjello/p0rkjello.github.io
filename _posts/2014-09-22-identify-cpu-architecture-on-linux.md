@@ -7,7 +7,7 @@ tags: ['linux']
 
 Using `lscpu` is a quick and easy way to determine your CPU architecture.
 
-### 64bit AMD processor example
+## 64bit AMD processor example
 
 ```shell
 $ lscpu
@@ -37,7 +37,7 @@ L3 cache:              6144K
 NUMA node0 CPU(s):     0-5
 ```
 
-### 32bit Intel Pentium 4 example
+## 32bit Intel Pentium 4 example
 
 ```shell
 $ lscpu

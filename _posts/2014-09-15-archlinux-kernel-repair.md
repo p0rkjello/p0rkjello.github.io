@@ -8,7 +8,7 @@ tags: [linux, archlinux]
 
 {%- include toc.html -%}
 
-### So I managed to uninstall my kernel
+## So I managed to uninstall my kernel
 
 In an effort to get VMware Workstation running I needed to downgrade my kernel. I installed the new kernel and got everything setup. Sometime later the system reverted to the newer version.
 
@@ -16,7 +16,7 @@ I already had the package exclusion `IgnorePjg = linux, linux-headers` in `pacma
 
 Thankfully everything I needed was on the system. Just need to get into it. So I boot into the [archlinux.iso](https://www.archlinux.org/download/) and setup a `chroot` into the existing system.
 
-### System Repair
+## System Repair
 
 My partion layout is as follows:
 
@@ -51,7 +51,7 @@ Reinstall the kernel..
 pacman -U --force linux-3.13.7-1-x86_64.pkg.tar.xz linux-headers-3.13.7-1-x86_64.pkg.tar.xz
 ```
 
-### Verify
+## Verify
 
 This time I double checked `/boot`.
 

@@ -3,6 +3,7 @@ layout: post
 title: CAPI2 error - Missing System Writer on Windows 2008
 permalink: capi2-error-missing-system-writer-on-windows-2008
 redirect_from: "2013-02-11-capi2-error-missing-system-writer-on-windows-2008/"
+author: 'Andrew Bounds'
 tags:
 - windows
 - vss
@@ -15,7 +16,7 @@ The script below is combines a couple suggested fixes. One of the fixed is from 
 
 Either run the script as is or break it down in parts to show the exact issue. Be sure to restart the cryptographic service if not running the script in its entirety.
 
-```
+```batch
 ::  Reset Reg and Dir ACLs
 
 Takeown /f "%windir%\Microsoft.NET\Framework\v2.0.50727\Temporary ASP.NET Files" /a

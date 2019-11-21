@@ -7,9 +7,9 @@ tags:
 - archlinux
 ---
 
-### Arch Linux Powerpill Setup
+## Arch Linux Powerpill Setup
 
-Powerpill is a wrapper for Archlinux package management tool, pacman. This is a short tutorial on setting up powerpill for concurrent downloads without using the <a href="http://wiki.archlinux.org/index.php/Reflector">reflector</a>
+Powerpill is a wrapper for Archlinux package management tool, pacman. This is a short tutorial on setting up powerpill for concurrent downloads without using the [reflector](http://wiki.archlinux.org/index.php/Reflector).
 
 > Powerpill is a wrapper script written by Xyne for pacman  that speeds up package retrieval by using aria2c for concurrent/segmented downloads. It determines the target packages of requested synchronization operation and then uses the mirrorlist to create a comprehensive metalink. This metalink is then piped to the download manager aria2 for package retrieval. Significant reductions in download times are often possible due to the combined effects of simultaneous and segmented downloads.
 >

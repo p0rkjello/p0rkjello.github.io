@@ -11,7 +11,7 @@ tags:
 
 While searching for a quick method of checking a systems memory type, I stumbled upon the `dmidecode` tool. Dmidecode was able to pull all of the memory information from my motherboard. Including open memory slots and values of the occupied ones.
 
-### Usage
+## Usage
 
 ```console
 Usage: dmidecode [OPTIONS]
@@ -30,7 +30,7 @@ Options are:
 
 `dmidecode` run without any options will dump everything it can determine from the Desktop Management Interface (dmi). The output can be limited to a specific dmi type.
 
-### DMI Types
+## DMI Types
 
 ```console
 DMI TYPES
@@ -81,7 +81,7 @@ DMI TYPES
          41   Onboard Device
 ```
 
-### Identify Memory Device
+## Identify Memory Device
 
 Using the **-t** option, I have queried the dmi for type **"17"** **"Memory Device"**.
 

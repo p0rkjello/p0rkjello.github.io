@@ -14,7 +14,7 @@ Note: Windows 7 Professional or better.
 
 Install the software then run the follow commands to enable the AD Users & Computer snapin.
 
-```
+```console
 dism /online /enable-feature /featurename:RemoteServerAdministrationTools
 dism /online /enable-feature /featurename:RemoteServerAdministrationTools-Roles
 dism /online /enable-feature /featurename:RemoteServerAdministrationTools-Roles-AD
@@ -24,7 +24,7 @@ dism /online /enable-feature /featurename:RemoteServerAdministrationTools-Roles-
 
 I received an error when trying to install the snapin directly.
 
-```
+```console
 c:\>dism /online /enable-feature /featurename:RemoteServerAdministrationTools-Roles-AD-DS-SnapIns
 
 Deployment Image Servicing and Management tool
@@ -41,9 +41,10 @@ The operation completed but RemoteServerAdministrationTools-Roles-AD-DS-SnapIns 
 Ensure that the following parent feature(s) are enabled first. If they are already enabled, refer to the log file for further diagnostics.
 RemoteServerAdministrationTools-Roles-AD-DS, RemoteServerAdministrationTools-Roles-AD, RemoteServerAdministrationTools-Roles, RemoteServerAdministrationTools
 ```
+
 Per the error message, install one component at a time.
 
-```
+```console
 c:\>dism /online /enable-feature /featurename:RemoteServerAdministrationTools
 
 Deployment Image Servicing and Management tool

@@ -2,7 +2,7 @@
 layout: post
 title: Generate QR codes on Wolframalpha
 permalink: generate-qr-codes-on-wolframalpha
-redirect_from: "2011-04-21-generate-qr-codes-on-wolframalpha/"
+author: 'Andrew Bounds'
 tags:
 - wolframalpha
 ---
