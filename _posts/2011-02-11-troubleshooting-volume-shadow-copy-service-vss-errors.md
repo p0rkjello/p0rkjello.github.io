@@ -1,25 +1,26 @@
 ---
 layout: post
-title: Identification and resolution of Volume Shadow Copy Service errors
-permalink: troubleshooting-volume-shadow-copy-service-vss-errors
-redirect_from: "2011-02-11-troubleshooting-volume-shadow-copy-service-vss-errors/"
+title: 'Identification and resolution of Volume Shadow Copy Service errors'
+author: 'Andrew Bounds'
 tags:
 - windows
 - vss
 ---
 
-## Identification and resolution of Volume Shadow Copy Service errors.
+## Identification and resolution of Volume Shadow Copy Service errors
 
 Identify the problem writers using vssadmin
 
 ***vssadmin syntax:***
 
-<pre><code class="dos">vssadmin list {shadows [/set= [shadow copy set GUID]] | writers | providers}
+```console
+vssadmin list {shadows [/set= [shadow copy set GUID]] | writers | providers}
 vssadmin delete shadows /for=<ForVolumeSpec> [/oldest | /all | /shadow=<ShadowID>] [/quiet]`</pre>
+```
 
 Let's start off by checking the state of the VSS Writers
 
-```bat
+```batch
 C:\vssadmin list writers
 
 vssadmin 1.1 - Volume Shadow Copy Service administrative command-line tool (C) Copyright 2001 Microsoft Corp.
@@ -61,7 +62,7 @@ WMI Writer is the Windows Management Instrumentation service.
 
 Restart both services and recheck the output of ***vssadmin list writers***
 
-```bat
+```batch
 C:\vssadmin list writers
 
 vssadmin 1.1 - Volume Shadow Copy Service administrative command-line tool (C) Copyright 2001 Microsoft Corp.
@@ -97,7 +98,9 @@ Other VSS errors might not be as straight forward. Let's looks at some additiona
 
 Clean up any dead VSS snapshots. Some defect systems accumulate hundreds of VSS snapshots that persist in the system and cause Windows to become unresponsive.
 
-    vssadmin delete shadows /all
+```batch
+vssadmin delete shadows /all
+```
 
 Restart the services: COM+ System Application Service, Distributed Transaction Coordinator Service, and Volume Shadow Copy Service
 
@@ -105,8 +108,9 @@ Rerun ***vssadmin list writers*** and check the output.
 
 Additionally recommended by Microsoft: create a batch file to start/stop the VSS services and reregister the DLLs.
 
-32bit
-```bat
+### 32bit
+
+```batch
 cd /d %windir%\system32
 net stop vss
 net stop swprv
@@ -127,8 +131,9 @@ net start vss
 net start swprv
 ```
 
-64bit
-```bat
+### 64bit
+
+```batch
 net stop vss
 net stop swprv
 regsvr32.exe /i %windir%\system32\eventcls.dll

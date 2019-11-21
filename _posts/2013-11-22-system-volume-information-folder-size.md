@@ -12,7 +12,7 @@ Reduce the size of your System Volume Information folder by shrinking the shadow
 
 Use `vssadmin list shadowstorage` to list the current Shadow Copy Storage size.
 
-```
+```console
 C:\>vssadmin list shadowstorage
 vssadmin 1.1 - Volume Shadow Copy Service administrative command-line tool
 (C) Copyright 2001-2005 Microsoft Corp.
@@ -29,7 +29,7 @@ Maximum Shadow Copy Storage space: UNBOUNDED (100%)
 In the example above there is no limit set on Maxium storage.
 To set a limit use the `maxsize=` command. In Windows Server 2008+ this can be set as a percentage of disk space.
 
-```
+```console
 C:\>vssadmin resize shadowstorage /on=C: /For=C: /Maxsize=4GB
 vssadmin 1.1 - Volume Shadow Copy Service administrative command-line tool
 (C) Copyright 2001-2005 Microsoft Corp.
@@ -39,7 +39,7 @@ Successfully resized the shadow copy storage association
 
 After setting `maxsize` rerun `list shadowstorage` to verify/review the updated configuration.
 
-```
+```console
 C:\>vssadmin list shadowstorage
 vssadmin 1.1 - Volume Shadow Copy Service administrative command-line tool
 (C) Copyright 2001-2005 Microsoft Corp.

@@ -10,7 +10,7 @@ tags:
 
 The Windows Assessment Tool (WinSAT) is included Microsoft Vista and Windows 7. This tool can perform performance tests including CPU, memory, disk and video.
 
-```
+```console
 winsat disk -drive c
 
 Windows System Assessment Tool

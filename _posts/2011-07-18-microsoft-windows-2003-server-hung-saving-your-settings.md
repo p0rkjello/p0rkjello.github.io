@@ -1,8 +1,9 @@
 ---
 layout: post
-title: Windows 2003 hung saving your settings
+title: 'Windows 2003 hung saving your settings'
 permalink: microsoft-windows-2003-server-hung-saving-your-settings
 redirect_from: "2011-07-18-microsoft-windows-2003-server-hung-saving-your-settings/"
+author: 'Andrew Bounds'
 tags:
 - windows
 ---

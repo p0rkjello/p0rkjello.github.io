@@ -18,7 +18,7 @@ I tried checking the backup to find when the file changed or went missing. Howev
 
 In order to repair Windows Update I also needed to stop the bits and Windows Update service, rename the **"%SystemRoot%\SoftwareDistribution"** directory then restart the services.
 
-```console
+```batch
 %Windir%\system32\net.exe stop bits
 %Windir%\system32\net.exe stop wuauserv
 
