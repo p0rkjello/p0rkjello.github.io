@@ -2,6 +2,8 @@
 layout: post
 title: 'Packer CentOS Virtualbox image' 
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - linux
 - packer
@@ -13,7 +15,7 @@ tags:
 
 Many of the public [Vagrant boxes](https://app.vagrantup.com/boxes/search) are configured with an IDE controller. I assume this is for compatibility reasons. The SATA controller on VirtualBox performs better, so that is what I want.
 
-***[Serial ATA (SATA)](https://www.virtualbox.org/manual/ch05.html#harddiskcontrollers)***
+**[Serial ATA (SATA)](https://www.virtualbox.org/manual/ch05.html#harddiskcontrollers)**
 
 >Like a real SATA controller, Oracle VM VirtualBox's virtual SATA controller operates faster and also consumes fewer CPU resources than the virtual IDE controller. Also, this enables you to connect up to 30 virtual hard disks to one machine instead of just three, when compared to the Oracle VM VirtualBox IDE controller with a DVD drive attached.
 
@@ -21,11 +23,13 @@ Many of the public [Vagrant boxes](https://app.vagrantup.com/boxes/search) are c
 
 To start the process of building your Vagrant box using Packer. Create a working directory. Within that directory start the [Packer template](#packer-json-file). The template which I named centos-7.7-x86_64.json`  is a file that describes how to build the image.
 
-## Packer json file
+## Packer Template
 
 Within the `json` file we define the builder type [virtualbox-iso](https://www.packer.io/docs/builders/virtualbox-iso.html). This builder will create a new image from an ISO file. Here is where we can define the __hard_drive_interface__ as SCSI.
 
 > hard_drive_interface (string) - The type of controller that the primary hard drive is attached to, defaults to ide. When set to sata, the drive is attached to an AHCI SATA controller. When set to scsi, the drive is attached to an LsiLogic SCSI controller.
+
+### centos-7.7-x86_64.json
 
 {% raw %}
 
