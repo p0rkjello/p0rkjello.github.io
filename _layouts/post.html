@@ -26,13 +26,19 @@ layout: default
     {{ content }}
   </div>
 
+  {% if page.support == true %}
+    {% include support.html %}
+  {% endif %}
+
+  {% if site.utterances.repo %}
+    {% if page.comments %}
+      {% include utterances.html %}
+    {% endif %}
+  {% endif %}
+
   {% if site.related_posts.size >= 1 %}
     {% include page_related.html %}
   {% endif %}
   
-  {%- if site.utterances.repo -%}
-    {%- include utterances.html -%}
-  {%- endif -%}
-
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
