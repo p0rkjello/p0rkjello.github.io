@@ -2,6 +2,8 @@
 layout: post
 title: 'Detect .NET version using Internet Explorer'
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - windows
 - dotnet

@@ -2,6 +2,8 @@
 layout: post
 title: 'Persistent static route via Windows registry'
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags: ['windows', 'registry', 'route']
 ---
 

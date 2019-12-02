@@ -2,6 +2,8 @@
 layout: post
 title: 'Restart Terminal Services without rebooting'
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - windows
 ---

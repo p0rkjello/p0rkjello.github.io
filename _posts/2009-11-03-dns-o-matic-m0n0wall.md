@@ -2,6 +2,8 @@
 layout: post
 title: 'dns-o-matic on m0n0wall'
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - opendns
 - dnsomatic

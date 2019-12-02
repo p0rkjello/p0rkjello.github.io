@@ -2,6 +2,8 @@
 layout: post
 title: 'Network Bonding'
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - linux
 ---

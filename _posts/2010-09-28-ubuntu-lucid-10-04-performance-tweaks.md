@@ -2,6 +2,8 @@
 layout: post
 title: 'Ubuntu Lucid performance tweaks'
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - linux
 - ubuntu

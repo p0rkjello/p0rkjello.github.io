@@ -2,6 +2,8 @@
 layout: post
 title: 'Google Chrome PDF reader'
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - chrome
 ---

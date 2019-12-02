@@ -3,6 +3,8 @@ layout: post
 title: Powerline on Archlinux
 permalink: powerline-on-archlinux
 redirect_from: "2014-09-10-powerline-on-archlinux/"
+support: true
+comments: true
 tags:
 - linux
 - archlinux

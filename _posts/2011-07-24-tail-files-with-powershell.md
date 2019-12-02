@@ -4,6 +4,8 @@ title: Tail files with Powershell
 permalink: tail-files-with-powershell
 redirect_from: "2011-07-24-tail-files-with-powershell/"
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - windows
 - powershell

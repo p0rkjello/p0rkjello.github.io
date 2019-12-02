@@ -2,6 +2,8 @@
 layout: post
 title: 'Save readonly file in vim'
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags: ['vim', 'linux']
 ---
 

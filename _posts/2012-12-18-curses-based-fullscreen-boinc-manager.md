@@ -3,6 +3,8 @@ layout: post
 title: 'Curses based full screen BOINC manager'
 permalink: curses-based-fullscreen-boinc-manager
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - linux
 - boinc

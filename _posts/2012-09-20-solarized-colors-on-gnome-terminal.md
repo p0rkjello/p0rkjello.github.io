@@ -3,6 +3,8 @@ layout: post
 title: Solarized colors on Gnome terminal
 permalink: solarized-colors-on-gnome-terminal
 redirect_from: "2012-09-20-solarized-colors-on-gnome-terminal/"
+support: true
+comments: true
 tags:
 - linux
 - gnome

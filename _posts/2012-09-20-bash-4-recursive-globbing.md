@@ -2,6 +2,8 @@
 layout: post
 title: 'Bash 4 recursive globbing'
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - linux
 - bash

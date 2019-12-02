@@ -3,6 +3,8 @@ layout: post
 title: Chrome socks5 command line switch
 permalink: google-chrome-socks5-command-line-switch
 redirect_from: "2011-08-02-google-chrome-socks5-command-line-switch/"
+support: true
+comments: true
 tags:
 - chrome
 - proxy

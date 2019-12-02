@@ -4,6 +4,8 @@ title: Uninstall LibreOffice on Redhat/Fedora
 permalink: uninstall-libreoffice-on-redhatfedora
 redirect_from: "2013-09-04-uninstall-libreoffice-on-redhatfedora/"
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - linux
 - libreoffice

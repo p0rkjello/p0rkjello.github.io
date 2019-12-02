@@ -3,6 +3,8 @@ layout: post
 title: Set recursive file or directory permission
 permalink: recursive-file-or-directory-permissions
 redirect_from: "2012-10-08-recursive-file-or-directory-permissions/"
+support: true
+comments: true
 tags:
 - linux
 - bash

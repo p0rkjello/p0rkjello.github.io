@@ -2,6 +2,8 @@
 layout: post
 title: 'BOINC cli for World Community Grid'
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - linux
 - boinc

@@ -2,6 +2,8 @@
 layout: post
 title: 'Batch convert images with ImageMagick'
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - linux
 - cli

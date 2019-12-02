@@ -3,6 +3,8 @@ layout: post
 title: Archlinux Kernel Repair
 permalink: archlinux-kernel-repair
 redirect_from: "2014-09-15-archlinux-kernel-repair/"
+support: true
+comments: true
 tags: [linux, archlinux]
 ---
 

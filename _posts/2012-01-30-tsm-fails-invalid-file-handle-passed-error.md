@@ -3,6 +3,8 @@ layout: post
 title: TSM Invalid file handle passed
 permalink: tsm-fails-invalid-file-handle-passed-error
 redirect_from: "2012-01-30-tsm-fails-invalid-file-handle-passed-error/"
+support: true
+comments: true
 tags:
 - windows
 - tsm

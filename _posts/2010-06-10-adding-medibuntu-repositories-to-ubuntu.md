@@ -2,6 +2,8 @@
 layout: post
 title: 'Medibuntu Repositories'
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - linux
 - ubuntu

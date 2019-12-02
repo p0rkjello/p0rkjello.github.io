@@ -2,6 +2,8 @@
 layout: post
 title: 'Archlinux Powerpill Setup'
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - linux
 - archlinux

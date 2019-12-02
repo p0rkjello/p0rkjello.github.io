@@ -2,6 +2,8 @@
 layout: post
 title: 'Linux Hardware Detection Tool Dmidecode'
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - linux
 - dmidecode
