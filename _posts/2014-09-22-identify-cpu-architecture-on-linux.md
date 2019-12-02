@@ -2,6 +2,8 @@
 layout: post
 title: 'Identify CPU architecture on Linux'
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags: ['linux']
 ---
 

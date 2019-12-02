@@ -3,6 +3,8 @@ layout: post
 title: iPad ad blocking using privoxy
 permalink: ipad-ad-blocking-using-privoxy
 redirect_from: "2012-12-05-ipad-ad-blocking-using-privoxy/"
+support: true
+comments: true
 tags:
 - proxy
 - privoxy

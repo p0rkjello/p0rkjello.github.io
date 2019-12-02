@@ -4,6 +4,8 @@ title: gpedit.msi could not create snap-in
 permalink: gpedit-msi-could-not-create-snap-in
 redirect_from: "2012-11-05-gpedit-msi-could-not-create-snap-in/"
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - windows
 - gpedit

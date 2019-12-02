@@ -2,6 +2,8 @@
 layout: post
 title: 'Windows 7 GodMode'
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - windows
 ---

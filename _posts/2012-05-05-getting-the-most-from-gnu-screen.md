@@ -3,6 +3,8 @@ layout: post
 title: Getting the most from GNU Screen
 permalink: getting-the-most-from-gnu-screen
 redirect_from: "2012-05-05-getting-the-most-from-gnu-screen/"
+support: true
+comments: true
 tags:
 - linux
 - screen
@@ -14,7 +16,7 @@ Via [gnu.org](href="http://www.gnu.org/software/screen/)
 Screen will allow you to keep a persistent terminal session. Even when the connection is lost.
 In the middle of compiling a new kernel when your network connection drops? No problem.. You were in a screen session right?
 
-##Running Screen
+## Running Screen
 
 Screen is simple enough to use.
 To start a new session in a terminal
@@ -33,7 +35,7 @@ Share a screen session (multi display mode)
 
     screen -x
 
-##Basic Keyboard Commands
+## Basic Keyboard Commands
 
 Here are some basics commands to help you get around.
 
@@ -94,9 +96,9 @@ Kill all windows and terminate screen.
 The commands above are just the basics. They will get the job done on their own. There are many more options available.
 <a href="http://www.gnu.org/software/screen/manual/screen.html#Default-Key-Bindings">Default-Key-Bindings</a>
 
-##Example .screenrc for a webserver:
+## Example .screenrc for a webserver
 
-```
+```conf
 # basics
 startup_message off
 vbell           on

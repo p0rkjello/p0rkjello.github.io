@@ -3,6 +3,8 @@ layout: post
 title: Using Winsat to test hard drive performance
 permalink: using-winsat-to-test-hard-drive-performance
 redirect_from: "2013-09-04-using-winsat-to-test-hard-drive-performance/"
+support: true
+comments: true
 tags:
 - windows
 - winsat

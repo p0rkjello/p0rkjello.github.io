@@ -4,6 +4,8 @@ title: Remove Ghosted nics
 permalink: remove-ghosted-nics
 redirect_from: "2013-11-22-remove-ghosted-nics/"
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - windows
 ---

@@ -2,6 +2,8 @@
 layout: post
 title: Remove ctrl-m characters on Linux
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - linux
 ---

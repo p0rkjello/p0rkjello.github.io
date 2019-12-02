@@ -2,6 +2,8 @@
 layout: post
 title: 'Persistent Gnome shell in Lucid'
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - linux
 - ubuntu

@@ -3,6 +3,8 @@ layout: post
 title: Warning failed to load theme
 permalink: window-manager-warning-failed-to-load-theme
 redirect_from: "2014-09-04-window-manager-warning-failed-to-load-theme/"
+support: true
+comments: true
 tags:
 - linux
 - gnome

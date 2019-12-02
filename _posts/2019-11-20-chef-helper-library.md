@@ -2,6 +2,8 @@
 layout: post
 title: 'Chef helper library' 
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - chef
 - automation

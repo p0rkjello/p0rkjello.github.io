@@ -3,6 +3,8 @@ layout: post
 title: 'Lenovo T400 will not power on'
 permalink: lenovo-t400-will-not-power-on
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - lenovo
 - repair

@@ -3,6 +3,8 @@ layout: post
 title: BOINC Linux GPU
 permalink: boinc-linux-gpu
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - linux
 - boinc

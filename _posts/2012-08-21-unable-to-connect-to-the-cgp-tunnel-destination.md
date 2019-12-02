@@ -3,6 +3,8 @@ layout: post
 title: Citrix - Unable to connect to the CGP tunnel destination
 permalink: unable-to-connect-to-the-cgp-tunnel-destination
 redirect_from: "2012-08-21-unable-to-connect-to-the-cgp-tunnel-destination/"
+support: true
+comments: true
 tags:
 - citrix
 ---

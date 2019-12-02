@@ -2,6 +2,8 @@
 layout: post
 title: 'Windows Update error - Missing advpack.dll'
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - windows
 ---

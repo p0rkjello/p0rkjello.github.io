@@ -2,6 +2,8 @@
 layout: post
 title: 'Unrar multiple files'
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - linux
 ---

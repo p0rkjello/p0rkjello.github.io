@@ -3,6 +3,8 @@ layout: post
 title: System Volume Information folder size
 permalink: system-volume-information-folder-size
 redirect_from: "2013-11-22-system-volume-information-folder-size/"
+support: true
+comments: true
 tags:
 - windows
 - vss

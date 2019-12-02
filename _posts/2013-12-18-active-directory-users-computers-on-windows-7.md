@@ -3,6 +3,8 @@ layout: post
 title: Active directory Users and Computers on Windows 7
 permalink: active-directory-users-computers-on-windows-7
 redirect_from: "2013-12-18-active-directory-users-computers-on-windows-7/"
+support: true
+comments: true
 tags:
 - windows
 - dsim

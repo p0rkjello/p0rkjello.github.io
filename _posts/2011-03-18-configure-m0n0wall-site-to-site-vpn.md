@@ -3,6 +3,8 @@ layout: post
 title: m0n0wall site to site VPN
 permalink: configure-m0n0wall-site-to-site-vpn
 redirect_from: "2011-03-18-configure-m0n0wall-site-to-site-vpn/"
+support: true
+comments: true
 tags:
 - m0n0wall
 - vpn

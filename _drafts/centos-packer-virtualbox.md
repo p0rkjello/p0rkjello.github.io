@@ -21,7 +21,7 @@ Many of the public [Vagrant boxes](https://app.vagrantup.com/boxes/search) are c
 
 ## Getting started
 
-To start the process of building your Vagrant box using Packer. Create a working directory. Within that directory start the [Packer template](#packer-json-file). The template which I named centos-7.7-x86_64.json`  is a file that describes how to build the image.
+To start the process of building your Vagrant box using Packer, create a working directory. Within that directory start the [Packer template](#packer-json-file). The Packer template, which I named `centos-7.7-x86_64.json`, is a file that describes how to build the image.
 
 ## Packer Template
 
@@ -30,6 +30,8 @@ Within the `json` file we define the builder type [virtualbox-iso](https://www.p
 > hard_drive_interface (string) - The type of controller that the primary hard drive is attached to, defaults to ide. When set to sata, the drive is attached to an AHCI SATA controller. When set to scsi, the drive is attached to an LsiLogic SCSI controller.
 
 ### centos-7.7-x86_64.json
+
+Validate the contents of the json file `packer validate <template>`
 
 {% raw %}
 
@@ -212,6 +214,8 @@ sudo chmod 440 /etc/sudoers.d/vagrant
 
 ## Project directory
 
+The project directory should resemble the outline below.
+
 ```text
 📦centos-packer-virtualbox
  ┃ ┣ 📂http
@@ -222,4 +226,42 @@ sudo chmod 440 /etc/sudoers.d/vagrant
  ┃ ┗ 📜virtualbox.sh
  ┣ 📜.gitignore
  ┗ 📜centos-7.7-x86_64.json
+```
+
+## Building the box
+
+Once everthing is in place run `packer build <template>`.
+
+```console
+➜  packer build centos-7.7-x86_64.json                                                                                                                                                                                                       virtualbox-iso output will be in this color.
+
+...
+truncated output
+...
+
+==> virtualbox-iso: Running post-processor: vagrant
+==> virtualbox-iso (vagrant): Creating Vagrant box for 'virtualbox' provider
+    virtualbox-iso (vagrant): Copying from artifact: output-centos-7.7-x86_64-virtualbox-iso\packer-centos-7.7-x86_64-disk001.vmdk
+    virtualbox-iso (vagrant): Copying from artifact: output-centos-7.7-x86_64-virtualbox-iso\packer-centos-7.7-x86_64.ovf
+    virtualbox-iso (vagrant): Renaming the OVF to box.ovf...
+    virtualbox-iso (vagrant): Compressing: Vagrantfile
+    virtualbox-iso (vagrant): Compressing: box.ovf
+    virtualbox-iso (vagrant): Compressing: metadata.json
+    virtualbox-iso (vagrant): Compressing: packer-centos-7.7-x86_64-disk001.vmdk
+Build 'virtualbox-iso' finished.
+
+==> Builds finished. The artifacts of successful builds are:
+--> virtualbox-iso: 'virtualbox' provider box: centos-7.7-x86_64-virtualbox.box
+```
+
+## .gitignore
+
+The `packer_cache` directory contains the ISO files used for building the image. The `*.box` file is the output image. These are large files that do not need to be tracked via Git. It's recommended to exclude these items in your `.gitignore` file.
+
+```conf
+# Cache objects
+packer_cache/
+
+# For built boxes
+*.box
 ```

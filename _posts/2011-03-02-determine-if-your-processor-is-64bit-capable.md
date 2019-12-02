@@ -2,6 +2,8 @@
 layout: post
 title: 'Determine if your processor is 64bit capable'
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - linux
 - cli

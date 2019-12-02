@@ -2,6 +2,8 @@
 layout: post
 title: 'Identification and resolution of Volume Shadow Copy Service errors'
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - windows
 - vss

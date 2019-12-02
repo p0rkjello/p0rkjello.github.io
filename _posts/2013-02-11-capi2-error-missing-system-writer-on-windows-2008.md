@@ -4,6 +4,8 @@ title: CAPI2 error - Missing System Writer on Windows 2008
 permalink: capi2-error-missing-system-writer-on-windows-2008
 redirect_from: "2013-02-11-capi2-error-missing-system-writer-on-windows-2008/"
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - windows
 - vss

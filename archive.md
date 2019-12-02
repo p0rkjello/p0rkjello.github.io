@@ -3,9 +3,17 @@ layout: page
 title: Archive
 ---
 
-## Blog Posts
+## Chronological
 
 {% for post in site.posts %}
+{% assign currentDate = post.date | date: "%Y" %}
+{% if currentDate != myDate %}
 
-* {{ post.date | date_to_string }} &raquo; [ {{ post.title }} ]({{ post.url }})
+### {{ currentDate }}
+
+{% assign myDate = currentDate %}
+{% endif %}
+
+* [{{ post.title }}]({{ post.url }}) - {{ post.date | date: "%B %-d" }}
+
 {% endfor %}

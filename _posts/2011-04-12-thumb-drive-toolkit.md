@@ -3,6 +3,7 @@ layout: post
 title: Thumb drive toolkit
 permalink: thumb-drive-toolkit
 redirect_from: "2011-04-12-thumb-drive-toolkit/"
+comments: true
 tags:
 - windows
 - thumbdrive

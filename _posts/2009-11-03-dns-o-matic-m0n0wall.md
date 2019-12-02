@@ -2,13 +2,15 @@
 layout: post
 title: 'dns-o-matic on m0n0wall'
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - opendns
 - dnsomatic
 - m0n0wall
 ---
 
-Looking for a method of using [OpenDNS](https://www.opendns.com) with a dynamic IP address. I am currently using the DynDNS service however is no method of linking this service to OpenDNS. OpenDNS has an additional service called [DNS-O-Matic](http://www.dnsomatic.com).
+Looking for a method of using [OpenDNS](https://www.opendns.com) with a dynamic IP address. I am using the DynDNS service however there is no method of linking this service to OpenDNS. OpenDNS has an additional service called [DNS-O-Matic](http://www.dnsomatic.com).
 
 DNS-O-Matic is a dynamic DNS service. The service supports dozens of other dynamic DNS services. All of which can be linked to your account. A list of the supported services can be found below.
 

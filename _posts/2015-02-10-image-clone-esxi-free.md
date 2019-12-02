@@ -2,6 +2,8 @@
 layout: post
 title: 'Image cloning in VMware ESX shell'
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags: ['vmware', 'esxi']
 ---
 

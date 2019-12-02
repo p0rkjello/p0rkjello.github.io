@@ -4,6 +4,8 @@ title: 'Fix Shrew Soft VPN on Ubuntu 11.04'
 permalink: fix-shrew-soft-vpn-on-ubuntu-11-04
 redirect_from: "2011-05-31-fix-shrew-soft-vpn-on-ubuntu-11-04/"
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - linux
 - ubuntu

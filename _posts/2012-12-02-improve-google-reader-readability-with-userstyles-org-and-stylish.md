@@ -3,6 +3,8 @@ layout: post
 title: Improve Google Reader readability with userstyles.org and stylish
 permalink: improve-google-reader-readability-with-userstyles-org-and-stylish
 redirect_from: "2012-12-02-improve-google-reader-readability-with-userstyles-org-and-stylish/"
+support: true
+comments: true
 tags:
 - chrome
 - userstyles

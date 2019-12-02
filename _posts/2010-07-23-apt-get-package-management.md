@@ -2,6 +2,8 @@
 layout: post
 title: 'apt-get package management'
 author: 'Andrew Bounds'
+support: true
+comments: true
 tags:
 - linux
 - debian
