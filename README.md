@@ -16,7 +16,7 @@ required.
 
 ## Thanks
 
-This blog is created using Ruby, Jekyll, and GitrHub Pages. 
+This blog is created using Ruby, Jekyll, and GitHub Pages.
 
 * [GitHub](https://github.com) and [GitHub Pages](https://pages.github.com) for being awesome .
 * [Jykell](https://jekyllrb.com/) the static site generator used here.
