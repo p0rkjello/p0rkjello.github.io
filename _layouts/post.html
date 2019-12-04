@@ -16,7 +16,7 @@ layout: default
       <p class="post-tags">
         {% if page.tags %}
           {% for tag in page.tags %}
-            <a class="btn btn-sm" href="/tags/{{ tag }}/">{{ tag }} {% octicon tag %}</a>
+            <a class="btn btn-sm" href="/tags/{{ tag }}">{{ tag }} {% octicon tag %}</a>
           {% endfor %}
         {% endif %}
       </p>
