@@ -46,3 +46,5 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - node_modules/
+  - package-lock.json

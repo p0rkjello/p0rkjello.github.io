@@ -13,7 +13,7 @@ tags:
 
 ## SATA Wanted
 
-Many of the public [Vagrant boxes](https://app.vagrantup.com/boxes/search) are configured with an IDE controller. I assume this is for compatibility reasons. The SATA controller on VirtualBox performs better, so that is what I want.
+Many of the public CentOS [Vagrant boxes](https://app.vagrantup.com/boxes/search) are configured with only an IDE controller. I assume this is for compatibility reasons. The SATA controller on VirtualBox performs better, so that is what I want.
 
 **[Serial ATA (SATA)](https://www.virtualbox.org/manual/ch05.html#harddiskcontrollers)**
 
@@ -21,17 +21,17 @@ Many of the public [Vagrant boxes](https://app.vagrantup.com/boxes/search) are c
 
 ## Getting started
 
-To start the process of building your Vagrant box using Packer, create a working directory. Within that directory start the [Packer template](#packer-json-file). The Packer template, which I named `centos-7.7-x86_64.json`, is a file that describes how to build the image.
+To start the process of building your Vagrant box using Packer, create a working directory. Within that directory create the [Packer template](#packer-json-file). The Packer template, which I named `centos-7.7-x86_64.json`, is a file that describes how to build the image.
 
 ## Packer Template
 
-Within the `json` file we define the builder type [virtualbox-iso](https://www.packer.io/docs/builders/virtualbox-iso.html). This builder will create a new image from an ISO file. Here is where we can define the __hard_drive_interface__ as SCSI.
+Within the `JSON` file we define the builder type [virtualbox-iso](https://www.packer.io/docs/builders/virtualbox-iso.html). This builder will create a new image from an ISO file. Here is where we can define the __hard_drive_interface__ as SCSI.
 
 > hard_drive_interface (string) - The type of controller that the primary hard drive is attached to, defaults to ide. When set to sata, the drive is attached to an AHCI SATA controller. When set to scsi, the drive is attached to an LsiLogic SCSI controller.
 
 ### centos-7.7-x86_64.json
 
-Validate the contents of the json file `packer validate <template>`
+The information about the Packer template configuration options are detailed in the [docs](https://www.packer.io/docs/index.html).
 
 {% raw %}
 
@@ -107,7 +107,23 @@ Validate the contents of the json file `packer validate <template>`
 
 {% endraw %}
 
+Validate the contents of the json file `packer validate <template>`.
+
+```console
+➜  packer validate .\centos-7.7-x86_64.json
+Template validated successfully.
+```
+
 ## CentOS kickstart file
+
+[Documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-kickstart-syntax) and [example](https://github.com/CentOS/Community-Kickstarts) kickstart files can be found online. This file will install CentOS with configuration to fit my needs.
+
+* Install a minimal set of packages
+* Disable firewall and SELinux
+* Add and configure the Vagrant user
+
+**Warning**: Recommended for local development and lab use only. This kickstart file is insecure by default.
+{: .flash .flash-warn }
 
 ```conf
 # RHEL7 - Vagrant lab system
@@ -230,10 +246,11 @@ The project directory should resemble the outline below.
 
 ## Building the box
 
-Once everthing is in place run `packer build <template>`.
+Once everything is in place run `packer build <template>`.
 
 ```console
-➜  packer build centos-7.7-x86_64.json                                                                                                                                                                                                       virtualbox-iso output will be in this color.
+➜  packer build centos-7.7-x86_64.json
+virtualbox-iso output will be in this color.
 
 ...
 truncated output
