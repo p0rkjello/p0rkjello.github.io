@@ -2,6 +2,7 @@
 layout: post
 title: 'Test-IsAdministrator' 
 author: 'Andrew Bounds'
+comments: true
 tags:
 - powershell
 - gist

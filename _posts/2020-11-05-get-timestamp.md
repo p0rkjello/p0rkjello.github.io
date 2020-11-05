@@ -2,6 +2,7 @@
 layout: post
 title: 'Get-TimeStamp' 
 author: 'Andrew Bounds'
+comments: true
 tags:
 - powershell
 - gist
