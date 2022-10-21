@@ -1,82 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>powershell on misctechmusings.com</title>
-    
-    
-    
-    <link>/tags/powershell/</link>
-    <description>Recent content in powershell on misctechmusings.com</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 05 Nov 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Get-TimeStamp</title>
-      <link>/get-timestamp/</link>
-      <pubDate>Thu, 05 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/get-timestamp/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          Get-TimeStamp function returns a time stamp in string format.
-The output is either an ISO 8601 format 2020-11-05T15:49:14Z useful for logs or standard yyyyMMddHHmmss 20201105154912 for either logs or output files.
-powershell Get-TimeStamp   function Get-TimeStamp {param (# Return an UTC ISO 8601 timestamp (ie: &amp;#34;2020-06-16T17:33:27Z&amp;#34;)[switch]$iso8601 = $false)$String = switch ($iso8601.IsPresent) {true { &amp;#39;yyyy-MM-ddTHH:mm:ssZ&amp;#39; }false { &amp;#39;yyyyMMddHHmmss&amp;#39; }}(Get-Date).ToUniversalTime().ToString($String)}  
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>Test-IsAdministrator</title>
-      <link>/test-isadministrator/</link>
-      <pubDate>Thu, 19 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/test-isadministrator/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          PowerShell function to test if the current user is an administrator.
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>Tail files with Powershell</title>
-      <link>/tail-files-with-powershell/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/tail-files-with-powershell/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          For those note aware of the GNU Tail utility, it will print the last n lines of text from a file. It is an invaluable tool for monitoring log files.
-Since Windows does not have an equivalent command this is quite useful. Using the Powershell Get-Content cmdlet will print the contents of a file. The -wait parameter will print additional lines as they are added.
-Get-Content filename -wait Be aware that this is slow on large files.
-          
-        
-        </description>
-    </item>
-    
-  </channel>
-</rss>
