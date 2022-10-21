@@ -1,0 +1,70 @@
+<!doctype html><html lang=en><head><title>BOINC cli for World Community Grid ::
+misctechmusings.com — notebook for projects, problems, and solution</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="{%- include toc.html -%}
+BOINC - Berkeley Open Infrastructure for Network Computing BOINC is a distributed [grid] computing client that uses idle time on your computer. There are a number of projects that you can attach to and assist with. I will cover how to connect to the World Community Grid via CLI on Ubuntu.
+World Community Grid
+World Community Grid&amp;rsquo;s mission is to create the world&amp;rsquo;s largest public computing grid to tackle projects that benefit humanity."><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://p0rkjello.github.io/boinc-cli-for-world-community-grid/><link rel=stylesheet href=https://p0rkjello.github.io/assets/style.css><link rel=stylesheet href=https://p0rkjello.github.io/style.css><link rel=apple-touch-icon-precomposed sizes=144x144 href=https://p0rkjello.github.io/img/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=https://p0rkjello.github.io/img/favicon.png><link href=https://p0rkjello.github.io/assets/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://p0rkjello.github.io/assets/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://p0rkjello.github.io/assets/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://p0rkjello.github.io/assets/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://p0rkjello.github.io/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://p0rkjello.github.io/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><meta name=twitter:card content="summary"><meta name=twitter:title content="BOINC cli for World Community Grid"><meta name=twitter:description content="{%- include toc.html -%}
+BOINC - Berkeley Open Infrastructure for Network Computing BOINC is a distributed [grid] computing client that uses idle time on your computer. There are a number of projects that you can attach to and assist with. I will cover how to connect to the World Community Grid via CLI on Ubuntu.
+World Community Grid
+World Community Grid&rsquo;s mission is to create the world&rsquo;s largest public computing grid to tackle projects that benefit humanity."><meta property="og:title" content="BOINC cli for World Community Grid"><meta property="og:description" content="{%- include toc.html -%}
+BOINC - Berkeley Open Infrastructure for Network Computing BOINC is a distributed [grid] computing client that uses idle time on your computer. There are a number of projects that you can attach to and assist with. I will cover how to connect to the World Community Grid via CLI on Ubuntu.
+World Community Grid
+World Community Grid&rsquo;s mission is to create the world&rsquo;s largest public computing grid to tackle projects that benefit humanity."><meta property="og:type" content="article"><meta property="og:url" content="https://p0rkjello.github.io/boinc-cli-for-world-community-grid/"><meta property="article:section" content="posts"><meta property="og:site_name" content="misctechmusings.com"></head><body class=dark-theme><div class=container><header class=header><span class=header__inner><a href=/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span><span class=logo__text>/misc/tech/musings</span>
+<span class=logo__cursor></span></a>
+<span class=header__right><nav class=menu><ul class="menu__inner menu__inner--desktop"><li><a href=/about>About</a></li><li><a href=/archive>Archive</a></li></ul><ul class="menu__inner menu__inner--mobile"><li><a href=/about>About</a></li><li><a href=/archive>Archive</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span><span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg></span></span></span></header><div class=content><div class=post><h1 class=post-title>BOINC cli for World Community Grid</h1><div class=post-meta><span class=post-author>— Written by Andrew Bounds</span></div><span class=post-tags><a href=https://p0rkjello.github.io/tags/linux/>#linux</a>&nbsp;
+<a href=https://p0rkjello.github.io/tags/boinc/>#boinc</a>&nbsp;
+<a href=https://p0rkjello.github.io/tags/wcg/>#wcg</a>&nbsp;</span><div class=post-content><p>{%- include toc.html -%}</p><h2 id=boinc---berkeley-open-infrastructure-for-network-computing>BOINC - Berkeley Open Infrastructure for Network Computing</h2><p>BOINC is a distributed [grid] computing client that uses idle time on your computer. There are a number of projects that you can attach to and assist with. I will cover how to connect to the World Community Grid via CLI on Ubuntu.</p><p><a href=http://www.worldcommunitygrid.org>World Community Grid</a></p><blockquote><p>World Community Grid&rsquo;s mission is to create the world&rsquo;s largest public computing grid to tackle projects that benefit humanity.</p><p>Our work has developed the technical infrastructure that serves as the grid&rsquo;s foundation for scientific research. Our success depends upon individuals collectively contributing their unused computer time to change the world for the better.</p><p>World Community Grid is making technology available only to public and not-for-profit organizations to use in humanitarian research that might otherwise not be completed due to the high cost of the computer infrastructure required in the absence of a public grid. As part of our commitment to advancing human welfare, all results will be in the public domain and made public to the global research community.</p></blockquote><h2 id=installation--configuration>Installation & Configuration</h2><p>This is a description of how to run BOINC on Ubuntu without Xorg.
+Install the boinc-client, boinc-manager is not required.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>$ sudo apt-get update
+</span></span><span style=display:flex><span>$ sudo apt-get install boinc-client
+</span></span></code></pre></div><p>You will need your &lt;account key> to connect to the project. The account key can be obtained either from the command line or the World Community Grid site.</p><p>If you do not already have an account you will need to set one up before proceeding.</p><p>Account Key via boinccmd:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>$ boinccmd --lookup_account http://www.worldcommunitygrid.org &lt;username&gt; &lt;password&gt;
+</span></span></code></pre></div><p>If everything went well you should see the following output:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>usename@computer:~$ boinccmd --lookup_account http://www.worldcommunitygrid.org username password
+</span></span><span style=display:flex><span>status: Success
+</span></span><span style=display:flex><span>poll status: operation in progress
+</span></span><span style=display:flex><span>account key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+</span></span></code></pre></div><p>If you have an existing account or just set one up the key can be found under your profile in the <a href=http://www.worldcommunitygrid.org>World Community Grid</a> site.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>$ boinccmd --host localhost --project_attach http://www.worldcommunitygrid.org account key
+</span></span></code></pre></div><p>Everything should be up and running.</p><p>Below is a list of boinccmd options.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-console data-lang=console><span style=display:flex><span>usage: boinccmd [--host hostname] [--passwd passwd] command
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>Commands:
+</span></span><span style=display:flex><span>--lookup_account URL email passwd
+</span></span><span style=display:flex><span>--create_account URL email passwd name
+</span></span><span style=display:flex><span>--project_attach URL auth          attach to project
+</span></span><span style=display:flex><span>--join_acct_mgr URL name passwd    attach account manager
+</span></span><span style=display:flex><span>--quit_acct_mgr                    quit current account manager
+</span></span><span style=display:flex><span>--get_state                        show entire state
+</span></span><span style=display:flex><span>--get_results                      show results
+</span></span><span style=display:flex><span>--get_simple_gui_info              show status of projects and active results
+</span></span><span style=display:flex><span>--get_file_transfers               show file transfers
+</span></span><span style=display:flex><span>--get_project_status               show status of all attached projects
+</span></span><span style=display:flex><span>--get_disk_usage                   show disk usage
+</span></span><span style=display:flex><span>--get_proxy_settings
+</span></span><span style=display:flex><span>--get_messages [ seqno ]           show messages &amp;amp;gt; seqno
+</span></span><span style=display:flex><span>--get_message_count                show largest message seqno
+</span></span><span style=display:flex><span>--get_host_info
+</span></span><span style=display:flex><span>--version, -V                      show core client version
+</span></span><span style=display:flex><span>--result url result_name op        job operation
+</span></span><span style=display:flex><span>op = suspend | resume | abort | graphics_window | graphics_fullscreen
+</span></span><span style=display:flex><span>--project URL op                   project operation
+</span></span><span style=display:flex><span>op = reset | detach | update | suspend | resume | nomorework | allowmorework
+</span></span><span style=display:flex><span>--file_transfer URL filename op    file transfer operation
+</span></span><span style=display:flex><span>op = retry | abort
+</span></span><span style=display:flex><span>--set_run_mode mode duration       set run mode for given duration
+</span></span><span style=display:flex><span>mode = always | auto | never
+</span></span><span style=display:flex><span>--set_network_mode mode duration
+</span></span><span style=display:flex><span>--set_proxy_settings
+</span></span><span style=display:flex><span>--run_benchmarks
+</span></span><span style=display:flex><span>--read_global_prefs_override
+</span></span><span style=display:flex><span>--quit
+</span></span><span style=display:flex><span>--read_cc_config
+</span></span><span style=display:flex><span>--set_debts URL1 std1 ltd1 [URL2 std2 ltd2 ...]
+</span></span><span style=display:flex><span>--get_project_config URL
+</span></span><span style=display:flex><span>--get_project_config_poll
+</span></span><span style=display:flex><span>--network_available
+</span></span><span style=display:flex><span>--get_cc_status
+</span></span></code></pre></div><p><a href=http://boinc.berkeley.edu/wiki/Boinccmd_tool>http://boinc.berkeley.edu/wiki/Boinccmd_tool</a></p></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Read other posts</span><hr></div><div class=pagination__buttons><span class="button previous"><a href=https://p0rkjello.github.io/batch-convert-images-with-imagemagick/><span class=button__icon>←</span>
+<span class=button__text>Batch convert images with ImageMagick</span></a></span>
+<span class="button next"><a href=https://p0rkjello.github.io/boinc-linux-gpu/><span class=button__text>BOINC Linux GPU</span>
+<span class=button__icon>→</span></a></span></div></div></div></div><footer class=footer><div class=footer__inner><a href=/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span><span class=logo__text>/misc/tech/musings</span>
+<span class=logo__cursor></span></a><div class=copyright><span>© 2022 Powered by
+<a href=https://gohugo.io target=_blank rel=noopener>Hugo</a></span>
+<span>Theme created by
+<a href=https://twitter.com/panr target=_blank rel=noopener>panr</a></span></div></div></footer><script src=https://p0rkjello.github.io/assets/main.js></script>
+<script src=https://p0rkjello.github.io/assets/prism.js></script></div></body></html>

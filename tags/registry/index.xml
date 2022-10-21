@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>registry on misctechmusings.com</title><link>https://p0rkjello.github.io/tags/registry/</link><description>Recent content in registry on misctechmusings.com</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://p0rkjello.github.io/tags/registry/index.xml" rel="self" type="application/rss+xml"/><item><title>Persistent static route via Windows registry</title><link>https://p0rkjello.github.io/persistent-static-route-via-windows-registry/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://p0rkjello.github.io/persistent-static-route-via-windows-registry/</guid><description>
+For whatever reason I was unable to set a static route via the route command. I assume the system was pending a reboot. However I did not have the time to schedule the outage.
+So I added the route directly to the registry. Problem solved, next.
+Persistent static routed are stored in the following registry key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip \Parameters\PersistentRoutes
+Add a new String Value with the name destination,mask,gateway,metric
+Example</description></item></channel></rss>
