@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Batch script - Get SID ::
+        misctechmusings.com — notebook for projects, problems, and solution
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="Get group SID Get the SID for group &amp;ldquo;GroupName&amp;rdquo; and set variable SID to that value.
+:: cmd shell for /f %i in (&amp;#39;wmic group where name^=&amp;#34;GroupName&amp;#34; get sid ^| findstr ^S\-d*&amp;#39;) do set SID=%i :: batch file for /f %%i in (&amp;#39;wmic group where name^=&amp;#34;GroupName&amp;#34; get sid ^| findstr ^S\-d*&amp;#39;) do set SID=%%i Get user SID Get the SID for user &amp;ldquo;UserName&amp;rdquo; and set variable SID to that value."
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/batch-script-get-sid/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/img/favicon.png" />
+
+
+<link href="/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Batch script - Get SID"/>
+<meta name="twitter:description" content="Get group SID Get the SID for group &ldquo;GroupName&rdquo; and set variable SID to that value.
+:: cmd shell for /f %i in (&#39;wmic group where name^=&#34;GroupName&#34; get sid ^| findstr ^S\-d*&#39;) do set SID=%i :: batch file for /f %%i in (&#39;wmic group where name^=&#34;GroupName&#34; get sid ^| findstr ^S\-d*&#39;) do set SID=%%i Get user SID Get the SID for user &ldquo;UserName&rdquo; and set variable SID to that value."/>
+
+
+
+<meta property="og:title" content="Batch script - Get SID" />
+<meta property="og:description" content="Get group SID Get the SID for group &ldquo;GroupName&rdquo; and set variable SID to that value.
+:: cmd shell for /f %i in (&#39;wmic group where name^=&#34;GroupName&#34; get sid ^| findstr ^S\-d*&#39;) do set SID=%i :: batch file for /f %%i in (&#39;wmic group where name^=&#34;GroupName&#34; get sid ^| findstr ^S\-d*&#39;) do set SID=%%i Get user SID Get the SID for user &ldquo;UserName&rdquo; and set variable SID to that value." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/batch-script-get-sid/" /><meta property="article:section" content="posts" />
+
+<meta property="og:site_name" content="misctechmusings.com" />
+
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >/misc/tech/musings</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/archive">Archive</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/archive">Archive</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Batch script - Get SID</h1>
+    <div class="post-meta">
+      
+
+      
+        <span class="post-author"
+          >— Written by Andrew Bounds</span
+        >
+
+
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          <a href="/tags/windows/">#windows</a>&nbsp;
+        
+          <a href="/tags/batch/">#batch</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      <h2 id="get-group-sid">Get group SID</h2>
+<p>Get the SID for group &ldquo;GroupName&rdquo; and set variable <em>SID</em> to that value.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-batch" data-lang="batch">:<span style="color:#75715e">: cmd shell</span>
+
+<span style="color:#66d9ef">for</span> <span style="color:#66d9ef">/f</span> %i in (&#39;wmic group where name^=&#34;GroupName&#34; get sid ^| findstr ^S\-d*&#39;) do set SID=%i
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-batch" data-lang="batch">:<span style="color:#75715e">: batch file</span>
+
+<span style="color:#66d9ef">for</span> <span style="color:#66d9ef">/f</span> <span style="color:#ae81ff">%%</span>i <span style="color:#66d9ef">in</span> (<span style="color:#e6db74">&#39;wmic group where name^=&#34;GroupName&#34; get sid ^| findstr ^S\-d*&#39;</span>) <span style="color:#66d9ef">do</span> <span style="color:#66d9ef">set</span> SID=<span style="color:#ae81ff">%%</span>i
+</code></pre></div><h2 id="get-user-sid">Get user SID</h2>
+<p>Get the SID for user &ldquo;UserName&rdquo; and set variable <em>SID</em> to that value.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-batch" data-lang="batch">:<span style="color:#75715e">: cmd shell</span>
+
+<span style="color:#66d9ef">for</span> <span style="color:#66d9ef">/f</span> %i in (&#39;wmic useraccount where name^=&#34;UserName&#34; get sid ^| findstr ^S\-d*&#39;) do set SID=%i
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-batch" data-lang="batch">:<span style="color:#75715e">: batch file</span>
+
+<span style="color:#66d9ef">for</span> <span style="color:#66d9ef">/f</span> <span style="color:#ae81ff">%%</span>i <span style="color:#66d9ef">in</span> (<span style="color:#e6db74">&#39;wmic useraccount where name^=&#34;UserName&#34; get sid ^| findstr ^S\-d*&#39;</span>) <span style="color:#66d9ef">do</span> <span style="color:#66d9ef">set</span> SID=<span style="color:#ae81ff">%%</span>i
+</code></pre></div><h2 id="notes">Notes</h2>
+<p>The <code>wmic.exe</code> command will output a header and value. In the case below <em>SID</em> and the actual <em>SID</em>. Here is where we use <code>findstr ^S\-d*</code> to capture the actual <em>SID</em>. The regex looks for a line starting w/ <code>S</code> then a <code>-</code> followed by a digit <code>d</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-batch" data-lang="batch">C:\<span style="color:#75715e">&gt; wmic.exe useraccount where name=&#34;administrator&#34; get sid</span>
+SID
+S-1-5-21-259050107-3560852614-2882725377-500
+</code></pre></div>
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/batch-convert-images-with-imagemagick/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Batch convert images with ImageMagick</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="/boinc-cli-for-world-community-grid/">
+                  <span class="button__text">BOINC cli for World Community Grid</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >/misc/tech/musings</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span
+          >© 2021 Powered by
+          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span
+        >
+        <span
+          >Theme created by
+          <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span
+        >
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

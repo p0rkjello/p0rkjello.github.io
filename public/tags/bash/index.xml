@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bash on misctechmusings.com</title>
+    
+    
+    
+    <link>/tags/bash/</link>
+    <description>Recent content in bash on misctechmusings.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bash 4 recursive globbing</title>
+      <link>/bash-4-recursive-globbing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/bash-4-recursive-globbing/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Bash version 4 introduced a new option called globstar. When the option is set, recursive globbing with ** is enabled.
+Lets say you want to move all files from a directory and its subdirectories. Most common method would be to use the find command.
+For example, find and move all .mp3 files from the current and all subdirectories to a directory named music.
+$ sudo find . -type f -exec mv *.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Set recursive file or directory permission</title>
+      <link>/set-recursive-file-or-directory-permission/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/set-recursive-file-or-directory-permission/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Command to recursively change either file or directory permissions in Bash.
+Example of changing directory permissions to 755
+sudo find . -type d -exec chmod 755 {} \; Example of changing file permissions to 666
+sudo find . -type f -exec chmod 666 {} \; 
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>repair on misctechmusings.com</title>
+    
+    
+    
+    <link>/tags/repair/</link>
+    <description>Recent content in repair on misctechmusings.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/tags/repair/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Lenovo T400 will not power on</title>
+      <link>/lenovo-t400-will-not-power-on/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/lenovo-t400-will-not-power-on/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Ran into a problem with my Lenovo T400. The laptop would not power on. No lights of any kind. Tried with and without the battery and/or AC adapter. Found these instructions while searching around for a solution:
+ Ensure nothing is plugged into the computer  Remove the battery Press power button 10 times Press power button down for 30 seconds Press power button twice Attach ac adapter Press power button once.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Warning failed to load theme</title>
+      <link>/warning-failed-to-load-theme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/warning-failed-to-load-theme/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          While recklessly installing/testing some new themes I broke my GUI. Nothing seemed to be working right. After rebooting the box I was sitting at a blank screen. A quick check of ps -aux showed Gnome and Xorg running. What gives?
+Fired up journalctl and saw a bunch of these listed. Yep that looks like a place I might have screwed up.
+gnome-session[7460]: Window manager warning: Failed to load theme &amp;quot;Adwaita&amp;quot;: Failed to find a valid file for theme Adwaita gnome-session[7460]: Window manager warning: Failed to load theme &amp;quot;Simple&amp;quot;: Failed to find a valid file for theme Simple gnome-session[7460]: Window manager warning: Failed to load theme &amp;quot;ThinIce&amp;quot;: Failed to find a valid file for theme ThinIce gnome-session[7460]: Window manager warning: Failed to load theme &amp;quot;Zukitre&amp;quot;: Failed to find a valid file for theme Zukitre gnome-session[7460]: Window manager warning: Failed to load theme &amp;quot;Default&amp;quot;: Failed to find a valid file for theme Default gnome-session[7460]: Window manager warning: Failed to load theme &amp;quot;Emacs&amp;quot;: Failed to find a valid file for theme Emacs gnome-session[7460]: Window manager warning: Failed to load theme &amp;quot;Redmond&amp;quot;: Failed to find a valid file for theme Redmond gnome-session[7460]: Window manager warning: Failed to load theme &amp;quot;Moka&amp;quot;: Failed to find a valid file for theme Moka gnome-session[7460]: Window manager warning: Failed to load theme &amp;quot;Numix&amp;quot;: Failed to find a valid file for theme Numix gnome-session[7460]: Window manager warning: Failed to load theme &amp;quot;Zukitwo&amp;quot;: Failed to find a valid file for theme Zukitwo I quick Google search found a recommendation to reinstall the gnome-themes-standard package.
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>

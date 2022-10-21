@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>duckduckgo on misctechmusings.com</title>
+    
+    
+    
+    <link>/tags/duckduckgo/</link>
+    <description>Recent content in duckduckgo on misctechmusings.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/tags/duckduckgo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>DuckDuckGo bang-list</title>
+      <link>/duckduckgo-bang-list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/duckduckgo-bang-list/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          DuckDuckGo is a search engine that reminds me of Google from several years ago. One helpful feature is the !Bang command. You can use it to set options or search specific sites.
+The following example will give you a nice list of supplies for the zombie apocalypse:
+!costco survival  Tech * **Blogs:** !arstechnica !arturogoga !boingboing !cnet !df !eff !ehow !engadget !espacoliberdade !gawker !ghacks !gigaom !gizmodo !groklaw !gsmarena !habra !hackaday !
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>

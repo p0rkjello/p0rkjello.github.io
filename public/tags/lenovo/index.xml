@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lenovo on misctechmusings.com</title>
+    
+    
+    
+    <link>/tags/lenovo/</link>
+    <description>Recent content in lenovo on misctechmusings.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/tags/lenovo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Lenovo T400 will not power on</title>
+      <link>/lenovo-t400-will-not-power-on/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/lenovo-t400-will-not-power-on/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Ran into a problem with my Lenovo T400. The laptop would not power on. No lights of any kind. Tried with and without the battery and/or AC adapter. Found these instructions while searching around for a solution:
+ Ensure nothing is plugged into the computer  Remove the battery Press power button 10 times Press power button down for 30 seconds Press power button twice Attach ac adapter Press power button once.
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>

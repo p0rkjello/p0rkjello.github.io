@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Using Winsat to test hard drive performance ::
+        misctechmusings.com — notebook for projects, problems, and solution
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="The Windows Assessment Tool (WinSAT) is included Microsoft Vista and Windows 7. This tool can perform performance tests including CPU, memory, disk and video.
+winsat disk -drive c Windows System Assessment Tool &amp;gt; Running: Feature Enumeration &#39;&#39; &amp;gt; Run Time 00:00:00.00 &amp;gt; Running: Storage Assessment &#39;-drive c -seq -read&#39; &amp;gt; Run Time 00:00:05.48 &amp;gt; Running: Storage Assessment &#39;-drive c -ran -read&#39; &amp;gt; Run Time 00:00:06.99 &amp;gt; Running: Storage Assessment &#39;-drive c -scen 2009&#39; &amp;gt; Run Time 00:01:13."
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/using-winsat-to-test-hard-drive-performance/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/img/favicon.png" />
+
+
+<link href="/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Using Winsat to test hard drive performance"/>
+<meta name="twitter:description" content="The Windows Assessment Tool (WinSAT) is included Microsoft Vista and Windows 7. This tool can perform performance tests including CPU, memory, disk and video.
+winsat disk -drive c Windows System Assessment Tool &gt; Running: Feature Enumeration &#39;&#39; &gt; Run Time 00:00:00.00 &gt; Running: Storage Assessment &#39;-drive c -seq -read&#39; &gt; Run Time 00:00:05.48 &gt; Running: Storage Assessment &#39;-drive c -ran -read&#39; &gt; Run Time 00:00:06.99 &gt; Running: Storage Assessment &#39;-drive c -scen 2009&#39; &gt; Run Time 00:01:13."/>
+
+
+
+<meta property="og:title" content="Using Winsat to test hard drive performance" />
+<meta property="og:description" content="The Windows Assessment Tool (WinSAT) is included Microsoft Vista and Windows 7. This tool can perform performance tests including CPU, memory, disk and video.
+winsat disk -drive c Windows System Assessment Tool &gt; Running: Feature Enumeration &#39;&#39; &gt; Run Time 00:00:00.00 &gt; Running: Storage Assessment &#39;-drive c -seq -read&#39; &gt; Run Time 00:00:05.48 &gt; Running: Storage Assessment &#39;-drive c -ran -read&#39; &gt; Run Time 00:00:06.99 &gt; Running: Storage Assessment &#39;-drive c -scen 2009&#39; &gt; Run Time 00:01:13." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/using-winsat-to-test-hard-drive-performance/" /><meta property="article:section" content="posts" />
+
+<meta property="og:site_name" content="misctechmusings.com" />
+
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >/misc/tech/musings</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/archive">Archive</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/archive">Archive</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Using Winsat to test hard drive performance</h1>
+    <div class="post-meta">
+      
+
+      
+
+
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          <a href="/tags/windows/">#windows</a>&nbsp;
+        
+          <a href="/tags/winsat/">#winsat</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      <p>The Windows Assessment Tool (WinSAT) is included Microsoft Vista and Windows 7. This tool can perform performance tests including CPU, memory, disk and video.</p>
+<pre tabindex="0"><code class="language-console" data-lang="console">winsat disk -drive c
+
+Windows System Assessment Tool
+&gt; Running: Feature Enumeration ''
+&gt; Run Time 00:00:00.00
+&gt; Running: Storage Assessment '-drive c -seq -read'
+&gt; Run Time 00:00:05.48
+&gt; Running: Storage Assessment '-drive c -ran -read'
+&gt; Run Time 00:00:06.99
+&gt; Running: Storage Assessment '-drive c -scen 2009'
+&gt; Run Time 00:01:13.62
+&gt; Running: Storage Assessment '-drive c -seq -write'
+&gt; Run Time 00:00:36.26
+&gt; Running: Storage Assessment '-drive c -flush -seq'
+&gt; Run Time 00:00:05.94
+&gt; Running: Storage Assessment '-drive c -flush -ran'
+&gt; Run Time 00:00:12.18
+&gt; Running: Storage Assessment '-drive c -hybrid -ran -read -ransize 4096'
+NV Cache not present.
+&gt; Run Time 00:00:00.02
+&gt; Running: Storage Assessment '-drive c -hybrid -ran -read -ransize 16384'
+NV Cache not present.
+&gt; Run Time 00:00:00.01
+&gt; Disk  Sequential 64.0 Read                   111.23 MB/s          6.7
+&gt; Disk  Random 16.0 Read                       2.43 MB/s          4.4
+&gt; Responsiveness: Average IO Rate              3.57 ms/IO          6.0
+&gt; Responsiveness: Grouped IOs                  9.67 units          7.2
+&gt; Responsiveness: Long IOs                     8.72 units          7.5
+&gt; Responsiveness: Overall                      84.37 units          6.9
+&gt; Responsiveness: PenaltyFactor                0.0
+&gt; Disk  Sequential 64.0 Write                  116.12 MB/s          6.8
+&gt; Average Read Time with Sequential Writes     6.720 ms          5.4
+&gt; Latency: 95th Percentile                     30.732 ms          3.4
+&gt; Latency: Maximum                             56.218 ms          7.8
+&gt; Average Read Time with Random Writes         15.075 ms          3.4
+&gt; Total Run Time 00:02:22.10
+</code></pre>
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/unrar-multiple-files/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Unrar multiple files</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="/warning-failed-to-load-theme/">
+                  <span class="button__text">Warning failed to load theme</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >/misc/tech/musings</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span
+          >© 2021 Powered by
+          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span
+        >
+        <span
+          >Theme created by
+          <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span
+        >
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

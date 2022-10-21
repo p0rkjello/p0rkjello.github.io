@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>socks5 on misctechmusings.com</title>
+    
+    
+    
+    <link>/tags/socks5/</link>
+    <description>Recent content in socks5 on misctechmusings.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/tags/socks5/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Chrome socks5 command line switch</title>
+      <link>/chrome-socks5-command-line-switch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/chrome-socks5-command-line-switch/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          In Windows the Chrome browser uses your system wide proxy settings. This can be a problem if you have a need to run different browsers and/or applications. An example would be running a Secure Shell proxy to get through a content filtering firewall.
+To get around the Chrome system wide proxy settings, use a command line switch. Open or create a shortcut to Chrome/Chromium
+--proxy-server=&amp;quot;socks5://127.0.0.1:8080&amp;quot;  Replace 127.0.0.1 with your proxy address and 8080 with your proxy port.
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>

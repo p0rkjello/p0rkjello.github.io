@@ -1,0 +1,1437 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>misctechmusings.com</title>
+    
+    
+    
+    <link>/</link>
+    <description>Recent content on misctechmusings.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 16 Oct 2021 15:37:17 -0400</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Windows 2008 R2</title>
+      <link>/windows-2008-r2/</link>
+      <pubDate>Sat, 16 Oct 2021 15:37:17 -0400</pubDate>
+      
+      <guid>/windows-2008-r2/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          PowerShell Import-Module ServerManager Get-WindowsFeature Failover-Clustering Add-WindowsFeature Failover-Clustering dism.exe DISM command to list available Windows features
+dism.exe /online /get-features DISM command to enable the Failover Cluster feature
+dism.exe /online /enable-feature /featurename:FailoverCluster-FullServer Windows Edition Windows Server 2008 R2 includes a command-line tool called the Deployment Image Servicing and Management tool, or DISM. It&amp;rsquo;s functionally equivalent to the Windows Anytime Upgrade feature in client versions of Windows. You can run it from an elevated command prompt.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Get-TimeStamp</title>
+      <link>/get-timestamp/</link>
+      <pubDate>Thu, 05 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/get-timestamp/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Get-TimeStamp function returns a time stamp in string format.
+The output is either an ISO 8601 format 2020-11-05T15:49:14Z useful for logs or standard yyyyMMddHHmmss 20201105154912 for either logs or output files.
+powershell Get-TimeStamp   function Get-TimeStamp {param (# Return an UTC ISO 8601 timestamp (ie: &amp;#34;2020-06-16T17:33:27Z&amp;#34;)[switch]$iso8601 = $false)$String = switch ($iso8601.IsPresent) {true { &amp;#39;yyyy-MM-ddTHH:mm:ssZ&amp;#39; }false { &amp;#39;yyyyMMddHHmmss&amp;#39; }}(Get-Date).ToUniversalTime().ToString($String)}  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Test-IsAdministrator</title>
+      <link>/test-isadministrator/</link>
+      <pubDate>Thu, 19 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/test-isadministrator/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          PowerShell function to test if the current user is an administrator.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Chef helper library</title>
+      <link>/chef-helper-library/</link>
+      <pubDate>Wed, 20 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/chef-helper-library/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Create a Chef helper module
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Save readonly file in vim</title>
+      <link>/save-readonly-file-in-vim/</link>
+      <pubDate>Fri, 04 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/save-readonly-file-in-vim/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Save a file in vim when opened readonly
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>dns-o-matic on m0n0wall</title>
+      <link>/dns-o-matic-on-m0n0wall/</link>
+      <pubDate>Tue, 03 Nov 2009 00:00:00 +0000</pubDate>
+      
+      <guid>/dns-o-matic-on-m0n0wall/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Looking for a method of using OpenDNS with a dynamic IP address. I am using the DynDNS service however there is no method of linking this service to OpenDNS. OpenDNS has an additional service called DNS-O-Matic.
+DNS-O-Matic is a dynamic DNS service. The service supports dozens of other dynamic DNS services. All of which can be linked to your account. A list of the supported services can be found below.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Linux Hardware Detection Tool Dmidecode</title>
+      <link>/linux-hardware-detection-tool-dmidecode/</link>
+      <pubDate>Mon, 26 Oct 2009 00:00:00 +0000</pubDate>
+      
+      <guid>/linux-hardware-detection-tool-dmidecode/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          While searching for a quick method of checking a systems memory type, I stumbled upon the dmidecode tool. Dmidecode was able to pull all of the memory information from my motherboard. Including open memory slots and values of the occupied ones.
+Usage Usage: dmidecode [OPTIONS] Options are: -d, --dev-mem FILE Read memory from device FILE (default: /dev/mem) -h, --help Display this help text and exit -q, --quiet Less verbose output -s, --string KEYWORD Only display the value of the given DMI string -t, --type TYPE Only display the entries of given type -u, --dump Do not decode the entries --dump-bin FILE Dump the DMI data to a binary file --from-dump FILE Read the DMI data from a binary file -V, --version Display the version and exit dmidecode run without any options will dump everything it can determine from the Desktop Management Interface (dmi).
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Linux Hardware Detection Tool Dmidecode</title>
+      <link>/linux-hardware-detection-tool-dmidecode/</link>
+      <pubDate>Mon, 26 Oct 2009 00:00:00 +0000</pubDate>
+      
+      <guid>/linux-hardware-detection-tool-dmidecode/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Usage DMI Types Identify Memory Device  While searching for a quick method of checking a systems memory type, I stumbled upon the dmidecode tool. Dmidecode was able to pull all of the memory information from my motherboard. Including open memory slots and values of the occupied ones.
+Usage Usage: dmidecode [OPTIONS] Options are: -d, --dev-mem FILE Read memory from device FILE (default: /dev/mem) -h, --help Display this help text and exit -q, --quiet Less verbose output -s, --string KEYWORD Only display the value of the given DMI string -t, --type TYPE Only display the entries of given type -u, --dump Do not decode the entries --dump-bin FILE Dump the DMI data to a binary file --from-dump FILE Read the DMI data from a binary file -V, --version Display the version and exit dmidecode run without any options will dump everything it can determine from the Desktop Management Interface (dmi).
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Active directory Users and Computers on Windows 7</title>
+      <link>/active-directory-users-and-computers-on-windows-7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/active-directory-users-and-computers-on-windows-7/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Download the Remote Server Administration Tools for Windows 7.
+Note: Windows 7 Professional or better.
+Install the software then run the follow commands to enable the AD Users &amp;amp; Computer snapin.
+dism /online /enable-feature /featurename:RemoteServerAdministrationTools dism /online /enable-feature /featurename:RemoteServerAdministrationTools-Roles dism /online /enable-feature /featurename:RemoteServerAdministrationTools-Roles-AD dism /online /enable-feature /featurename:RemoteServerAdministrationTools-Roles-AD-DS dism /online /enable-feature /featurename:RemoteServerAdministrationTools-Roles-AD-DS-SnapIns I received an error when trying to install the snapin directly.
+c:\&amp;gt;dism /online /enable-feature /featurename:RemoteServerAdministrationTools-Roles-AD-DS-SnapIns Deployment Image Servicing and Management tool Version: 6.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>apt-get package management</title>
+      <link>/apt-get-package-management/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/apt-get-package-management/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          apt-get is the package management utility behind Debian-based Linux systems Ubuntu, Mint and Mepis.
+A complete list of distributions based on Debian can be found on Distrowatch.
+Basic Package Management: apt-get update
+Used to resynchronize the package index files from their sources. The indexes of available packages are fetched from the location(s) specified in /etc/apt/sources.list. For example, when using a Debian archive, this command retrieves and scans the Packages.gz files, so that information about new and updated packages is available.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Archive</title>
+      <link>/archive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/archive/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Archlinux Kernel Repair</title>
+      <link>/archlinux-kernel-repair/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/archlinux-kernel-repair/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          {%- include toc.html -%}
+So I managed to uninstall my kernel In an effort to get VMware Workstation running I needed to downgrade my kernel. I installed the new kernel and got everything setup. Sometime later the system reverted to the newer version.
+I already had the package exclusion IgnorePjg = linux, linux-headers in pacman.conf. So I decided to purge the newer kernel 3.16 from the system. After doing so, I reinstalled the downlevel kernel 3.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Archlinux Powerpill Setup</title>
+      <link>/archlinux-powerpill-setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/archlinux-powerpill-setup/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Arch Linux Powerpill Setup Powerpill is a wrapper for Archlinux package management tool, pacman. This is a short tutorial on setting up powerpill for concurrent downloads without using the reflector.
+ Powerpill is a wrapper script written by Xyne for pacman that speeds up package retrieval by using aria2c for concurrent/segmented downloads. It determines the target packages of requested synchronization operation and then uses the mirrorlist to create a comprehensive metalink.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Bash 4 recursive globbing</title>
+      <link>/bash-4-recursive-globbing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/bash-4-recursive-globbing/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Bash version 4 introduced a new option called globstar. When the option is set, recursive globbing with ** is enabled.
+Lets say you want to move all files from a directory and its subdirectories. Most common method would be to use the find command.
+For example, find and move all .mp3 files from the current and all subdirectories to a directory named music.
+$ sudo find . -type f -exec mv *.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Batch convert images with ImageMagick</title>
+      <link>/batch-convert-images-with-imagemagick/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/batch-convert-images-with-imagemagick/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Batch convert image files with ImageMagick I recently had a number of SVG images that needed to be converted to PNG. There are a few applications that are capable of converting (Gimp, Photoshop, etc). However I wanted something simple that could batch convert them. Little did I know I already had it installed. The application is called ImageMagick.
+mogrify -format png *.svg There are an incredible number of options available. Head on over to the ImageMagick site for more details.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Batch script - Get SID</title>
+      <link>/batch-script-get-sid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/batch-script-get-sid/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Get group SID Get the SID for group &amp;ldquo;GroupName&amp;rdquo; and set variable SID to that value.
+:: cmd shell for /f %i in (&amp;#39;wmic group where name^=&amp;#34;GroupName&amp;#34; get sid ^| findstr ^S\-d*&amp;#39;) do set SID=%i :: batch file for /f %%i in (&amp;#39;wmic group where name^=&amp;#34;GroupName&amp;#34; get sid ^| findstr ^S\-d*&amp;#39;) do set SID=%%i Get user SID Get the SID for user &amp;ldquo;UserName&amp;rdquo; and set variable SID to that value.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>BOINC cli for World Community Grid</title>
+      <link>/boinc-cli-for-world-community-grid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/boinc-cli-for-world-community-grid/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          {%- include toc.html -%}
+BOINC - Berkeley Open Infrastructure for Network Computing BOINC is a distributed [grid] computing client that uses idle time on your computer. There are a number of projects that you can attach to and assist with. I will cover how to connect to the World Community Grid via CLI on Ubuntu.
+World Community Grid
+ World Community Grid&amp;rsquo;s mission is to create the world&amp;rsquo;s largest public computing grid to tackle projects that benefit humanity.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>BOINC Linux GPU</title>
+      <link>/boinc-linux-gpu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/boinc-linux-gpu/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          As of version 7.0.40 BOINC has the ability to split GPU tasks across multiple work units.
+ Preliminary Change Log 7.0.39 &amp;ndash;&amp;gt; 7.0.40:
+client: add &amp;ldquo;client app configuration&amp;rdquo; feature; see  This lets users do the following:
+ limit the number of concurrent jobs of a given app (e.g. for WCG apps that are I/O-intensive) Specify the CPU and GPU usage parameters of GPU versions of a given app.   BOINC development versions are found here: http://boinc.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>CAPI2 error - Missing System Writer on Windows 2008</title>
+      <link>/capi2-error-missing-system-writer-on-windows-2008/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/capi2-error-missing-system-writer-on-windows-2008/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          System Writer is missing from the output of vssadmin list writers. The Application Event log is showing Event ID 513 source CAPI2.
+Had a hell of a time resolving this issue. Most of the sources point to a permissions issue. However the security log remains error free. The script below is combines a couple suggested fixes. One of the fixed is from the Microsoft KB article 2009272. Other items were found in various forums.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Chrome socks5 command line switch</title>
+      <link>/chrome-socks5-command-line-switch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/chrome-socks5-command-line-switch/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          In Windows the Chrome browser uses your system wide proxy settings. This can be a problem if you have a need to run different browsers and/or applications. An example would be running a Secure Shell proxy to get through a content filtering firewall.
+To get around the Chrome system wide proxy settings, use a command line switch. Open or create a shortcut to Chrome/Chromium
+--proxy-server=&amp;quot;socks5://127.0.0.1:8080&amp;quot;  Replace 127.0.0.1 with your proxy address and 8080 with your proxy port.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Citrix - Unable to connect to the CGP tunnel destination</title>
+      <link>/citrix-unable-to-connect-to-the-cgp-tunnel-destination/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/citrix-unable-to-connect-to-the-cgp-tunnel-destination/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Citrix users are receiving an error on login.
+The Citrix server is reporting a number of Event ID: 118 errors.
+Open the Terminal Services Manager and check for disconnected listeners. In my case the ICA Listener was down (disconnected). Resetting the listener resolved the issue.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Citrix ICA not listening on port 1494</title>
+      <link>/citrix-ica-not-listening-on-port-1494/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/citrix-ica-not-listening-on-port-1494/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          I ran into an issue with some Citrix servers in the environment. Users were getting a protocol driver error. After poking around I noticed ICA was not listening on port 1494.
+It appears that this issue was caused by Microsoft patch MS12-024.
+ Known issues with this security update After you install this security update on a Windows Server 2003 SP2-based terminal server, Remote Desktop Protocol (RDP) clients or Independent Computing Architecture (ICA) clients may be unable to connect to the terminal server.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Curses based full screen BOINC manager</title>
+      <link>/curses-based-full-screen-boinc-manager/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/curses-based-full-screen-boinc-manager/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Do you have a couple boxes running headless or otherwise not running Xorg? If you ever wanted to or had the need there is a Curses based BOINC manager. The project name is Boinctui and is available on Google Code.
+Boinctui source code along with deb and rpm binaries are available for download.
+wget http://code.google.com/p/boinctui/downloads/detail?name=boinctui_1.0.0-0_i386.deb sudo dpkg -i boinctui_1.0.0-0_i386.deb 
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Detect .NET version using Internet Explorer</title>
+      <link>/detect-.net-version-using-internet-explorer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/detect-.net-version-using-internet-explorer/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Here is a quick method of getting the .NET versions running on a system.
+Past the following text into the Internet Explorer address bar.
+javascript:alert(navigator.userAgent)  Note: Be aware that the userAgent response can be modified. {: .flash .flash-warn }
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Determine if your processor is 64bit capable</title>
+      <link>/determine-if-your-processor-is-64bit-capable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/determine-if-your-processor-is-64bit-capable/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Determine if your processor is 64bit capable Grep the output of /proc/cpuinfo for the lm (long mode) flag.
+grep lm /proc/cpuinfo flags : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx lm constant_tsc arch_perfmon pebs bts aperfmperf pni dtes64 monitor ds_cpl vmx smx est tm2 ssse3 cx16 xtpr pdcm sse4_1 xsave lahf_lm ida dts tpr_shadow vnmi flexpriority flags : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx lm constant_tsc arch_perfmon pebs bts aperfmperf pni dtes64 monitor ds_cpl vmx smx est tm2 ssse3 cx16 xtpr pdcm sse4_1 xsave lahf_lm ida dts tpr_shadow vnmi flexpriority Long Mode (lm) description via Wikipedia:
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>DuckDuckGo bang-list</title>
+      <link>/duckduckgo-bang-list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/duckduckgo-bang-list/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          DuckDuckGo is a search engine that reminds me of Google from several years ago. One helpful feature is the !Bang command. You can use it to set options or search specific sites.
+The following example will give you a nice list of supplies for the zombie apocalypse:
+!costco survival  Tech * **Blogs:** !arstechnica !arturogoga !boingboing !cnet !df !eff !ehow !engadget !espacoliberdade !gawker !ghacks !gigaom !gizmodo !groklaw !gsmarena !habra !hackaday !
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Fix Shrew Soft VPN on Ubuntu 11.04</title>
+      <link>/fix-shrew-soft-vpn-on-ubuntu-11.04/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/fix-shrew-soft-vpn-on-ubuntu-11.04/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          After upgrading my system to Ubuntu 11.04 I was no longer able to establish a VPN connection. Shrew Soft VPN would time out. It appears that the Reverse Path Filter was causing the issue.
+Found the following solution:
+Edit your network-security.conf to disable the Reverse Path Filter:
+sudo vim /etc/sysctl.d/10-network-security.conf Set the following items from 1 to 0:
+net.ipv4.conf.default.rp_filter=0 net.ipv4.conf.all.rp_filter=0 Save and perform the following command.
+sudo /sbin/sysctl -p 
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Generate QR codes on Wolframalpha</title>
+      <link>/generate-qr-codes-on-wolframalpha/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/generate-qr-codes-on-wolframalpha/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          The computational knowledge engine wolframalpha.com can now generate QR Codes. If you type in &amp;ldquo;QR Code:&amp;quot; followed by the information (up to 7KB of data) you want encoded a QR Code is generated with the option to change the size, download as a PDF.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Getting the most from GNU Screen</title>
+      <link>/getting-the-most-from-gnu-screen/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/getting-the-most-from-gnu-screen/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Via gnu.org
+ Screen is a full-screen window manager that multiplexes a physical terminal between several processes, typically interactive shells. Each virtual terminal provides the functions of the DEC VT100terminal and, in addition, several control functions from the ANSI X3.64(ISO 6429) and ISO 2022 standards (e.g., insert/delete line and support for multiple character sets). There is a scrollback history buffer for each virtual terminal and a copy-and-paste mechanism that allows the user to move text regions between windows.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Google Chrome PDF reader</title>
+      <link>/google-chrome-pdf-reader/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/google-chrome-pdf-reader/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          With this effort, we will accomplish the following:
+ PDF files will render as seamlessly as HTML web pages, and basic interactions will be no different than the same interactions with web pages (for example, zooming and searching will work as users expect). PDF rendering quality is still a work in progress, and we will improve it substantially before releasing it to the beta and stable channels. To further protect users, PDF functionality will be contained within the security sandbox Chrome uses for web page rendering.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>gpedit.msi could not create snap-in</title>
+      <link>/gpedit.msi-could-not-create-snap-in/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/gpedit.msi-could-not-create-snap-in/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          When opening gpedit.msc you receive the following error:
+MMC could not create the snap-in. The snap-in might not have been installed correctly.
+Verify that &amp;quot;%SystemRoot%\System32\Wbem&amp;quot; is in the PATH environment variable.
+echo %PATH% Add the environment variable if it is missing and rerun gpedit.msc.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Identification and resolution of Volume Shadow Copy Service errors</title>
+      <link>/identification-and-resolution-of-volume-shadow-copy-service-errors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/identification-and-resolution-of-volume-shadow-copy-service-errors/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Identification and resolution of Volume Shadow Copy Service errors Identify the problem writers using vssadmin
+vssadmin syntax:
+vssadmin list {shadows [/set= [shadow copy set GUID]] | writers | providers} vssadmin delete shadows /for=&amp;lt;ForVolumeSpec&amp;gt; [/oldest | /all | /shadow=&amp;lt;ShadowID&amp;gt;] [/quiet]`&amp;lt;/pre&amp;gt; Let&amp;rsquo;s start off by checking the state of the VSS Writers
+C:\vssadminlist writers vssadmin 1.1 - Volume Shadow Copy Service administrative command-line tool (C) Copyright 2001 Microsoft Corp. Writer name: &amp;#39;System Writer&amp;#39; Writer Id: {e8132975-6f93-4464-a53e-1050253ae220} Writer Instance Id: {449e12cf-6b8f-4d75-a821-bc869d6612c4} State: [1] Failed Last error: No error Writer name: &amp;#39;SqlServerWriter&amp;#39; Writer Id: {a65faa63-5ea8-4ebc-9dbd-a0c4db26912a} Writer Instance Id: {de3b2861-77f6-43f8-8619-64dc9ea2fbcf} State: [1] Stable Last error: No error Writer name: &amp;#39;MSDEWriter&amp;#39; Writer Id: {f8544ac1-0611-4fa5-b04b-f7ee00b03277} Writer Instance Id: {9036fdfa-05ef-4f7d-9c2f-84fa2f06560a} State: [1] Stable Last error: No error Writer name: &amp;#39;WMI Writer&amp;#39; Writer Id: {a6ad56c2-b509-4e6c-bb19-49d8f43532f0} Writer Instance Id: {f9f92826-a3d4-486c-ade3-a4201deb8ad2} State: [7] Failed Last error: No error The output above is showing the System and WMI writers in a Failed state.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Identify CPU architecture on Linux</title>
+      <link>/identify-cpu-architecture-on-linux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/identify-cpu-architecture-on-linux/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Using lscpu is a quick and easy way to determine your CPU architecture.
+64bit AMD processor example $ lscpu Architecture: x86_64 CPU op-mode(s): 32-bit, 64-bit Byte Order: Little Endian CPU(s): 6 On-line CPU(s) list: 0-5 Thread(s) per core: 1 Core(s) per socket: 6 Socket(s): 1 NUMA node(s): 1 Vendor ID: AuthenticAMD CPU family: 16 Model: 10 Model name: AMD Phenom(tm) II X6 1055T Processor Stepping: 0 CPU MHz: 800.000 CPU max MHz: 2800.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Image cloning in VMware ESX shell</title>
+      <link>/image-cloning-in-vmware-esx-shell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/image-cloning-in-vmware-esx-shell/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          VMware image clone via ESX shell and vmkfstools The free version of the VMware vSphere Hypervisor has a reduced feature set. One of the missing features is the ability to clone or create templates from existing vms. You can clone an image using vmkfstools within the ESX shell.
+vmkfstools OPTIONS FOR FILE SYSTEMS: vmkfstools -C --createfs [vmfs3|vmfs5] -b --blocksize #[mMkK] -S --setfsname fsName -Z --spanfs span-partition -G --growfs grown-partition deviceName -P --queryfs -h --humanreadable -T --upgradevmfs vmfsPath -y --reclaimBlocks vmfsPath [--reclaimBlocksUnit #blocks] OPTIONS FOR VIRTUAL DISKS: vmkfstools -c --createvirtualdisk #[gGmMkK] -d --diskformat [zeroedthick |thin |eagerzeroedthick ] -a --adaptertype [buslogic|lsilogic|ide |lsisas|pvscsi] -W --objecttype [file|vsan] --policyFile &amp;lt;fileName&amp;gt; -w --writezeros -j --inflatedisk -k --eagerzero -K --punchzero -U --deletevirtualdisk -E --renamevirtualdisk srcDisk -i --clonevirtualdisk srcDisk -d --diskformat [zeroedthick |thin |eagerzeroedthick |rdm:&amp;lt;device&amp;gt;|rdmp:&amp;lt;device&amp;gt; |2gbsparse] -W --object [file|vsan] --policyFile &amp;lt;fileName&amp;gt; -N --avoidnativeclone -X --extendvirtualdisk #[gGmMkK] [-d --diskformat eagerzeroedthick] -M --migratevirtualdisk -r --createrdm /vmfs/devices/disks/.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Improve Google Reader readability with userstyles.org and stylish</title>
+      <link>/improve-google-reader-readability-with-userstyles.org-and-stylish/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/improve-google-reader-readability-with-userstyles.org-and-stylish/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          As with most Google products Reader is utilitarian.
+Install the Stylish Google Chrome extension.
+ Restyle the web with Stylish, a user styles manager. Stylish lets you easily install themes and skins for Google, Facebook,… User styles are themes for web sites. User styles empower your browsing experience by letting you customize web sites. Take out irrelevant content, change colors, or completely redesign the entire site.
+  Stylish lets you easily manage user styles.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>iPad ad blocking using privoxy</title>
+      <link>/ipad-ad-blocking-using-privoxy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/ipad-ad-blocking-using-privoxy/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          I recently acquired an iPad 2 which I use mostly for surfing the web. I had no idea that you could not use browser extensions.
+Assuming you have an extra computer running on your network. One method of blocking ads (on your home network) is to use a web proxy like Privoxy. Privoxy has binaries for Windows, OS X, BSD and Linux.
+In the example below we are going to install and setup Privoxy on Ubuntu.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Lenovo T400 will not power on</title>
+      <link>/lenovo-t400-will-not-power-on/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/lenovo-t400-will-not-power-on/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Ran into a problem with my Lenovo T400. The laptop would not power on. No lights of any kind. Tried with and without the battery and/or AC adapter. Found these instructions while searching around for a solution:
+ Ensure nothing is plugged into the computer  Remove the battery Press power button 10 times Press power button down for 30 seconds Press power button twice Attach ac adapter Press power button once.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>m0n0wall site to site VPN</title>
+      <link>/m0n0wall-site-to-site-vpn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/m0n0wall-site-to-site-vpn/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Configuring site to site VPN using two m0n0wall boxes is a snap.
+There are a couple of things you will want to know ahead of time.
+ The IP address or FQDN of both firewalls WAN interface. Internal subnet of both networks. The shared key (password).  Log into your firewall and head to the VPN/IPSec section. Click the + sign to get started. Assuming you are connecting two boxes across the internet, set the Interface to &amp;ldquo;WAN&amp;rdquo;.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Medibuntu Repositories</title>
+      <link>/medibuntu-repositories/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/medibuntu-repositories/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Medibuntu (Multimedia, Entertainment &amp;amp; Distractions In Ubuntu) is a repository of &amp;gt;packages that cannot be included into the Ubuntu distribution for legal reasons &amp;gt;copyright, license, patent, etc).
+Some of these packages include the libdvdcss package from VideoLAN and the external &amp;gt;binary codecs package (commonly known as w32codecs) used by MPlayer and xine.
+ The following one line command will add Medibuntu repositories to the sources.list, install the Medibuntu GPG key and resynchronize the package index:
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>NATO phonetic alphabet background</title>
+      <link>/nato-phonetic-alphabet-background/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/nato-phonetic-alphabet-background/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Communicate clearly using the Nato phonetic alphabet background. It is difficult to accurately convey an asset tag, serial number, model number, etc to a peer or offsite support. Aside from phone clarity there is often accent or language barriers.
+If you are using a Microsoft Windows OS you can quickly add the Nato phonetic alphabet to your desktop background. Grab a copy of the Sysinternals tool Bginfo. Then download the nato.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Network Bonding</title>
+      <link>/network-bonding/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/network-bonding/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Details on setting up network bonding. This is going to be used as a Snort sensor on a passive network tap.
+Install ifenslave
+$ sudo apt-get install ifenslave Create the file /etc/modprobe.d/bonding.conf with the following:
+alias bond0 bonding options bonding mode=0 miimon=100 A note about promiscuous mode regarding the bonding mode:
+ Promiscuous mode
+When running network monitoring tools, e.g., tcpdump, it is common to enable promiscuous mode on the device, so that all traffic is seen (instead of seeing only traffic destined for the local host).
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Packer CentOS Virtualbox image</title>
+      <link>/packer-centos-virtualbox-image/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/packer-centos-virtualbox-image/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          SATA Wanted Many of the public CentOS Vagrant boxes are configured with only an IDE controller. I assume this is for compatibility reasons. The SATA controller on VirtualBox performs better, so that is what I want.
+Serial ATA (SATA)
+ Like a real SATA controller, Oracle VM VirtualBox&amp;rsquo;s virtual SATA controller operates faster and also consumes fewer CPU resources than the virtual IDE controller. Also, this enables you to connect up to 30 virtual hard disks to one machine instead of just three, when compared to the Oracle VM VirtualBox IDE controller with a DVD drive attached.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Persistent Gnome shell in Lucid</title>
+      <link>/persistent-gnome-shell-in-lucid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/persistent-gnome-shell-in-lucid/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          GNOME Shell is the defining technology of the GNOME 3 desktop user experience. It provides core interface functions like switching to windows and launching applications. GNOME Shell takes advantage of the capabilities of modern graphics hardware and introduces innovative user interface concepts to provide a delightful and easy to use experience.
+Availability and Status
+The GNOME Shell is currently in active development and while many planned features are not yet implemented it is stable enough for everyday use.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Persistent static route via Windows registry</title>
+      <link>/persistent-static-route-via-windows-registry/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/persistent-static-route-via-windows-registry/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          For whatever reason I was unable to set a static route via the route command. I assume the system was pending a reboot. However I did not have the time to schedule the outage.
+So I added the route directly to the registry. Problem solved, next.
+Persistent static routed are stored in the following registry key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip \Parameters\PersistentRoutes
+Add a new String Value with the name destination,mask,gateway,metric
+Example 
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Powerline on Archlinux</title>
+      <link>/powerline-on-archlinux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/powerline-on-archlinux/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Powerline on Archlinux I recently switched from GNU Screen to Tmux. While reviewing random tmux.confs on Github I stumbled onto the screenshot below of tmux &amp;amp; powerline.
+ Powerline is a statusline plugin for vim, and provides statuslines and prompts for several other applications, including zsh, bash, tmux, IPython, Awesome and Qtile.
+ https://github.com/gpakosz/.tmux
+An AUR package available for Powerline. However for this document I am going to detail the standard installation.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Remove ctrl-m characters on Linux</title>
+      <link>/remove-ctrl-m-characters-on-linux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/remove-ctrl-m-characters-on-linux/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Use CTRL+V CTRL+M to type ^M
+vi:
+:%s/^M//g tr:
+tr -d ^M &amp;lt; file &amp;gt; newfile sed:
+sed &amp;#39;s/^M//g&amp;#39; file &amp;gt; newfile 
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Remove Ghosted nics</title>
+      <link>/remove-ghosted-nics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/remove-ghosted-nics/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Found a great script for removing ghosted (hidden) NICS on Frank Peter&amp;rsquo;s blog.
+Using the Microsoft devcon.exe tool the script compares the output of find and findall. If the matching device count is not equal the additional device is removed.
+ find - Find devices that match the specific hardware or instance ID. findall - Find devices including those that are not present.  The Device Console Utilitu (DevCon) is available from support.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Restart Terminal Services without rebooting</title>
+      <link>/restart-terminal-services-without-rebooting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/restart-terminal-services-without-rebooting/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Restart Terminal Services Without Rebooting Microsoft Windows 2003 and lower does not allow you start or stop the Terminal Services service. However if you can&amp;rsquo;t schedule a server reboot there is an alternative.
+Download the Sysinternals tool Process Explorer Using Process Explorer locate the svchost.exe -k termsvcs process. There will be a number of running svchost.exe processes. Hover your mouse over them to identify the correct one. Once you find it, right click and kill it.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Set recursive file or directory permission</title>
+      <link>/set-recursive-file-or-directory-permission/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/set-recursive-file-or-directory-permission/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Command to recursively change either file or directory permissions in Bash.
+Example of changing directory permissions to 755
+sudo find . -type d -exec chmod 755 {} \; Example of changing file permissions to 666
+sudo find . -type f -exec chmod 666 {} \; 
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Solarized colors on Gnome terminal</title>
+      <link>/solarized-colors-on-gnome-terminal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/solarized-colors-on-gnome-terminal/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Solarized is a beautiful color palette. The palette was designed for readability and comes with both light and dark options.
+ Solarized is a sixteen color palette (eight monotones, eight accent colors) designed for use with terminal and gui applications. It has several unique properties. I designed this color scheme with both precise CIELAB lightness relationships and a refined set of hues based on fixed color wheel relationships. It has been tested extensively in real world use on color calibrated displays (as well as uncalibrated/intentionally miscalibrated displays) and in a variety of lighting conditions.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>System Volume Information folder size</title>
+      <link>/system-volume-information-folder-size/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/system-volume-information-folder-size/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Reduce the size of your System Volume Information folder by shrinking the shadow storage.
+Use vssadmin list shadowstorage to list the current Shadow Copy Storage size.
+C:\&amp;gt;vssadmin list shadowstorage vssadmin 1.1 - Volume Shadow Copy Service administrative command-line tool (C) Copyright 2001-2005 Microsoft Corp. Shadow Copy Storage association For volume: (C:)\\?\Volume{278ce142-19d8-11e1-9176-806e6f6e6963}\ Shadow Copy Storage volume: (C:)\\?\Volume{278ce142-19d8-11e1-9176-806e6f6e69 63}\ Used Shadow Copy Storage space: 15.681 GB (39%) Allocated Shadow Copy Storage space: 16.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Tail files with Powershell</title>
+      <link>/tail-files-with-powershell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tail-files-with-powershell/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          For those note aware of the GNU Tail utility, it will print the last n lines of text from a file. It is an invaluable tool for monitoring log files.
+Since Windows does not have an equivalent command this is quite useful. Using the Powershell Get-Content cmdlet will print the contents of a file. The -wait parameter will print additional lines as they are added.
+Get-Content filename -wait Be aware that this is slow on large files.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Thumb drive toolkit</title>
+      <link>/thumb-drive-toolkit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/thumb-drive-toolkit/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          A Windows Administrator USB toolkit. The following is a collection of free and/or open source tools I like to keep on hand.
+Portable Apps collection  PortableApps.com Suite™ is a complete collection of portable apps including a web browser, email client, office suite, calendar/scheduler, instant messaging client, antivirus, audio player, sudoku game, password manager, PDF reader, minesweeper clone, backup utility and integrated menu, all preconfigured to work portably. Just drop it on your portable device and you&amp;rsquo;re ready to go.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>TSM Invalid file handle passed</title>
+      <link>/tsm-invalid-file-handle-passed/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tsm-invalid-file-handle-passed/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          If TSM client job failed with and error of &amp;ldquo;Invalid file handle passed&amp;rdquo;. Here is a quick solution.
+Stop the TSM Client Scheduler service.
+net stop &amp;quot;TSM Client Scheduler&amp;quot;  Delete (or rename) the adsm.sys directory. The directory will be recreated by TSM.
+Restart the TSM Client Scheduler service.
+net start &amp;quot;TSM Client Scheduler&amp;quot;  Rerun the backup job.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Turn off Windows firewall using netsh</title>
+      <link>/turn-off-windows-firewall-using-netsh/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/turn-off-windows-firewall-using-netsh/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Often the first step in troubleshooting communication issues is to disable the Windows firewall. Below is the netsh command.
+netsh advfirewall set allprofiles state off Additional netsh.exe information: Windows Server® 2008 Network Shell (Netsh) Technical Reference
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu Lucid performance tweaks</title>
+      <link>/ubuntu-lucid-performance-tweaks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/ubuntu-lucid-performance-tweaks/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          I use these setting on a laptop with a Core 2 Duo and 4 GB of ram. It might seem like overkill to tweak this system. However since it is a work machine at any time I am running Lotus Notes, VirtualBox, OpenOffice, Chrome, etc. Should you have a system with limited resources I would recommend Xubuntu for a light full-featured DE. Another option and very light on resources would be any of the open|flux|blackbox window managers.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Uninstall LibreOffice on Redhat/Fedora</title>
+      <link>/uninstall-libreoffice-on-redhat/fedora/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/uninstall-libreoffice-on-redhat/fedora/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Uninstall any existing installation of LibreOffice.
+$ sudo yum remove libreoffice* Change directory into the new extracted LibreOffice package. Install all of the rpms.
+$ sudo rpm -Uvh *.rpm Change directory to the desktop-integration and install the desktop additions.
+$ cd desktop-integration $ sudo rpm -Uvh *freedesktop*.rpm 
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Unrar multiple files</title>
+      <link>/unrar-multiple-files/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/unrar-multiple-files/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Unrar Multiple Files Not something you run into everyday. However when you need to unrar multiple files in a directory, the following command is handy:
+$ find -type f -name &amp;#39;*.rar&amp;#39; -exec unrar x {} \; 
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Using Winsat to test hard drive performance</title>
+      <link>/using-winsat-to-test-hard-drive-performance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/using-winsat-to-test-hard-drive-performance/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          The Windows Assessment Tool (WinSAT) is included Microsoft Vista and Windows 7. This tool can perform performance tests including CPU, memory, disk and video.
+winsat disk -drive c Windows System Assessment Tool &amp;gt; Running: Feature Enumeration &#39;&#39; &amp;gt; Run Time 00:00:00.00 &amp;gt; Running: Storage Assessment &#39;-drive c -seq -read&#39; &amp;gt; Run Time 00:00:05.48 &amp;gt; Running: Storage Assessment &#39;-drive c -ran -read&#39; &amp;gt; Run Time 00:00:06.99 &amp;gt; Running: Storage Assessment &#39;-drive c -scen 2009&#39; &amp;gt; Run Time 00:01:13.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Warning failed to load theme</title>
+      <link>/warning-failed-to-load-theme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/warning-failed-to-load-theme/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          While recklessly installing/testing some new themes I broke my GUI. Nothing seemed to be working right. After rebooting the box I was sitting at a blank screen. A quick check of ps -aux showed Gnome and Xorg running. What gives?
+Fired up journalctl and saw a bunch of these listed. Yep that looks like a place I might have screwed up.
+gnome-session[7460]: Window manager warning: Failed to load theme &amp;quot;Adwaita&amp;quot;: Failed to find a valid file for theme Adwaita gnome-session[7460]: Window manager warning: Failed to load theme &amp;quot;Simple&amp;quot;: Failed to find a valid file for theme Simple gnome-session[7460]: Window manager warning: Failed to load theme &amp;quot;ThinIce&amp;quot;: Failed to find a valid file for theme ThinIce gnome-session[7460]: Window manager warning: Failed to load theme &amp;quot;Zukitre&amp;quot;: Failed to find a valid file for theme Zukitre gnome-session[7460]: Window manager warning: Failed to load theme &amp;quot;Default&amp;quot;: Failed to find a valid file for theme Default gnome-session[7460]: Window manager warning: Failed to load theme &amp;quot;Emacs&amp;quot;: Failed to find a valid file for theme Emacs gnome-session[7460]: Window manager warning: Failed to load theme &amp;quot;Redmond&amp;quot;: Failed to find a valid file for theme Redmond gnome-session[7460]: Window manager warning: Failed to load theme &amp;quot;Moka&amp;quot;: Failed to find a valid file for theme Moka gnome-session[7460]: Window manager warning: Failed to load theme &amp;quot;Numix&amp;quot;: Failed to find a valid file for theme Numix gnome-session[7460]: Window manager warning: Failed to load theme &amp;quot;Zukitwo&amp;quot;: Failed to find a valid file for theme Zukitwo I quick Google search found a recommendation to reinstall the gnome-themes-standard package.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Windows 2003 hung saving your settings</title>
+      <link>/windows-2003-hung-saving-your-settings/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-2003-hung-saving-your-settings/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Every so often I will run into the error where a Windows 2003 server will get stuck logging off a user. The console screen will display the message &amp;ldquo;Saving your settings&amp;rdquo;.
+I ran into this issue while needing to remotely reboot a server. The server in question did not have any kind of remote access card. However, the server was running RAdminsoftware and I was able to get a console screen open.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Windows 2008 access denied killing a process</title>
+      <link>/windows-2008-access-denied-killing-a-process/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-2008-access-denied-killing-a-process/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          There are multiple times where I have been unable to kill a process on Windows 2008 server. Generally the process is running as a domain account. Killing the process failed using an administrative prompt and/or the account the process was started with.
+The process is owned by the System account. You can use the Sysinternals tool psexec with the -s switch to run as the System account. The -i switch allows the process to interact with the desktop.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Windows 2008 telnet client</title>
+      <link>/windows-2008-telnet-client/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-2008-telnet-client/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Install the telnet client on Windows 2008 server.
+pkgmgr /iu:&amp;quot;TelnetClient&amp;quot; 
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Windows 7 GodMode</title>
+      <link>/windows-7-godmode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-7-godmode/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Update: This works on all Windows systems newer than Windows 7. {: .flash }
+Found on cnet.com A simple shortcut to multiple Windows 7 configuration options.
+Create a new folder and rename it to the following:
+GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Windows Update error - Missing advpack.dll</title>
+      <link>/windows-update-error-missing-advpack.dll/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-update-error-missing-advpack.dll/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Ran into an issue with Microsoft Windows Update Service on two Windows 2003 servers. I use a 3rd party patch management tool that calls the Windows Update API. This issue was preventing the correct list of vulnerabilities and causing Windows Update to error out. One of the servers would report Error number: 0x8DDD0004 the other reported an ActiveX issue.
+While exploring solutions I ran into the following error message when opening Add/Remove Windows Components via appwiz.
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>

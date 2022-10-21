@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        System Volume Information folder size ::
+        misctechmusings.com — notebook for projects, problems, and solution
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="Reduce the size of your System Volume Information folder by shrinking the shadow storage.
+Use vssadmin list shadowstorage to list the current Shadow Copy Storage size.
+C:\&amp;gt;vssadmin list shadowstorage vssadmin 1.1 - Volume Shadow Copy Service administrative command-line tool (C) Copyright 2001-2005 Microsoft Corp. Shadow Copy Storage association For volume: (C:)\\?\Volume{278ce142-19d8-11e1-9176-806e6f6e6963}\ Shadow Copy Storage volume: (C:)\\?\Volume{278ce142-19d8-11e1-9176-806e6f6e69 63}\ Used Shadow Copy Storage space: 15.681 GB (39%) Allocated Shadow Copy Storage space: 16."
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/system-volume-information-folder-size/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/img/favicon.png" />
+
+
+<link href="/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="System Volume Information folder size"/>
+<meta name="twitter:description" content="Reduce the size of your System Volume Information folder by shrinking the shadow storage.
+Use vssadmin list shadowstorage to list the current Shadow Copy Storage size.
+C:\&gt;vssadmin list shadowstorage vssadmin 1.1 - Volume Shadow Copy Service administrative command-line tool (C) Copyright 2001-2005 Microsoft Corp. Shadow Copy Storage association For volume: (C:)\\?\Volume{278ce142-19d8-11e1-9176-806e6f6e6963}\ Shadow Copy Storage volume: (C:)\\?\Volume{278ce142-19d8-11e1-9176-806e6f6e69 63}\ Used Shadow Copy Storage space: 15.681 GB (39%) Allocated Shadow Copy Storage space: 16."/>
+
+
+
+<meta property="og:title" content="System Volume Information folder size" />
+<meta property="og:description" content="Reduce the size of your System Volume Information folder by shrinking the shadow storage.
+Use vssadmin list shadowstorage to list the current Shadow Copy Storage size.
+C:\&gt;vssadmin list shadowstorage vssadmin 1.1 - Volume Shadow Copy Service administrative command-line tool (C) Copyright 2001-2005 Microsoft Corp. Shadow Copy Storage association For volume: (C:)\\?\Volume{278ce142-19d8-11e1-9176-806e6f6e6963}\ Shadow Copy Storage volume: (C:)\\?\Volume{278ce142-19d8-11e1-9176-806e6f6e69 63}\ Used Shadow Copy Storage space: 15.681 GB (39%) Allocated Shadow Copy Storage space: 16." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/system-volume-information-folder-size/" /><meta property="article:section" content="posts" />
+
+<meta property="og:site_name" content="misctechmusings.com" />
+
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >/misc/tech/musings</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/archive">Archive</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/archive">Archive</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">System Volume Information folder size</h1>
+    <div class="post-meta">
+      
+
+      
+
+
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          <a href="/tags/windows/">#windows</a>&nbsp;
+        
+          <a href="/tags/vss/">#vss</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      <p>Reduce the size of your System Volume Information folder by shrinking the shadow storage.</p>
+<p>Use <code>vssadmin list shadowstorage</code> to list the current Shadow Copy Storage size.</p>
+<pre tabindex="0"><code class="language-console" data-lang="console">C:\&gt;vssadmin list shadowstorage
+vssadmin 1.1 - Volume Shadow Copy Service administrative command-line tool
+(C) Copyright 2001-2005 Microsoft Corp.
+
+Shadow Copy Storage association
+For volume: (C:)\\?\Volume{278ce142-19d8-11e1-9176-806e6f6e6963}\
+Shadow Copy Storage volume: (C:)\\?\Volume{278ce142-19d8-11e1-9176-806e6f6e69
+63}\
+Used Shadow Copy Storage space: 15.681 GB (39%)
+Allocated Shadow Copy Storage space: 16.152 GB (40%)
+Maximum Shadow Copy Storage space: UNBOUNDED (100%)
+</code></pre><p>In the example above there is no limit set on Maxium storage.
+To set a limit use the <code>maxsize=</code> command. In Windows Server 2008+ this can be set as a percentage of disk space.</p>
+<pre tabindex="0"><code class="language-console" data-lang="console">C:\&gt;vssadmin resize shadowstorage /on=C: /For=C: /Maxsize=4GB
+vssadmin 1.1 - Volume Shadow Copy Service administrative command-line tool
+(C) Copyright 2001-2005 Microsoft Corp.
+
+Successfully resized the shadow copy storage association
+</code></pre><p>After setting <code>maxsize</code> rerun <code>list shadowstorage</code> to verify/review the updated configuration.</p>
+<pre tabindex="0"><code class="language-console" data-lang="console">C:\&gt;vssadmin list shadowstorage
+vssadmin 1.1 - Volume Shadow Copy Service administrative command-line tool
+(C) Copyright 2001-2005 Microsoft Corp.
+
+Shadow Copy Storage association
+For volume: (C:)\\?\Volume{278ce142-19d8-11e1-9176-806e6f6e6963}\
+Shadow Copy Storage volume: (C:)\\?\Volume{278ce142-19d8-11e1-9176-806e6f6e6963}\
+Used Shadow Copy Storage space: 2.81 GB (7%)
+Allocated Shadow Copy Storage space: 3.279 GB (8%)
+Maximum Shadow Copy Storage space: 4 GB (10%)
+</code></pre>
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/solarized-colors-on-gnome-terminal/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Solarized colors on Gnome terminal</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="/tail-files-with-powershell/">
+                  <span class="button__text">Tail files with Powershell</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >/misc/tech/musings</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span
+          >© 2021 Powered by
+          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span
+        >
+        <span
+          >Theme created by
+          <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span
+        >
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

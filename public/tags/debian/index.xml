@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>debian on misctechmusings.com</title>
+    
+    
+    
+    <link>/tags/debian/</link>
+    <description>Recent content in debian on misctechmusings.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/tags/debian/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>apt-get package management</title>
+      <link>/apt-get-package-management/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/apt-get-package-management/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          apt-get is the package management utility behind Debian-based Linux systems Ubuntu, Mint and Mepis.
+A complete list of distributions based on Debian can be found on Distrowatch.
+Basic Package Management: apt-get update
+Used to resynchronize the package index files from their sources. The indexes of available packages are fetched from the location(s) specified in /etc/apt/sources.list. For example, when using a Debian archive, this command retrieves and scans the Packages.gz files, so that information about new and updated packages is available.
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>

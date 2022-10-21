@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>powerline on misctechmusings.com</title>
+    
+    
+    
+    <link>/tags/powerline/</link>
+    <description>Recent content in powerline on misctechmusings.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/tags/powerline/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Powerline on Archlinux</title>
+      <link>/powerline-on-archlinux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/powerline-on-archlinux/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Powerline on Archlinux I recently switched from GNU Screen to Tmux. While reviewing random tmux.confs on Github I stumbled onto the screenshot below of tmux &amp;amp; powerline.
+ Powerline is a statusline plugin for vim, and provides statuslines and prompts for several other applications, including zsh, bash, tmux, IPython, Awesome and Qtile.
+ https://github.com/gpakosz/.tmux
+An AUR package available for Powerline. However for this document I am going to detail the standard installation.
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>

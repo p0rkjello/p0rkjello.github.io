@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Image cloning in VMware ESX shell ::
+        misctechmusings.com — notebook for projects, problems, and solution
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="VMware image clone via ESX shell and vmkfstools The free version of the VMware vSphere Hypervisor has a reduced feature set. One of the missing features is the ability to clone or create templates from existing vms. You can clone an image using vmkfstools within the ESX shell.
+vmkfstools OPTIONS FOR FILE SYSTEMS: vmkfstools -C --createfs [vmfs3|vmfs5] -b --blocksize #[mMkK] -S --setfsname fsName -Z --spanfs span-partition -G --growfs grown-partition deviceName -P --queryfs -h --humanreadable -T --upgradevmfs vmfsPath -y --reclaimBlocks vmfsPath [--reclaimBlocksUnit #blocks] OPTIONS FOR VIRTUAL DISKS: vmkfstools -c --createvirtualdisk #[gGmMkK] -d --diskformat [zeroedthick |thin |eagerzeroedthick ] -a --adaptertype [buslogic|lsilogic|ide |lsisas|pvscsi] -W --objecttype [file|vsan] --policyFile &amp;lt;fileName&amp;gt; -w --writezeros -j --inflatedisk -k --eagerzero -K --punchzero -U --deletevirtualdisk -E --renamevirtualdisk srcDisk -i --clonevirtualdisk srcDisk -d --diskformat [zeroedthick |thin |eagerzeroedthick |rdm:&amp;lt;device&amp;gt;|rdmp:&amp;lt;device&amp;gt; |2gbsparse] -W --object [file|vsan] --policyFile &amp;lt;fileName&amp;gt; -N --avoidnativeclone -X --extendvirtualdisk #[gGmMkK] [-d --diskformat eagerzeroedthick] -M --migratevirtualdisk -r --createrdm /vmfs/devices/disks/."
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/image-cloning-in-vmware-esx-shell/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/img/favicon.png" />
+
+
+<link href="/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Image cloning in VMware ESX shell"/>
+<meta name="twitter:description" content="VMware image clone via ESX shell and vmkfstools The free version of the VMware vSphere Hypervisor has a reduced feature set. One of the missing features is the ability to clone or create templates from existing vms. You can clone an image using vmkfstools within the ESX shell.
+vmkfstools OPTIONS FOR FILE SYSTEMS: vmkfstools -C --createfs [vmfs3|vmfs5] -b --blocksize #[mMkK] -S --setfsname fsName -Z --spanfs span-partition -G --growfs grown-partition deviceName -P --queryfs -h --humanreadable -T --upgradevmfs vmfsPath -y --reclaimBlocks vmfsPath [--reclaimBlocksUnit #blocks] OPTIONS FOR VIRTUAL DISKS: vmkfstools -c --createvirtualdisk #[gGmMkK] -d --diskformat [zeroedthick |thin |eagerzeroedthick ] -a --adaptertype [buslogic|lsilogic|ide |lsisas|pvscsi] -W --objecttype [file|vsan] --policyFile &lt;fileName&gt; -w --writezeros -j --inflatedisk -k --eagerzero -K --punchzero -U --deletevirtualdisk -E --renamevirtualdisk srcDisk -i --clonevirtualdisk srcDisk -d --diskformat [zeroedthick |thin |eagerzeroedthick |rdm:&lt;device&gt;|rdmp:&lt;device&gt; |2gbsparse] -W --object [file|vsan] --policyFile &lt;fileName&gt; -N --avoidnativeclone -X --extendvirtualdisk #[gGmMkK] [-d --diskformat eagerzeroedthick] -M --migratevirtualdisk -r --createrdm /vmfs/devices/disks/."/>
+
+
+
+<meta property="og:title" content="Image cloning in VMware ESX shell" />
+<meta property="og:description" content="VMware image clone via ESX shell and vmkfstools The free version of the VMware vSphere Hypervisor has a reduced feature set. One of the missing features is the ability to clone or create templates from existing vms. You can clone an image using vmkfstools within the ESX shell.
+vmkfstools OPTIONS FOR FILE SYSTEMS: vmkfstools -C --createfs [vmfs3|vmfs5] -b --blocksize #[mMkK] -S --setfsname fsName -Z --spanfs span-partition -G --growfs grown-partition deviceName -P --queryfs -h --humanreadable -T --upgradevmfs vmfsPath -y --reclaimBlocks vmfsPath [--reclaimBlocksUnit #blocks] OPTIONS FOR VIRTUAL DISKS: vmkfstools -c --createvirtualdisk #[gGmMkK] -d --diskformat [zeroedthick |thin |eagerzeroedthick ] -a --adaptertype [buslogic|lsilogic|ide |lsisas|pvscsi] -W --objecttype [file|vsan] --policyFile &lt;fileName&gt; -w --writezeros -j --inflatedisk -k --eagerzero -K --punchzero -U --deletevirtualdisk -E --renamevirtualdisk srcDisk -i --clonevirtualdisk srcDisk -d --diskformat [zeroedthick |thin |eagerzeroedthick |rdm:&lt;device&gt;|rdmp:&lt;device&gt; |2gbsparse] -W --object [file|vsan] --policyFile &lt;fileName&gt; -N --avoidnativeclone -X --extendvirtualdisk #[gGmMkK] [-d --diskformat eagerzeroedthick] -M --migratevirtualdisk -r --createrdm /vmfs/devices/disks/." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/image-cloning-in-vmware-esx-shell/" /><meta property="article:section" content="posts" />
+
+<meta property="og:site_name" content="misctechmusings.com" />
+
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >/misc/tech/musings</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/archive">Archive</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/archive">Archive</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Image cloning in VMware ESX shell</h1>
+    <div class="post-meta">
+      
+
+      
+        <span class="post-author"
+          >— Written by Andrew Bounds</span
+        >
+
+
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          <a href="/tags/vmware/">#vmware</a>&nbsp;
+        
+          <a href="/tags/esxi/">#esxi</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      <h2 id="vmware-image-clone-via-esx-shell-and-vmkfstools">VMware image clone via ESX shell and vmkfstools</h2>
+<p>The free version of the VMware vSphere Hypervisor has a reduced feature set. One of the missing features is the ability to clone or create
+templates from existing vms. You can clone an image using <code>vmkfstools</code> within the ESX shell.</p>
+<h2 id="vmkfstools">vmkfstools</h2>
+<pre tabindex="0"><code class="language-console" data-lang="console">OPTIONS FOR FILE SYSTEMS:
+vmkfstools -C --createfs [vmfs3|vmfs5]
+               -b --blocksize #[mMkK]
+               -S --setfsname fsName
+           -Z --spanfs span-partition
+           -G --growfs grown-partition
+   deviceName
+           -P --queryfs -h --humanreadable
+           -T --upgradevmfs
+   vmfsPath
+           -y --reclaimBlocks vmfsPath [--reclaimBlocksUnit #blocks]
+OPTIONS FOR VIRTUAL DISKS:
+vmkfstools -c --createvirtualdisk #[gGmMkK]
+               -d --diskformat [zeroedthick
+                               |thin
+                               |eagerzeroedthick
+                               ]
+               -a --adaptertype [buslogic|lsilogic|ide
+                                |lsisas|pvscsi]
+               -W --objecttype [file|vsan]
+               --policyFile &lt;fileName&gt;
+           -w --writezeros
+           -j --inflatedisk
+           -k --eagerzero
+           -K --punchzero
+           -U --deletevirtualdisk
+           -E --renamevirtualdisk srcDisk
+           -i --clonevirtualdisk srcDisk
+               -d --diskformat [zeroedthick
+                               |thin
+                               |eagerzeroedthick
+                               |rdm:&lt;device&gt;|rdmp:&lt;device&gt;
+                               |2gbsparse]
+               -W --object [file|vsan]
+               --policyFile &lt;fileName&gt;
+               -N --avoidnativeclone
+           -X --extendvirtualdisk #[gGmMkK]
+               [-d --diskformat eagerzeroedthick]
+           -M --migratevirtualdisk
+           -r --createrdm /vmfs/devices/disks/...
+           -q --queryrdm
+           -z --createrdmpassthru /vmfs/devices/disks/...
+           -v --verbose #
+           -g --geometry
+           -x --fix [check|repair]
+           -e --chainConsistent
+           -Q --objecttype name/value pair
+           --uniqueblocks childDisk
+   vmfsPath
+OPTIONS FOR DEVICES:
+           -L --lock [reserve|release|lunreset|targetreset|busreset|readkeys|readresv
+                     ] /vmfs/devices/disks/...
+           -B --breaklock /vmfs/devices/disks/...
+vmkfstools -H --help
+</code></pre><h2 id="identify-source-image-and-destination-location">Identify source image and destination location</h2>
+<p>Log into the ESX sever and identify the location of the source image. In
+this example I will be cloning image <code>centos-0</code> on <code>datastore-1</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd vmfs/volumes/datastore-1/
+/vmfs/volumes/datastore-1 <span style="color:#75715e"># ls</span>
+centos-0
+</code></pre></div><p>I am going to create 3 additional CentOS vm images. Create the
+destination directory/s prior to running <code>vmkfstools</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">/vmfs/volumes/datastore-1 <span style="color:#75715e"># mkdir centos-1 centos-2 centos-3</span>
+/vmfs/volumes/datastore-1 <span style="color:#75715e"># ls</span>
+centos-0  centos-1  centos-2  centos-3
+</code></pre></div><p>Clone the image via <code>vmkfstools -i source destination</code>. If not specified
+the new image will be <em>thick</em> provisioned. The first will use the
+<code>vmkfstools</code> command without additional options. The 2nd and 3rd will
+<code>thin</code> provision.</p>
+<p><em><strong>Thin</strong></em></p>
+<blockquote>
+<p>These virtual disks do not reserve space on the VMFS
+filesystem, nor do they reserve space on the back-end storage. They
+only consume blocks when data is written to disk from within the
+VM/Guest OS. The amount of actual space consumed by the VMDK starts
+out small, but grows in size as the Guest OS commits more I/O to disk,
+up to a maximum size set at VMDK creation time. The Guest OS believes
+that it has the maximum disk size available to it as storage space
+from the start.</p>
+</blockquote>
+<p><em><strong>Thick (aka LazyZeroedThick)</strong></em></p>
+<blockquote>
+<p>These disks reserve space on the VMFS
+filesystem but there is an interesting caveat. Although they are
+called thick disks, they behave similar to thinly provisioned disks.
+Disk blocks are only used on the back-end (array) when they get
+written to inside in the VM/Guest OS. Again, the Guest OS inside this
+VM thinks it has this maximum size from the start.</p>
+</blockquote>
+<p><em><strong>EagerZeroedThick</strong></em></p>
+<blockquote>
+<p>These virtual disks reserve space on the VMFS
+filesystem and zero out the disk blocks at creation time. This disk
+type may take a little longer to create as it zeroes out the blocks,
+but its performance should be optimal from deployment time (no
+overhead in zeroing out disk blocks on-demand, meaning no latency
+incurred from the zeroing operation). However, if the array supports
+the VAAI Zero primitive which offloads the zero operation to the
+array, then the additional time to create the zeroed out VMDK should
+be minimal.</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">/vmfs/volumes/datastore-1 <span style="color:#75715e"># vmkfstools -i centos-0/centos-0.vmdk centos-1/centos-1.vmdk</span>
+Destination disk format: VMFS zeroedthick
+Cloning disk <span style="color:#e6db74">&#39;centos-0/centos-0.vmdk&#39;</span>...
+Clone: 100% <span style="color:#66d9ef">done</span>.
+
+/vmfs/volumes/datastore-1 <span style="color:#75715e"># ls -la centos-1/</span>
+total <span style="color:#ae81ff">16778248</span>
+drwxr-xr-x    <span style="color:#ae81ff">1</span> root     root           <span style="color:#ae81ff">560</span> Feb  <span style="color:#ae81ff">3</span> 18:27 .
+drwxr-xr-t    <span style="color:#ae81ff">1</span> root     root          <span style="color:#ae81ff">1820</span> Feb  <span style="color:#ae81ff">3</span> 18:17 ..
+-rw-------    <span style="color:#ae81ff">1</span> root     root     <span style="color:#ae81ff">17179869184</span> Feb  <span style="color:#ae81ff">3</span> 18:25 centos-1-flat.vmdk
+-rw-------    <span style="color:#ae81ff">1</span> root     root           <span style="color:#ae81ff">524</span> Feb  <span style="color:#ae81ff">3</span> 18:27 centos-1.vmdk
+</code></pre></div><p>Clone a 2nd copy to the centos-2 directory. Specify <code>-d thin</code> to <em>thin</em>
+provision this image.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">/vmfs/volumes/datastore-1 <span style="color:#75715e"># vmkfstools -i centos-0/centos-0.vmdk centos-2/centos-2.vmdk -d thin</span>
+Destination disk format: VMFS thin-provisioned
+Cloning disk <span style="color:#e6db74">&#39;centos-0/centos-0.vmdk&#39;</span>...
+Clone: 100% <span style="color:#66d9ef">done</span>.
+/vmfs/volumes/datastore-1 <span style="color:#75715e"># ls -la centos-2/</span>
+total <span style="color:#ae81ff">1471496</span>
+drwxr-xr-x    <span style="color:#ae81ff">1</span> root     root           <span style="color:#ae81ff">560</span> Feb  <span style="color:#ae81ff">3</span> 18:36 .
+drwxr-xr-t    <span style="color:#ae81ff">1</span> root     root          <span style="color:#ae81ff">1820</span> Feb  <span style="color:#ae81ff">3</span> 18:17   ..
+-rw-------    <span style="color:#ae81ff">1</span> root     root     <span style="color:#ae81ff">17179869184</span> Feb  <span style="color:#ae81ff">3</span> 18:34 centos-2-flat.vmdk
+-rw-------    <span style="color:#ae81ff">1</span> root     root           <span style="color:#ae81ff">550</span> Feb  <span style="color:#ae81ff">3</span> 18:36 centos-2.vmdk
+</code></pre></div><p>Clone a 3rd copy to the centos-3 directory</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">/vmfs/volumes/datastore-1 <span style="color:#75715e"># vmkfstools -i centos-0/centos-0.vmdk centos-3/centos-3.vmdk -d thin</span>
+Destination disk format: VMFS thin-provisioned
+Cloning disk <span style="color:#e6db74">&#39;centos-0/centos-0.vmdk&#39;</span>...
+Clone: 100% <span style="color:#66d9ef">done</span>.
+/vmfs/volumes/datastore-1 <span style="color:#75715e"># ls -la centos-3/</span>
+total <span style="color:#ae81ff">1471496</span>
+drwxr-xr-x    <span style="color:#ae81ff">1</span> root     root           <span style="color:#ae81ff">560</span> Feb  <span style="color:#ae81ff">3</span> 18:42 .
+drwxr-xr-t    <span style="color:#ae81ff">1</span> root     root          <span style="color:#ae81ff">1820</span> Feb  <span style="color:#ae81ff">3</span> 18:17 ..
+-rw-------    <span style="color:#ae81ff">1</span> root     root     <span style="color:#ae81ff">17179869184</span> Feb  <span style="color:#ae81ff">3</span> 18:40 centos-3-flat.vmdk
+-rw-------    <span style="color:#ae81ff">1</span> root     root           <span style="color:#ae81ff">550</span> Feb  <span style="color:#ae81ff">3</span> 18:42 centos-3.vmdk
+</code></pre></div><p>3 new copies of the CentOS vmdk files have been created. The
+<code>vmkfstools</code> command does not copy any of the additional files from
+within the source directory. I will add some details on this at a later
+time. For this example the cloned images will be added via the vSphere
+Client.</p>
+<h2 id="add-the-newly-cloned-images-to-the-vsphere-inventory">Add the newly cloned images to the vSphere inventory.</h2>
+<p>Log into the <strong>vSphere Client</strong> and add a <strong>New Virtual Machine</strong>
+(Ctrl-N).</p>
+<p>Step through the <strong>New Virtual Machine Wizard</strong> taking note of
+<strong>Configuration</strong> and <strong>Select a Disk</strong> pages. Select <em>Custom</em> from the
+Configuration step of the Configuration wizard.
+<img src="/assets/img/vsphere-config-custom.png" alt="vsphere-config-custom"></p>
+<p>Select <em>Use an existing virtual disk.</em> from the Select a Disk step of
+the Configuration wizrd.
+<img src="/assets/img/vsphere-config-existing.png" alt="vsphere-config-existing"></p>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/identify-cpu-architecture-on-linux/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Identify CPU architecture on Linux</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="/improve-google-reader-readability-with-userstyles.org-and-stylish/">
+                  <span class="button__text">Improve Google Reader readability with userstyles.org and stylish</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >/misc/tech/musings</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span
+          >© 2021 Powered by
+          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span
+        >
+        <span
+          >Theme created by
+          <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span
+        >
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

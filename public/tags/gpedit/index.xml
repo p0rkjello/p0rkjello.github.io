@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gpedit on misctechmusings.com</title>
+    
+    
+    
+    <link>/tags/gpedit/</link>
+    <description>Recent content in gpedit on misctechmusings.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/tags/gpedit/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>gpedit.msi could not create snap-in</title>
+      <link>/gpedit.msi-could-not-create-snap-in/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/gpedit.msi-could-not-create-snap-in/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          When opening gpedit.msc you receive the following error:
+MMC could not create the snap-in. The snap-in might not have been installed correctly.
+Verify that &amp;quot;%SystemRoot%\System32\Wbem&amp;quot; is in the PATH environment variable.
+echo %PATH% Add the environment variable if it is missing and rerun gpedit.msc.
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>

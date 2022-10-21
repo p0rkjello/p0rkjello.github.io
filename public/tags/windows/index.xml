@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>windows on misctechmusings.com</title>
+    
+    
+    
+    <link>/tags/windows/</link>
+    <description>Recent content in windows on misctechmusings.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Active directory Users and Computers on Windows 7</title>
+      <link>/active-directory-users-and-computers-on-windows-7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/active-directory-users-and-computers-on-windows-7/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Download the Remote Server Administration Tools for Windows 7.
+Note: Windows 7 Professional or better.
+Install the software then run the follow commands to enable the AD Users &amp;amp; Computer snapin.
+dism /online /enable-feature /featurename:RemoteServerAdministrationTools dism /online /enable-feature /featurename:RemoteServerAdministrationTools-Roles dism /online /enable-feature /featurename:RemoteServerAdministrationTools-Roles-AD dism /online /enable-feature /featurename:RemoteServerAdministrationTools-Roles-AD-DS dism /online /enable-feature /featurename:RemoteServerAdministrationTools-Roles-AD-DS-SnapIns I received an error when trying to install the snapin directly.
+c:\&amp;gt;dism /online /enable-feature /featurename:RemoteServerAdministrationTools-Roles-AD-DS-SnapIns Deployment Image Servicing and Management tool Version: 6.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Batch script - Get SID</title>
+      <link>/batch-script-get-sid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/batch-script-get-sid/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Get group SID Get the SID for group &amp;ldquo;GroupName&amp;rdquo; and set variable SID to that value.
+:: cmd shell for /f %i in (&amp;#39;wmic group where name^=&amp;#34;GroupName&amp;#34; get sid ^| findstr ^S\-d*&amp;#39;) do set SID=%i :: batch file for /f %%i in (&amp;#39;wmic group where name^=&amp;#34;GroupName&amp;#34; get sid ^| findstr ^S\-d*&amp;#39;) do set SID=%%i Get user SID Get the SID for user &amp;ldquo;UserName&amp;rdquo; and set variable SID to that value.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>CAPI2 error - Missing System Writer on Windows 2008</title>
+      <link>/capi2-error-missing-system-writer-on-windows-2008/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/capi2-error-missing-system-writer-on-windows-2008/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          System Writer is missing from the output of vssadmin list writers. The Application Event log is showing Event ID 513 source CAPI2.
+Had a hell of a time resolving this issue. Most of the sources point to a permissions issue. However the security log remains error free. The script below is combines a couple suggested fixes. One of the fixed is from the Microsoft KB article 2009272. Other items were found in various forums.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Detect .NET version using Internet Explorer</title>
+      <link>/detect-.net-version-using-internet-explorer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/detect-.net-version-using-internet-explorer/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Here is a quick method of getting the .NET versions running on a system.
+Past the following text into the Internet Explorer address bar.
+javascript:alert(navigator.userAgent)  Note: Be aware that the userAgent response can be modified. {: .flash .flash-warn }
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>gpedit.msi could not create snap-in</title>
+      <link>/gpedit.msi-could-not-create-snap-in/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/gpedit.msi-could-not-create-snap-in/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          When opening gpedit.msc you receive the following error:
+MMC could not create the snap-in. The snap-in might not have been installed correctly.
+Verify that &amp;quot;%SystemRoot%\System32\Wbem&amp;quot; is in the PATH environment variable.
+echo %PATH% Add the environment variable if it is missing and rerun gpedit.msc.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Identification and resolution of Volume Shadow Copy Service errors</title>
+      <link>/identification-and-resolution-of-volume-shadow-copy-service-errors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/identification-and-resolution-of-volume-shadow-copy-service-errors/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Identification and resolution of Volume Shadow Copy Service errors Identify the problem writers using vssadmin
+vssadmin syntax:
+vssadmin list {shadows [/set= [shadow copy set GUID]] | writers | providers} vssadmin delete shadows /for=&amp;lt;ForVolumeSpec&amp;gt; [/oldest | /all | /shadow=&amp;lt;ShadowID&amp;gt;] [/quiet]`&amp;lt;/pre&amp;gt; Let&amp;rsquo;s start off by checking the state of the VSS Writers
+C:\vssadminlist writers vssadmin 1.1 - Volume Shadow Copy Service administrative command-line tool (C) Copyright 2001 Microsoft Corp. Writer name: &amp;#39;System Writer&amp;#39; Writer Id: {e8132975-6f93-4464-a53e-1050253ae220} Writer Instance Id: {449e12cf-6b8f-4d75-a821-bc869d6612c4} State: [1] Failed Last error: No error Writer name: &amp;#39;SqlServerWriter&amp;#39; Writer Id: {a65faa63-5ea8-4ebc-9dbd-a0c4db26912a} Writer Instance Id: {de3b2861-77f6-43f8-8619-64dc9ea2fbcf} State: [1] Stable Last error: No error Writer name: &amp;#39;MSDEWriter&amp;#39; Writer Id: {f8544ac1-0611-4fa5-b04b-f7ee00b03277} Writer Instance Id: {9036fdfa-05ef-4f7d-9c2f-84fa2f06560a} State: [1] Stable Last error: No error Writer name: &amp;#39;WMI Writer&amp;#39; Writer Id: {a6ad56c2-b509-4e6c-bb19-49d8f43532f0} Writer Instance Id: {f9f92826-a3d4-486c-ade3-a4201deb8ad2} State: [7] Failed Last error: No error The output above is showing the System and WMI writers in a Failed state.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>NATO phonetic alphabet background</title>
+      <link>/nato-phonetic-alphabet-background/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/nato-phonetic-alphabet-background/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Communicate clearly using the Nato phonetic alphabet background. It is difficult to accurately convey an asset tag, serial number, model number, etc to a peer or offsite support. Aside from phone clarity there is often accent or language barriers.
+If you are using a Microsoft Windows OS you can quickly add the Nato phonetic alphabet to your desktop background. Grab a copy of the Sysinternals tool Bginfo. Then download the nato.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Persistent static route via Windows registry</title>
+      <link>/persistent-static-route-via-windows-registry/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/persistent-static-route-via-windows-registry/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          For whatever reason I was unable to set a static route via the route command. I assume the system was pending a reboot. However I did not have the time to schedule the outage.
+So I added the route directly to the registry. Problem solved, next.
+Persistent static routed are stored in the following registry key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip \Parameters\PersistentRoutes
+Add a new String Value with the name destination,mask,gateway,metric
+Example 
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Remove Ghosted nics</title>
+      <link>/remove-ghosted-nics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/remove-ghosted-nics/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Found a great script for removing ghosted (hidden) NICS on Frank Peter&amp;rsquo;s blog.
+Using the Microsoft devcon.exe tool the script compares the output of find and findall. If the matching device count is not equal the additional device is removed.
+ find - Find devices that match the specific hardware or instance ID. findall - Find devices including those that are not present.  The Device Console Utilitu (DevCon) is available from support.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Restart Terminal Services without rebooting</title>
+      <link>/restart-terminal-services-without-rebooting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/restart-terminal-services-without-rebooting/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Restart Terminal Services Without Rebooting Microsoft Windows 2003 and lower does not allow you start or stop the Terminal Services service. However if you can&amp;rsquo;t schedule a server reboot there is an alternative.
+Download the Sysinternals tool Process Explorer Using Process Explorer locate the svchost.exe -k termsvcs process. There will be a number of running svchost.exe processes. Hover your mouse over them to identify the correct one. Once you find it, right click and kill it.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>System Volume Information folder size</title>
+      <link>/system-volume-information-folder-size/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/system-volume-information-folder-size/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Reduce the size of your System Volume Information folder by shrinking the shadow storage.
+Use vssadmin list shadowstorage to list the current Shadow Copy Storage size.
+C:\&amp;gt;vssadmin list shadowstorage vssadmin 1.1 - Volume Shadow Copy Service administrative command-line tool (C) Copyright 2001-2005 Microsoft Corp. Shadow Copy Storage association For volume: (C:)\\?\Volume{278ce142-19d8-11e1-9176-806e6f6e6963}\ Shadow Copy Storage volume: (C:)\\?\Volume{278ce142-19d8-11e1-9176-806e6f6e69 63}\ Used Shadow Copy Storage space: 15.681 GB (39%) Allocated Shadow Copy Storage space: 16.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Tail files with Powershell</title>
+      <link>/tail-files-with-powershell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tail-files-with-powershell/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          For those note aware of the GNU Tail utility, it will print the last n lines of text from a file. It is an invaluable tool for monitoring log files.
+Since Windows does not have an equivalent command this is quite useful. Using the Powershell Get-Content cmdlet will print the contents of a file. The -wait parameter will print additional lines as they are added.
+Get-Content filename -wait Be aware that this is slow on large files.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Thumb drive toolkit</title>
+      <link>/thumb-drive-toolkit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/thumb-drive-toolkit/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          A Windows Administrator USB toolkit. The following is a collection of free and/or open source tools I like to keep on hand.
+Portable Apps collection  PortableApps.com Suite™ is a complete collection of portable apps including a web browser, email client, office suite, calendar/scheduler, instant messaging client, antivirus, audio player, sudoku game, password manager, PDF reader, minesweeper clone, backup utility and integrated menu, all preconfigured to work portably. Just drop it on your portable device and you&amp;rsquo;re ready to go.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>TSM Invalid file handle passed</title>
+      <link>/tsm-invalid-file-handle-passed/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/tsm-invalid-file-handle-passed/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          If TSM client job failed with and error of &amp;ldquo;Invalid file handle passed&amp;rdquo;. Here is a quick solution.
+Stop the TSM Client Scheduler service.
+net stop &amp;quot;TSM Client Scheduler&amp;quot;  Delete (or rename) the adsm.sys directory. The directory will be recreated by TSM.
+Restart the TSM Client Scheduler service.
+net start &amp;quot;TSM Client Scheduler&amp;quot;  Rerun the backup job.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Turn off Windows firewall using netsh</title>
+      <link>/turn-off-windows-firewall-using-netsh/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/turn-off-windows-firewall-using-netsh/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Often the first step in troubleshooting communication issues is to disable the Windows firewall. Below is the netsh command.
+netsh advfirewall set allprofiles state off Additional netsh.exe information: Windows Server® 2008 Network Shell (Netsh) Technical Reference
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Using Winsat to test hard drive performance</title>
+      <link>/using-winsat-to-test-hard-drive-performance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/using-winsat-to-test-hard-drive-performance/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          The Windows Assessment Tool (WinSAT) is included Microsoft Vista and Windows 7. This tool can perform performance tests including CPU, memory, disk and video.
+winsat disk -drive c Windows System Assessment Tool &amp;gt; Running: Feature Enumeration &#39;&#39; &amp;gt; Run Time 00:00:00.00 &amp;gt; Running: Storage Assessment &#39;-drive c -seq -read&#39; &amp;gt; Run Time 00:00:05.48 &amp;gt; Running: Storage Assessment &#39;-drive c -ran -read&#39; &amp;gt; Run Time 00:00:06.99 &amp;gt; Running: Storage Assessment &#39;-drive c -scen 2009&#39; &amp;gt; Run Time 00:01:13.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Windows 2003 hung saving your settings</title>
+      <link>/windows-2003-hung-saving-your-settings/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-2003-hung-saving-your-settings/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Every so often I will run into the error where a Windows 2003 server will get stuck logging off a user. The console screen will display the message &amp;ldquo;Saving your settings&amp;rdquo;.
+I ran into this issue while needing to remotely reboot a server. The server in question did not have any kind of remote access card. However, the server was running RAdminsoftware and I was able to get a console screen open.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Windows 2008 access denied killing a process</title>
+      <link>/windows-2008-access-denied-killing-a-process/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-2008-access-denied-killing-a-process/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          There are multiple times where I have been unable to kill a process on Windows 2008 server. Generally the process is running as a domain account. Killing the process failed using an administrative prompt and/or the account the process was started with.
+The process is owned by the System account. You can use the Sysinternals tool psexec with the -s switch to run as the System account. The -i switch allows the process to interact with the desktop.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Windows 2008 telnet client</title>
+      <link>/windows-2008-telnet-client/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-2008-telnet-client/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Install the telnet client on Windows 2008 server.
+pkgmgr /iu:&amp;quot;TelnetClient&amp;quot; 
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Windows 7 GodMode</title>
+      <link>/windows-7-godmode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-7-godmode/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Update: This works on all Windows systems newer than Windows 7. {: .flash }
+Found on cnet.com A simple shortcut to multiple Windows 7 configuration options.
+Create a new folder and rename it to the following:
+GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}  
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Windows Update error - Missing advpack.dll</title>
+      <link>/windows-update-error-missing-advpack.dll/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/windows-update-error-missing-advpack.dll/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Ran into an issue with Microsoft Windows Update Service on two Windows 2003 servers. I use a 3rd party patch management tool that calls the Windows Update API. This issue was preventing the correct list of vulnerabilities and causing Windows Update to error out. One of the servers would report Error number: 0x8DDD0004 the other reported an ActiveX issue.
+While exploring solutions I ran into the following error message when opening Add/Remove Windows Components via appwiz.
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>

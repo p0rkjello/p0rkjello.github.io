@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>
+        Ubuntu Lucid performance tweaks ::
+        misctechmusings.com — notebook for projects, problems, and solution
+      </title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="I use these setting on a laptop with a Core 2 Duo and 4 GB of ram. It might seem like overkill to tweak this system. However since it is a work machine at any time I am running Lotus Notes, VirtualBox, OpenOffice, Chrome, etc. Should you have a system with limited resources I would recommend Xubuntu for a light full-featured DE. Another option and very light on resources would be any of the open|flux|blackbox window managers."
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/ubuntu-lucid-performance-tweaks/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/style.css" />
+
+
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="/img/apple-touch-icon-144-precomposed.png"
+/>
+<link rel="shortcut icon" href="/img/favicon.png" />
+
+
+<link href="/assets/fonts/Inter-Italic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Regular.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Medium.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-MediumItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-Bold.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="/assets/fonts/Inter-BoldItalic.woff2" rel="preload" type="font/woff2" as="font" crossorigin="">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ubuntu Lucid performance tweaks"/>
+<meta name="twitter:description" content="I use these setting on a laptop with a Core 2 Duo and 4 GB of ram. It might seem like overkill to tweak this system. However since it is a work machine at any time I am running Lotus Notes, VirtualBox, OpenOffice, Chrome, etc. Should you have a system with limited resources I would recommend Xubuntu for a light full-featured DE. Another option and very light on resources would be any of the open|flux|blackbox window managers."/>
+
+
+
+<meta property="og:title" content="Ubuntu Lucid performance tweaks" />
+<meta property="og:description" content="I use these setting on a laptop with a Core 2 Duo and 4 GB of ram. It might seem like overkill to tweak this system. However since it is a work machine at any time I am running Lotus Notes, VirtualBox, OpenOffice, Chrome, etc. Should you have a system with limited resources I would recommend Xubuntu for a light full-featured DE. Another option and very light on resources would be any of the open|flux|blackbox window managers." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/ubuntu-lucid-performance-tweaks/" /><meta property="article:section" content="posts" />
+
+<meta property="og:site_name" content="misctechmusings.com" />
+
+
+
+
+
+
+
+  </head>
+  <body class="dark-theme">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >/misc/tech/musings</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/archive">Archive</a></li>
+        
+      
+      
+      
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">About</a></li>
+      
+    
+      
+        <li><a href="/archive">Archive</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg
+  class="theme-toggler"
+  width="24"
+  height="24"
+  viewBox="0 0 48 48"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"
+  />
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  <div class="post">
+    <h1 class="post-title">Ubuntu Lucid performance tweaks</h1>
+    <div class="post-meta">
+      
+
+      
+        <span class="post-author"
+          >— Written by Andrew Bounds</span
+        >
+
+
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          <a href="/tags/linux/">#linux</a>&nbsp;
+        
+          <a href="/tags/ubuntu/">#ubuntu</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      
+      <p>I use these setting on a laptop with a Core 2 Duo and 4 GB of ram. It might seem like overkill to tweak this system. However since it is a work machine at any time I am running Lotus Notes, VirtualBox, OpenOffice, Chrome, etc. Should you have a system with limited resources I would recommend Xubuntu for a light full-featured DE. Another option and very light on resources would be any of the open|flux|blackbox window managers.</p>
+<p>Looking to get a bit more performance from your Ubuntu desktop (laptop)? Here are a few tweaks I currently use.</p>
+<p><em><strong>Swappiness:</strong></em></p>
+<p>We all know what a bottleneck swap can be. This setting will force your system to keep more data in cache. The applications/data in cache will feel be more responsive as they are not unloaded to disk/swap. Experiment and find what works best for you.</p>
+<p>The Swap file is controlled by a variable called “swappiness” and higher the number, the greater the tendency to go to the disk.</p>
+<ul>
+<li>swappiness can have a value of between 0 and 100</li>
+<li>swappiness=0 tells the kernel to avoid swapping processes out of physical memory for as long as possible</li>
+<li>swappiness=100 tells the kernel to aggressively swap processes out of physical memory and move them to swap cache</li>
+</ul>
+<p>Identify your current system swappiness and vfs_cache_pressue settings by using the commands below.</p>
+<p>swappiness</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo cat /proc/sys/vm/swappiness
+</code></pre></div><p>cache_pressure</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo cat /proc/sys/vm/vfs_cache_pressure
+</code></pre></div><p>Ubuntu&rsquo;s default <em><strong>swappiness</strong></em> value is 60, <em><strong>vfs_cache_pressure</strong></em> value is 100.</p>
+<p>Now change your swappiness to 10  and cache_pressure to 50.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo sysctl -w vm.swappiness<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>
+$ sudo sysctl -w vm.vfs_cache_pressure<span style="color:#f92672">=</span><span style="color:#ae81ff">50</span>
+</code></pre></div><p>The changes above using <em><strong>sysctl</strong></em> are for testing, they will be reset on reboot. When you are comfortable making the settings persistent they will need to be added to the <code>/etc/sysctl.conf</code> file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo vim /etc/sysctl.conf
+</code></pre></div><p>Add the following to the end of the file.</p>
+<pre tabindex="0"><code class="language-conf" data-lang="conf"># swap/ram tweaks
+vm.swappiness=10
+vm.vfs_cache_pressure=50
+</code></pre><p>Additional reading: <a href="https://help.ubuntu.com/community/SwapFaq">Ubuntu Community Documentation: SwapFaq</a>.</p>
+<p><em><strong>CPU Scaling:</strong></em></p>
+<p>$CPU_THRESHOLD setting is the point that your system will increase/decrease the processor frequency. In the example below we will set this value to 40. When your CPU sampled load rate exceeds 40% the CPU frequency will scale. Adjust as needed.</p>
+<p>To change the CPU threshold you will need to add the following command into your <code>/etc/init.d/ondemand</code> script.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#66d9ef">for</span> CPU_THRESHOLD in /sys/devices/system/cpu/cpu*/cpufreq/ondemand/up_threshold
+<span style="color:#66d9ef">do</span>
+  <span style="color:#f92672">[</span> -f $CPU_THRESHOLD <span style="color:#f92672">]</span> <span style="color:#f92672">||</span> <span style="color:#66d9ef">continue</span>
+  echo -n <span style="color:#ae81ff">40</span> &amp;amp;gt; $CPU_THRESHOLD
+<span style="color:#66d9ef">done</span>
+</code></pre></div><p>Open <code>/etc/init.d/ondemand</code> and add the code above into the $CPUFREQ for loop.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo vim /etc/init.d/ondemand
+</code></pre></div><p>It should looks like this when added.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#66d9ef">for</span> CPUFREQ in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+<span style="color:#66d9ef">do</span>
+  <span style="color:#f92672">[</span> -f $CPUFREQ <span style="color:#f92672">]</span> <span style="color:#f92672">||</span> <span style="color:#66d9ef">continue</span>
+  echo -n ondemand &amp;amp;gt; $CPUFREQ
+  <span style="color:#66d9ef">for</span> CPU_THRESHOLD in /sys/devices/system/cpu/cpu*/cpufreq/ondemand/up_threshold
+  <span style="color:#66d9ef">do</span>
+    <span style="color:#f92672">[</span> -f $CPU_THRESHOLD <span style="color:#f92672">]</span> <span style="color:#f92672">||</span> <span style="color:#66d9ef">continue</span>
+    echo -n <span style="color:#ae81ff">40</span> &amp;amp;gt; $CPU_THRESHOLD
+  <span style="color:#66d9ef">done</span>
+<span style="color:#66d9ef">done</span>
+</code></pre></div><p>Some people recommend changing the $CPUFREQ from ondemand to performance. Doing so will set your processor to full speed. This option is not recommended for a laptop as it will drain your battery and might cause heat issues. For a standard desktop it might be worth testing out.</p>
+<p><em><strong>apt-fast:</strong></em></p>
+<p>This script reminds me of powerpill for <a href="http://www.archlinux.org">Archlinux</a>. Powerpill is a wrapper for Arch&rsquo;s package management tool <a href="http://wiki.archlinux.org/index.php/Pacman">pacman</a>. As you might have guessed apt-fast is a wrapper for apt-get. Apt-fast uses Alex download accelerator as opposed to apt/aptitude&rsquo;s use of wget. Axel is available in the standard repositories and is required for the script to function.</p>
+<p>Download apt-fast <a href="http://www.mattparnell.com/linux/apt-fast">here</a></p>
+<p>Save the script and make it executable.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo chmod +x /usr/local/bin/apt-fast
+</code></pre></div><p>Use the script as you would apt.</p>
+<p>Download atp-fast from <a href="http://www.mattparnell.com/linux/apt-fast">http://www.mattparnell.com/linux/apt-fast</a></p>
+<p><em><strong>/etc/hosts:</strong></em></p>
+<p>There was a bug in the previous version of Gnome that caused a performance problem when the hostname was missing from the /etc/hosts file. It is easy enough to address and will not cause any issues.</p>
+<p>Edit <code>/etc/hosts</code> and add your hostname to the loopback address. Replace myserver.mydomain.com myserver with your actual hostname.</p>
+<pre tabindex="0"><code class="language-conf" data-lang="conf">127.0.0.1 myserver.mydomain.com myserver localhost
+</code></pre><p>Note: These settings are not recommend for use on server systems.
+{: .flash .flash-warn}</p>
+
+    </div>
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h"
+              >Read other posts</span
+            >
+            <hr />
+          </div>
+          <div class="pagination__buttons">
+            
+              <span class="button previous">
+                <a href="/turn-off-windows-firewall-using-netsh/">
+                  <span class="button__icon">←</span>
+                  <span class="button__text">Turn off Windows firewall using netsh</span>
+                </a>
+              </span>
+            
+            
+              <span class="button next">
+                <a href="/uninstall-libreoffice-on-redhat/fedora/">
+                  <span class="button__text">Uninstall LibreOffice on Redhat/Fedora</span>
+                  <span class="button__icon">→</span>
+                </a>
+              </span>
+            
+          </div>
+        </div>
+      
+    
+
+    
+      
+        
+
+      
+    
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a
+  href="/"
+  class="logo"
+  style="text-decoration: none;"
+>
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367" />
+</svg>
+</span>
+    <span class="logo__text"
+      >/misc/tech/musings</span
+    >
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span
+          >© 2021 Powered by
+          <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span
+        >
+        <span
+          >Theme created by
+          <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span
+        >
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

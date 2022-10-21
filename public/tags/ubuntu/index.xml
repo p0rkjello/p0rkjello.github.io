@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ubuntu on misctechmusings.com</title>
+    
+    
+    
+    <link>/tags/ubuntu/</link>
+    <description>Recent content in ubuntu on misctechmusings.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fix Shrew Soft VPN on Ubuntu 11.04</title>
+      <link>/fix-shrew-soft-vpn-on-ubuntu-11.04/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/fix-shrew-soft-vpn-on-ubuntu-11.04/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          After upgrading my system to Ubuntu 11.04 I was no longer able to establish a VPN connection. Shrew Soft VPN would time out. It appears that the Reverse Path Filter was causing the issue.
+Found the following solution:
+Edit your network-security.conf to disable the Reverse Path Filter:
+sudo vim /etc/sysctl.d/10-network-security.conf Set the following items from 1 to 0:
+net.ipv4.conf.default.rp_filter=0 net.ipv4.conf.all.rp_filter=0 Save and perform the following command.
+sudo /sbin/sysctl -p 
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Medibuntu Repositories</title>
+      <link>/medibuntu-repositories/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/medibuntu-repositories/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Medibuntu (Multimedia, Entertainment &amp;amp; Distractions In Ubuntu) is a repository of &amp;gt;packages that cannot be included into the Ubuntu distribution for legal reasons &amp;gt;copyright, license, patent, etc).
+Some of these packages include the libdvdcss package from VideoLAN and the external &amp;gt;binary codecs package (commonly known as w32codecs) used by MPlayer and xine.
+ The following one line command will add Medibuntu repositories to the sources.list, install the Medibuntu GPG key and resynchronize the package index:
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Persistent Gnome shell in Lucid</title>
+      <link>/persistent-gnome-shell-in-lucid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/persistent-gnome-shell-in-lucid/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          GNOME Shell is the defining technology of the GNOME 3 desktop user experience. It provides core interface functions like switching to windows and launching applications. GNOME Shell takes advantage of the capabilities of modern graphics hardware and introduces innovative user interface concepts to provide a delightful and easy to use experience.
+Availability and Status
+The GNOME Shell is currently in active development and while many planned features are not yet implemented it is stable enough for everyday use.
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu Lucid performance tweaks</title>
+      <link>/ubuntu-lucid-performance-tweaks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/ubuntu-lucid-performance-tweaks/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          I use these setting on a laptop with a Core 2 Duo and 4 GB of ram. It might seem like overkill to tweak this system. However since it is a work machine at any time I am running Lotus Notes, VirtualBox, OpenOffice, Chrome, etc. Should you have a system with limited resources I would recommend Xubuntu for a light full-featured DE. Another option and very light on resources would be any of the open|flux|blackbox window managers.
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>

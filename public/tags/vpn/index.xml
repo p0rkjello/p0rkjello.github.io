@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vpn on misctechmusings.com</title>
+    
+    
+    
+    <link>/tags/vpn/</link>
+    <description>Recent content in vpn on misctechmusings.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/tags/vpn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fix Shrew Soft VPN on Ubuntu 11.04</title>
+      <link>/fix-shrew-soft-vpn-on-ubuntu-11.04/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/fix-shrew-soft-vpn-on-ubuntu-11.04/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          After upgrading my system to Ubuntu 11.04 I was no longer able to establish a VPN connection. Shrew Soft VPN would time out. It appears that the Reverse Path Filter was causing the issue.
+Found the following solution:
+Edit your network-security.conf to disable the Reverse Path Filter:
+sudo vim /etc/sysctl.d/10-network-security.conf Set the following items from 1 to 0:
+net.ipv4.conf.default.rp_filter=0 net.ipv4.conf.all.rp_filter=0 Save and perform the following command.
+sudo /sbin/sysctl -p 
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>m0n0wall site to site VPN</title>
+      <link>/m0n0wall-site-to-site-vpn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/m0n0wall-site-to-site-vpn/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Configuring site to site VPN using two m0n0wall boxes is a snap.
+There are a couple of things you will want to know ahead of time.
+ The IP address or FQDN of both firewalls WAN interface. Internal subnet of both networks. The shared key (password).  Log into your firewall and head to the VPN/IPSec section. Click the + sign to get started. Assuming you are connecting two boxes across the internet, set the Interface to &amp;ldquo;WAN&amp;rdquo;.
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>

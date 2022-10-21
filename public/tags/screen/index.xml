@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>screen on misctechmusings.com</title>
+    
+    
+    
+    <link>/tags/screen/</link>
+    <description>Recent content in screen on misctechmusings.com</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/tags/screen/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Getting the most from GNU Screen</title>
+      <link>/getting-the-most-from-gnu-screen/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/getting-the-most-from-gnu-screen/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Via gnu.org
+ Screen is a full-screen window manager that multiplexes a physical terminal between several processes, typically interactive shells. Each virtual terminal provides the functions of the DEC VT100terminal and, in addition, several control functions from the ANSI X3.64(ISO 6429) and ISO 2022 standards (e.g., insert/delete line and support for multiple character sets). There is a scrollback history buffer for each virtual terminal and a copy-and-paste mechanism that allows the user to move text regions between windows.
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>
