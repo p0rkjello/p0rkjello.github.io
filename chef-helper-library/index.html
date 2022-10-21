@@ -1,0 +1,81 @@
+<!doctype html><html lang=en><head><title>Chef helper library ::
+misctechmusings.com — notebook for projects, problems, and solution</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Chef helpers / Custom modules I found myself in need of a custom guard for a Chef recipe using the registry_key resource. I was able to create a module to eliminate code repetition. The following is a simplified example.
+To get started, generate a new cookbook chef generate cookbook example_helper.
+There isn&amp;rsquo;t a chef generate for libraries. Manually create the libraries directory and a new ruby file. In this example, I have created a file named my_helper."><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://p0rkjello.github.io/chef-helper-library/><link rel=stylesheet href=https://p0rkjello.github.io/assets/style.css><link rel=stylesheet href=https://p0rkjello.github.io/style.css><link rel=apple-touch-icon-precomposed sizes=144x144 href=https://p0rkjello.github.io/img/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=https://p0rkjello.github.io/img/favicon.png><link href=https://p0rkjello.github.io/assets/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://p0rkjello.github.io/assets/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://p0rkjello.github.io/assets/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://p0rkjello.github.io/assets/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://p0rkjello.github.io/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://p0rkjello.github.io/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><meta name=twitter:card content="summary"><meta name=twitter:title content="Chef helper library"><meta name=twitter:description content="Create a Chef helper module"><meta property="og:title" content="Chef helper library"><meta property="og:description" content="Create a Chef helper module"><meta property="og:type" content="article"><meta property="og:url" content="https://p0rkjello.github.io/chef-helper-library/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2019-11-20T00:00:00+00:00"><meta property="article:modified_time" content="2019-11-20T00:00:00+00:00"><meta property="og:site_name" content="misctechmusings.com"></head><body class=dark-theme><div class=container><header class=header><span class=header__inner><a href=/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span><span class=logo__text>/misc/tech/musings</span>
+<span class=logo__cursor></span></a>
+<span class=header__right><nav class=menu><ul class="menu__inner menu__inner--desktop"><li><a href=/about>About</a></li><li><a href=/archive>Archive</a></li></ul><ul class="menu__inner menu__inner--mobile"><li><a href=/about>About</a></li><li><a href=/archive>Archive</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span><span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg></span></span></span></header><div class=content><div class=post><h1 class=post-title>Chef helper library</h1><div class=post-meta><span class=post-date>2019-11-20</span>
+<span class=post-author>— Written by Andrew Bounds</span></div><span class=post-tags><a href=https://p0rkjello.github.io/tags/chef/>#chef</a>&nbsp;
+<a href=https://p0rkjello.github.io/tags/automation/>#automation</a>&nbsp;
+<a href=https://p0rkjello.github.io/tags/ruby/>#ruby</a>&nbsp;</span><div class=post-content><h2 id=chef-helpers--custom-modules>Chef helpers / Custom modules</h2><p>I found myself in need of a custom <a href=https://docs.chef.io/resource_common.html>guard</a> for a Chef recipe using the <a href=https://docs.chef.io/resource_registry_key.html>registry_key</a> resource. I was able to create a module to eliminate code repetition. The following is a simplified example.</p><p>To get started, generate a new cookbook <code>chef generate cookbook example_helper</code>.</p><p>There isn&rsquo;t a <code>chef generate</code> for <a href=https://docs.chef.io/libraries.html>libraries</a>. Manually create the <code>libraries</code> directory and a new ruby file. In this example, I have created a file named <code>my_helper.rb</code>.</p><p>Within the <code>my_helper.rb</code> file I created a new method called <code>in_file?</code>. The <code>in_file?</code> method will search the text file <code>'c:\temp\my_helper.txt'</code> for a specific word and return true if found.
+Additionally, the method will need to be included in the recipe, resource, etc. To prevent clobbering any existing method with the same name include it only where needed.</p><p><em><strong>example_helper > libraries > my_helper.rb</strong></em></p><div class=collapsable-code><input id=624138579 type=checkbox>
+<label for=624138579><span class=collapsable-code__language>ruby</span>
+<span class=collapsable-code__title>libraries/my_helper.rb</span>
+<span class=collapsable-code__toggle data-label-expand=△ data-label-collapse=▽></span></label><pre class=language-ruby><code>
+# libraries/my_helper.rb
+
+module My
+  module Helper
+    def in_file?(word)
+      # example code not for actual use
+      file = &#39;c:\temp\my_helper.txt&#39;
+      if File.exist?(file)
+        File.readlines(file).grep(/#{word}/).any? # return truth
+      end
+    end
+  end
+end
+
+# Send the helper to the required resource
+Chef::Resource::RegistryKey.send(:include, My::Helper)
+</code></pre></div><h2 id=attribute-file>Attribute file</h2><p>Create a new attribute file <code>chef generate attribute default</code>. I populated the attribute file with some values to loop over.</p><p><em><strong>example_helper > attributes > default.rb</strong></em></p><div class=collapsable-code><input id=459617832 type=checkbox>
+<label for=459617832><span class=collapsable-code__language>ruby</span>
+<span class=collapsable-code__title>attribute/default.rb</span>
+<span class=collapsable-code__toggle data-label-expand=△ data-label-collapse=▽></span></label><pre class=language-ruby><code>
+# attribute/default.rb
+
+default[&#39;example_helper&#39;][&#39;regkey&#39;][&#39;key1&#39;] = &#39;value1&#39;
+default[&#39;example_helper&#39;][&#39;regkey&#39;][&#39;key2&#39;] = &#39;value2&#39;
+default[&#39;example_helper&#39;][&#39;regkey&#39;][&#39;key3&#39;] = &#39;value3&#39;
+default[&#39;example_helper&#39;][&#39;regkey&#39;][&#39;key4&#39;] = &#39;value4&#39;
+</code></pre></div><h2 id=cookbook-recipe>Cookbook recipe</h2><p>The recipe iterates through the cookbook attributes and creates a new registry key. The guard uses the <code>in_file?</code> method created above. If the text file contains the attribute name the <strong>registry_key</strong> resource will be skipped for that iteration.</p><p><em><strong>example_helper > recipes > default.rb</strong></em></p><div class=collapsable-code><input id=239651748 type=checkbox>
+<label for=239651748><span class=collapsable-code__language>ruby</span>
+<span class=collapsable-code__title>recipe/default.rb</span>
+<span class=collapsable-code__toggle data-label-expand=△ data-label-collapse=▽></span></label><pre class=language-ruby><code>
+# recipe/default.rb
+
+return unless platform_family?(&#39;windows&#39;)
+
+node[&#39;example_helper&#39;][&#39;regkey&#39;]&amp;.each do |name, val|
+  registry_key &#34;HKLM\\System\\CurrentControlSet\\Control\\DoesNotExist\\#{name}&#34; do
+    action :create
+    recursive true
+    values [{ name: &#39;Enabled&#39;, type: :dword, data: val }]
+    not_if { in_file?(name) }
+  end
+end
+</code></pre></div><h2 id=example-word-list-file>Example word list file</h2><p>Add the words we want to trigger the <code>in_file?</code> method. In this case, we will add two of the four attribute values.</p><p><em><strong>c:\temp\my_helper.txt</strong></em></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-plaintext data-lang=plaintext><span style=display:flex><span>key2
+</span></span><span style=display:flex><span>key4
+</span></span></code></pre></div><h2 id=run-the-chef-client>Run the Chef Client</h2><p>Run the Chef cookbook <code>chef-client -z -o example_helper</code>. Using the helper along with the guard registry keys key2 and key4 will be skipped.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-console data-lang=console><span style=display:flex><span>➜  chef-client -z -o example_helper
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>Recipe: example_helper::default
+</span></span><span style=display:flex><span>  * registry_key[HKLM\System\CurrentControlSet\Control\DoesNotExist\key1] action create
+</span></span><span style=display:flex><span>    - create key HKLM\System\CurrentControlSet\Control\DoesNotExist\key1
+</span></span><span style=display:flex><span>    - set value {:name=&gt;&#34;Enabled&#34;, :type=&gt;:dword, :data=&gt;&#34;value1&#34;}
+</span></span><span style=display:flex><span>  * registry_key[HKLM\System\CurrentControlSet\Control\DoesNotExist\key2] action create (skipped due to not_if)
+</span></span><span style=display:flex><span>  * registry_key[HKLM\System\CurrentControlSet\Control\DoesNotExist\key3] action create
+</span></span><span style=display:flex><span>    - create key HKLM\System\CurrentControlSet\Control\DoesNotExist\key3
+</span></span><span style=display:flex><span>    - set value {:name=&gt;&#34;Enabled&#34;, :type=&gt;:dword, :data=&gt;&#34;value3&#34;}
+</span></span><span style=display:flex><span>  * registry_key[HKLM\System\CurrentControlSet\Control\DoesNotExist\key4] action create (skipped due to not_if)
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>Running handlers:
+</span></span><span style=display:flex><span>Running handlers complete
+</span></span><span style=display:flex><span>Chef Infra Client finished, 2/4 resources updated in 03 seconds
+</span></span></code></pre></div></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Read other posts</span><hr></div><div class=pagination__buttons><span class="button previous"><a href=https://p0rkjello.github.io/batch-script-get-sid/><span class=button__icon>←</span>
+<span class=button__text>Batch script - Get SID</span></a></span>
+<span class="button next"><a href=https://p0rkjello.github.io/save-readonly-file-in-vim/><span class=button__text>Save readonly file in vim</span>
+<span class=button__icon>→</span></a></span></div></div></div></div><footer class=footer><div class=footer__inner><a href=/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span><span class=logo__text>/misc/tech/musings</span>
+<span class=logo__cursor></span></a><div class=copyright><span>© 2022 Powered by
+<a href=https://gohugo.io target=_blank rel=noopener>Hugo</a></span>
+<span>Theme created by
+<a href=https://twitter.com/panr target=_blank rel=noopener>panr</a></span></div></div></footer><script src=https://p0rkjello.github.io/assets/main.js></script>
+<script src=https://p0rkjello.github.io/assets/prism.js></script></div></body></html>

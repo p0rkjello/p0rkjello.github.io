@@ -1,0 +1,116 @@
+<!doctype html><html lang=en><head><title>Identification and resolution of Volume Shadow Copy Service errors ::
+misctechmusings.com — notebook for projects, problems, and solution</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Identification and resolution of Volume Shadow Copy Service errors Identify the problem writers using vssadmin
+vssadmin syntax:
+vssadmin list {shadows [/set= [shadow copy set GUID]] | writers | providers} vssadmin delete shadows /for=&amp;lt;ForVolumeSpec&amp;gt; [/oldest | /all | /shadow=&amp;lt;ShadowID&amp;gt;] [/quiet]`&amp;lt;/pre&amp;gt; Let&amp;rsquo;s start off by checking the state of the VSS Writers
+C:\vssadmin list writers vssadmin 1.1 - Volume Shadow Copy Service administrative command-line tool (C) Copyright 2001 Microsoft Corp. Writer name: &amp;#39;System Writer&amp;#39; Writer Id: {e8132975-6f93-4464-a53e-1050253ae220} Writer Instance Id: {449e12cf-6b8f-4d75-a821-bc869d6612c4} State: [1] Failed Last error: No error Writer name: &amp;#39;SqlServerWriter&amp;#39; Writer Id: {a65faa63-5ea8-4ebc-9dbd-a0c4db26912a} Writer Instance Id: {de3b2861-77f6-43f8-8619-64dc9ea2fbcf} State: [1] Stable Last error: No error Writer name: &amp;#39;MSDEWriter&amp;#39; Writer Id: {f8544ac1-0611-4fa5-b04b-f7ee00b03277} Writer Instance Id: {9036fdfa-05ef-4f7d-9c2f-84fa2f06560a} State: [1] Stable Last error: No error Writer name: &amp;#39;WMI Writer&amp;#39; Writer Id: {a6ad56c2-b509-4e6c-bb19-49d8f43532f0} Writer Instance Id: {f9f92826-a3d4-486c-ade3-a4201deb8ad2} State: [7] Failed Last error: No error The output above is showing the System and WMI writers in a Failed state."><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://p0rkjello.github.io/identification-and-resolution-of-volume-shadow-copy-service-errors/><link rel=stylesheet href=https://p0rkjello.github.io/assets/style.css><link rel=stylesheet href=https://p0rkjello.github.io/style.css><link rel=apple-touch-icon-precomposed sizes=144x144 href=https://p0rkjello.github.io/img/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=https://p0rkjello.github.io/img/favicon.png><link href=https://p0rkjello.github.io/assets/fonts/Inter-Italic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://p0rkjello.github.io/assets/fonts/Inter-Regular.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://p0rkjello.github.io/assets/fonts/Inter-Medium.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://p0rkjello.github.io/assets/fonts/Inter-MediumItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://p0rkjello.github.io/assets/fonts/Inter-Bold.woff2 rel=preload type=font/woff2 as=font crossorigin><link href=https://p0rkjello.github.io/assets/fonts/Inter-BoldItalic.woff2 rel=preload type=font/woff2 as=font crossorigin><meta name=twitter:card content="summary"><meta name=twitter:title content="Identification and resolution of Volume Shadow Copy Service errors"><meta name=twitter:description content="Identification and resolution of Volume Shadow Copy Service errors Identify the problem writers using vssadmin
+vssadmin syntax:
+vssadmin list {shadows [/set= [shadow copy set GUID]] | writers | providers} vssadmin delete shadows /for=<ForVolumeSpec> [/oldest | /all | /shadow=<ShadowID>] [/quiet]`</pre> Let&rsquo;s start off by checking the state of the VSS Writers
+C:\vssadmin list writers vssadmin 1.1 - Volume Shadow Copy Service administrative command-line tool (C) Copyright 2001 Microsoft Corp. Writer name: 'System Writer' Writer Id: {e8132975-6f93-4464-a53e-1050253ae220} Writer Instance Id: {449e12cf-6b8f-4d75-a821-bc869d6612c4} State: [1] Failed Last error: No error Writer name: 'SqlServerWriter' Writer Id: {a65faa63-5ea8-4ebc-9dbd-a0c4db26912a} Writer Instance Id: {de3b2861-77f6-43f8-8619-64dc9ea2fbcf} State: [1] Stable Last error: No error Writer name: 'MSDEWriter' Writer Id: {f8544ac1-0611-4fa5-b04b-f7ee00b03277} Writer Instance Id: {9036fdfa-05ef-4f7d-9c2f-84fa2f06560a} State: [1] Stable Last error: No error Writer name: 'WMI Writer' Writer Id: {a6ad56c2-b509-4e6c-bb19-49d8f43532f0} Writer Instance Id: {f9f92826-a3d4-486c-ade3-a4201deb8ad2} State: [7] Failed Last error: No error The output above is showing the System and WMI writers in a Failed state."><meta property="og:title" content="Identification and resolution of Volume Shadow Copy Service errors"><meta property="og:description" content="Identification and resolution of Volume Shadow Copy Service errors Identify the problem writers using vssadmin
+vssadmin syntax:
+vssadmin list {shadows [/set= [shadow copy set GUID]] | writers | providers} vssadmin delete shadows /for=<ForVolumeSpec> [/oldest | /all | /shadow=<ShadowID>] [/quiet]`</pre> Let&rsquo;s start off by checking the state of the VSS Writers
+C:\vssadmin list writers vssadmin 1.1 - Volume Shadow Copy Service administrative command-line tool (C) Copyright 2001 Microsoft Corp. Writer name: 'System Writer' Writer Id: {e8132975-6f93-4464-a53e-1050253ae220} Writer Instance Id: {449e12cf-6b8f-4d75-a821-bc869d6612c4} State: [1] Failed Last error: No error Writer name: 'SqlServerWriter' Writer Id: {a65faa63-5ea8-4ebc-9dbd-a0c4db26912a} Writer Instance Id: {de3b2861-77f6-43f8-8619-64dc9ea2fbcf} State: [1] Stable Last error: No error Writer name: 'MSDEWriter' Writer Id: {f8544ac1-0611-4fa5-b04b-f7ee00b03277} Writer Instance Id: {9036fdfa-05ef-4f7d-9c2f-84fa2f06560a} State: [1] Stable Last error: No error Writer name: 'WMI Writer' Writer Id: {a6ad56c2-b509-4e6c-bb19-49d8f43532f0} Writer Instance Id: {f9f92826-a3d4-486c-ade3-a4201deb8ad2} State: [7] Failed Last error: No error The output above is showing the System and WMI writers in a Failed state."><meta property="og:type" content="article"><meta property="og:url" content="https://p0rkjello.github.io/identification-and-resolution-of-volume-shadow-copy-service-errors/"><meta property="article:section" content="posts"><meta property="og:site_name" content="misctechmusings.com"></head><body class=dark-theme><div class=container><header class=header><span class=header__inner><a href=/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span><span class=logo__text>/misc/tech/musings</span>
+<span class=logo__cursor></span></a>
+<span class=header__right><nav class=menu><ul class="menu__inner menu__inner--desktop"><li><a href=/about>About</a></li><li><a href=/archive>Archive</a></li></ul><ul class="menu__inner menu__inner--mobile"><li><a href=/about>About</a></li><li><a href=/archive>Archive</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span><span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg></span></span></span></header><div class=content><div class=post><h1 class=post-title>Identification and resolution of Volume Shadow Copy Service errors</h1><div class=post-meta><span class=post-author>— Written by Andrew Bounds</span></div><span class=post-tags><a href=https://p0rkjello.github.io/tags/windows/>#windows</a>&nbsp;
+<a href=https://p0rkjello.github.io/tags/vss/>#vss</a>&nbsp;</span><div class=post-content><h2 id=identification-and-resolution-of-volume-shadow-copy-service-errors>Identification and resolution of Volume Shadow Copy Service errors</h2><p>Identify the problem writers using vssadmin</p><p><em><strong>vssadmin syntax:</strong></em></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-console data-lang=console><span style=display:flex><span>vssadmin list {shadows [/set= [shadow copy set GUID]] | writers | providers}
+</span></span><span style=display:flex><span>vssadmin delete shadows /for=&lt;ForVolumeSpec&gt; [/oldest | /all | /shadow=&lt;ShadowID&gt;] [/quiet]`&lt;/pre&gt;
+</span></span></code></pre></div><p>Let&rsquo;s start off by checking the state of the VSS Writers</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-batch data-lang=batch><span style=display:flex><span>C:\vssadmin<span style=color:#75715e> list writers</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>vssadmin 1.1 - Volume Shadow Copy Service administrative command-line tool (C) Copyright 2001 Microsoft Corp.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Writer name: &#39;System Writer&#39;
+</span></span><span style=display:flex><span>Writer Id: {e8132975-6f93-4464-a53e-1050253ae220}
+</span></span><span style=display:flex><span>Writer Instance Id: {449e12cf-6b8f-4d75-a821-bc869d6612c4}
+</span></span><span style=display:flex><span>State: [1] Failed
+</span></span><span style=display:flex><span>Last error: No error
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Writer name: &#39;SqlServerWriter&#39;
+</span></span><span style=display:flex><span>Writer Id: {a65faa63-5ea8-4ebc-9dbd-a0c4db26912a}
+</span></span><span style=display:flex><span>Writer Instance Id: {de3b2861-77f6-43f8-8619-64dc9ea2fbcf}
+</span></span><span style=display:flex><span>State: [1] Stable
+</span></span><span style=display:flex><span>Last error: No error
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Writer name: &#39;MSDEWriter&#39;
+</span></span><span style=display:flex><span>Writer Id: {f8544ac1-0611-4fa5-b04b-f7ee00b03277}
+</span></span><span style=display:flex><span>Writer Instance Id: {9036fdfa-05ef-4f7d-9c2f-84fa2f06560a}
+</span></span><span style=display:flex><span>State: [1] Stable
+</span></span><span style=display:flex><span>Last error: No error
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Writer name: &#39;WMI Writer&#39;
+</span></span><span style=display:flex><span>Writer Id: {a6ad56c2-b509-4e6c-bb19-49d8f43532f0}
+</span></span><span style=display:flex><span>Writer Instance Id: {f9f92826-a3d4-486c-ade3-a4201deb8ad2}
+</span></span><span style=display:flex><span>State: [7] Failed
+</span></span><span style=display:flex><span>Last error: No error
+</span></span></code></pre></div><p>The output above is showing the System and WMI writers in a Failed state.</p><p>Most issues with VSS can be resolved by a server reboot. Rebooting the server is not often a viable option in a production environment where uptime is an issue. Let&rsquo;s take a look at some of our other options.</p><p>Identify the services associated with the failed writers. Search the registry for the Writer Id and/or Google it.</p><p>I have identified the failed writers as:
+System Writer is the Cryptographic service.
+WMI Writer is the Windows Management Instrumentation service.</p><p>Restart both services and recheck the output of <em><strong>vssadmin list writers</strong></em></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-batch data-lang=batch><span style=display:flex><span>C:\vssadmin<span style=color:#75715e> list writers</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>vssadmin 1.1 - Volume Shadow Copy Service administrative command-line tool (C) Copyright 2001 Microsoft Corp.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Writer name: &#39;System Writer&#39;
+</span></span><span style=display:flex><span>Writer Id: {e8132975-6f93-4464-a53e-1050253ae220}
+</span></span><span style=display:flex><span>Writer Instance Id: {449e12cf-6b8f-4d75-a821-bc869d6612c4}
+</span></span><span style=display:flex><span>State: [1] Stable
+</span></span><span style=display:flex><span>Last error: No error
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Writer name: &#39;SqlServerWriter&#39;
+</span></span><span style=display:flex><span>Writer Id: {a65faa63-5ea8-4ebc-9dbd-a0c4db26912a}
+</span></span><span style=display:flex><span>Writer Instance Id: {de3b2861-77f6-43f8-8619-64dc9ea2fbcf}
+</span></span><span style=display:flex><span>State: [1] Stable
+</span></span><span style=display:flex><span>Last error: No error
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Writer name: &#39;MSDEWriter&#39;
+</span></span><span style=display:flex><span>Writer Id: {f8544ac1-0611-4fa5-b04b-f7ee00b03277}
+</span></span><span style=display:flex><span>Writer Instance Id: {9036fdfa-05ef-4f7d-9c2f-84fa2f06560a}
+</span></span><span style=display:flex><span>State: [1] Stable
+</span></span><span style=display:flex><span>Last error: No error
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Writer name: &#39;WMI Writer&#39;
+</span></span><span style=display:flex><span>Writer Id: {a6ad56c2-b509-4e6c-bb19-49d8f43532f0}
+</span></span><span style=display:flex><span>Writer Instance Id: {f9f92826-a3d4-486c-ade3-a4201deb8ad2}
+</span></span><span style=display:flex><span>State: [7] Stable
+</span></span><span style=display:flex><span>Last error: No error
+</span></span></code></pre></div><p>As you can see above the VSS issues have been resolved by restarting the associated services.</p><p>Other VSS errors might not be as straight forward. Let&rsquo;s looks at some additional options:</p><p>Clean up any dead VSS snapshots. Some defect systems accumulate hundreds of VSS snapshots that persist in the system and cause Windows to become unresponsive.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-batch data-lang=batch><span style=display:flex><span>vssadmin delete shadows /all
+</span></span></code></pre></div><p>Restart the services: COM+ System Application Service, Distributed Transaction Coordinator Service, and Volume Shadow Copy Service</p><p>Rerun <em><strong>vssadmin list writers</strong></em> and check the output.</p><p>Additionally recommended by Microsoft: create a batch file to start/stop the VSS services and reregister the DLLs.</p><h3 id=32bit>32bit</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-batch data-lang=batch><span style=display:flex><span><span style=color:#66d9ef>cd</span> /d %windir%\system32
+</span></span><span style=display:flex><span>net stop vss
+</span></span><span style=display:flex><span>net stop swprv
+</span></span><span style=display:flex><span>regsvr32 ole32.dll
+</span></span><span style=display:flex><span>regsvr32 vss_ps.dll
+</span></span><span style=display:flex><span>Vssvc /Register
+</span></span><span style=display:flex><span>regsvr32 /i swprv.dll
+</span></span><span style=display:flex><span>regsvr32 /i eventcls.dll
+</span></span><span style=display:flex><span>regsvr32 es.dll
+</span></span><span style=display:flex><span>regsvr32 stdprov.dll
+</span></span><span style=display:flex><span>regsvr32 vssui.dll
+</span></span><span style=display:flex><span>regsvr32 msxml.dll
+</span></span><span style=display:flex><span>regsvr32 msxml3.dll
+</span></span><span style=display:flex><span>regsvr32 msxml4.dll
+</span></span><span style=display:flex><span>regsvr32 Vssapi.dll
+</span></span><span style=display:flex><span>regsvr32 Vssui.dll
+</span></span><span style=display:flex><span>net start vss
+</span></span><span style=display:flex><span>net start swprv
+</span></span></code></pre></div><h3 id=64bit>64bit</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-batch data-lang=batch><span style=display:flex><span>net stop vss
+</span></span><span style=display:flex><span>net stop swprv
+</span></span><span style=display:flex><span>regsvr32.exe /i %windir%\system32\eventcls.dll
+</span></span><span style=display:flex><span>regsvr32.exe /i %windir%\system32\swprv.dll
+</span></span><span style=display:flex><span>regsvr32.exe %windir%\system32\vssui.dll
+</span></span><span style=display:flex><span>regsvr32.exe %windir%\SysWOW64\vss_ps.dll
+</span></span><span style=display:flex><span>regsvr32.exe %windir%\SysWOW64\msxml.dll
+</span></span><span style=display:flex><span>regsvr32.exe %windir%\SysWOW64\msxml2.dll
+</span></span><span style=display:flex><span>regsvr32.exe %windir%\SysWOW64\msxml3.dll
+</span></span><span style=display:flex><span>regsvr32.exe %windir%\SysWOW64\msxml4.dll
+</span></span><span style=display:flex><span>regsvr32.exe %windir%\SysWOW64\ole32.dll
+</span></span><span style=display:flex><span>regsvr32.exe %windir%\SysWOW64\oleaut32.dll
+</span></span><span style=display:flex><span>regsvr32.exe %windir%\SysWOW64\es.dll
+</span></span><span style=display:flex><span>regsvr32.exe %windir%\SysWOW64\comsvcs.dll
+</span></span><span style=display:flex><span>vssvc /register
+</span></span><span style=display:flex><span>net start swprv
+</span></span><span style=display:flex><span>net start vss
+</span></span></code></pre></div></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Read other posts</span><hr></div><div class=pagination__buttons><span class="button previous"><a href=https://p0rkjello.github.io/gpedit.msi-could-not-create-snap-in/><span class=button__icon>←</span>
+<span class=button__text>gpedit.msi could not create snap-in</span></a></span>
+<span class="button next"><a href=https://p0rkjello.github.io/identify-cpu-architecture-on-linux/><span class=button__text>Identify CPU architecture on Linux</span>
+<span class=button__icon>→</span></a></span></div></div></div></div><footer class=footer><div class=footer__inner><a href=/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span><span class=logo__text>/misc/tech/musings</span>
+<span class=logo__cursor></span></a><div class=copyright><span>© 2022 Powered by
+<a href=https://gohugo.io target=_blank rel=noopener>Hugo</a></span>
+<span>Theme created by
+<a href=https://twitter.com/panr target=_blank rel=noopener>panr</a></span></div></div></footer><script src=https://p0rkjello.github.io/assets/main.js></script>
+<script src=https://p0rkjello.github.io/assets/prism.js></script></div></body></html>
