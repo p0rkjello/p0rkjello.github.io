@@ -7,8 +7,8 @@ There isn&amp;rsquo;t a chef generate for libraries. Manually create the librari
 <span class=post-author>— Written by Andrew Bounds</span></div><span class=post-tags><a href=https://p0rkjello.github.io/tags/chef/>#chef</a>&nbsp;
 <a href=https://p0rkjello.github.io/tags/automation/>#automation</a>&nbsp;
 <a href=https://p0rkjello.github.io/tags/ruby/>#ruby</a>&nbsp;</span><div class=post-content><h2 id=chef-helpers--custom-modules>Chef helpers / Custom modules</h2><p>I found myself in need of a custom <a href=https://docs.chef.io/resource_common.html>guard</a> for a Chef recipe using the <a href=https://docs.chef.io/resource_registry_key.html>registry_key</a> resource. I was able to create a module to eliminate code repetition. The following is a simplified example.</p><p>To get started, generate a new cookbook <code>chef generate cookbook example_helper</code>.</p><p>There isn&rsquo;t a <code>chef generate</code> for <a href=https://docs.chef.io/libraries.html>libraries</a>. Manually create the <code>libraries</code> directory and a new ruby file. In this example, I have created a file named <code>my_helper.rb</code>.</p><p>Within the <code>my_helper.rb</code> file I created a new method called <code>in_file?</code>. The <code>in_file?</code> method will search the text file <code>'c:\temp\my_helper.txt'</code> for a specific word and return true if found.
-Additionally, the method will need to be included in the recipe, resource, etc. To prevent clobbering any existing method with the same name include it only where needed.</p><p><em><strong>example_helper > libraries > my_helper.rb</strong></em></p><div class=collapsable-code><input id=867351429 type=checkbox>
-<label for=867351429><span class=collapsable-code__language>ruby</span>
+Additionally, the method will need to be included in the recipe, resource, etc. To prevent clobbering any existing method with the same name include it only where needed.</p><p><em><strong>example_helper > libraries > my_helper.rb</strong></em></p><div class=collapsable-code><input id=431896725 type=checkbox>
+<label for=431896725><span class=collapsable-code__language>ruby</span>
 <span class=collapsable-code__title>libraries/my_helper.rb</span>
 <span class=collapsable-code__toggle data-label-expand=△ data-label-collapse=▽></span></label><pre class=language-ruby><code>
 # libraries/my_helper.rb
@@ -27,8 +27,8 @@ end
 
 # Send the helper to the required resource
 Chef::Resource::RegistryKey.send(:include, My::Helper)
-</code></pre></div><h2 id=attribute-file>Attribute file</h2><p>Create a new attribute file <code>chef generate attribute default</code>. I populated the attribute file with some values to loop over.</p><p><em><strong>example_helper > attributes > default.rb</strong></em></p><div class=collapsable-code><input id=697518423 type=checkbox>
-<label for=697518423><span class=collapsable-code__language>ruby</span>
+</code></pre></div><h2 id=attribute-file>Attribute file</h2><p>Create a new attribute file <code>chef generate attribute default</code>. I populated the attribute file with some values to loop over.</p><p><em><strong>example_helper > attributes > default.rb</strong></em></p><div class=collapsable-code><input id=158642973 type=checkbox>
+<label for=158642973><span class=collapsable-code__language>ruby</span>
 <span class=collapsable-code__title>attribute/default.rb</span>
 <span class=collapsable-code__toggle data-label-expand=△ data-label-collapse=▽></span></label><pre class=language-ruby><code>
 # attribute/default.rb
@@ -37,8 +37,8 @@ default[&#39;example_helper&#39;][&#39;regkey&#39;][&#39;key1&#39;] = &#39;value
 default[&#39;example_helper&#39;][&#39;regkey&#39;][&#39;key2&#39;] = &#39;value2&#39;
 default[&#39;example_helper&#39;][&#39;regkey&#39;][&#39;key3&#39;] = &#39;value3&#39;
 default[&#39;example_helper&#39;][&#39;regkey&#39;][&#39;key4&#39;] = &#39;value4&#39;
-</code></pre></div><h2 id=cookbook-recipe>Cookbook recipe</h2><p>The recipe iterates through the cookbook attributes and creates a new registry key. The guard uses the <code>in_file?</code> method created above. If the text file contains the attribute name the <strong>registry_key</strong> resource will be skipped for that iteration.</p><p><em><strong>example_helper > recipes > default.rb</strong></em></p><div class=collapsable-code><input id=671853942 type=checkbox>
-<label for=671853942><span class=collapsable-code__language>ruby</span>
+</code></pre></div><h2 id=cookbook-recipe>Cookbook recipe</h2><p>The recipe iterates through the cookbook attributes and creates a new registry key. The guard uses the <code>in_file?</code> method created above. If the text file contains the attribute name the <strong>registry_key</strong> resource will be skipped for that iteration.</p><p><em><strong>example_helper > recipes > default.rb</strong></em></p><div class=collapsable-code><input id=978564231 type=checkbox>
+<label for=978564231><span class=collapsable-code__language>ruby</span>
 <span class=collapsable-code__title>recipe/default.rb</span>
 <span class=collapsable-code__toggle data-label-expand=△ data-label-collapse=▽></span></label><pre class=language-ruby><code>
 # recipe/default.rb
