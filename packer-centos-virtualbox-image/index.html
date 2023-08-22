@@ -5,7 +5,7 @@ Like a real SATA controller, Oracle VM VirtualBox&amp;rsquo;s virtual SATA contr
 Serial ATA (SATA)
 Like a real SATA controller, Oracle VM VirtualBox&rsquo;s virtual SATA controller operates faster and also consumes fewer CPU resources than the virtual IDE controller. Also, this enables you to connect up to 30 virtual hard disks to one machine instead of just three, when compared to the Oracle VM VirtualBox IDE controller with a DVD drive attached."><meta property="og:title" content="Packer CentOS Virtualbox image"><meta property="og:description" content="SATA Wanted Many of the public CentOS Vagrant boxes are configured with only an IDE controller. I assume this is for compatibility reasons. The SATA controller on VirtualBox performs better, so that is what I want.
 Serial ATA (SATA)
-Like a real SATA controller, Oracle VM VirtualBox&rsquo;s virtual SATA controller operates faster and also consumes fewer CPU resources than the virtual IDE controller. Also, this enables you to connect up to 30 virtual hard disks to one machine instead of just three, when compared to the Oracle VM VirtualBox IDE controller with a DVD drive attached."><meta property="og:type" content="article"><meta property="og:url" content="https://p0rkjello.github.io/packer-centos-virtualbox-image/"><meta property="article:section" content="posts"><meta property="og:site_name" content="misctechmusings.com"></head><body class=dark-theme><div class=container><header class=header><span class=header__inner><a href=/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span><span class=logo__text>/misc/tech/musings</span>
+Like a real SATA controller, Oracle VM VirtualBox&rsquo;s virtual SATA controller operates faster and also consumes fewer CPU resources than the virtual IDE controller. Also, this enables you to connect up to 30 virtual hard disks to one machine instead of just three, when compared to the Oracle VM VirtualBox IDE controller with a DVD drive attached."><meta property="og:type" content="article"><meta property="og:url" content="https://p0rkjello.github.io/packer-centos-virtualbox-image/"><meta property="article:section" content="posts"></head><body class=dark-theme><div class=container><header class=header><span class=header__inner><a href=/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span><span class=logo__text>/misc/tech/musings</span>
 <span class=logo__cursor></span></a>
 <span class=header__right><nav class=menu><ul class="menu__inner menu__inner--desktop"><li><a href=/about>About</a></li><li><a href=/archive>Archive</a></li></ul><ul class="menu__inner menu__inner--mobile"><li><a href=/about>About</a></li><li><a href=/archive>Archive</a></li></ul></nav><span class=menu-trigger><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span><span class=theme-toggle><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 41c10.4934.0 19-8.5066 19-19C41 11.5066 32.4934 3 22 3 11.5066 3 3 11.5066 3 22s8.5066 19 19 19zM7 22C7 13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22z"/></svg></span></span></span></header><div class=content><div class=post><h1 class=post-title>Packer CentOS Virtualbox image</h1><div class=post-meta><span class=post-author>— Written by Andrew Bounds</span></div><span class=post-tags><a href=https://p0rkjello.github.io/tags/linux/>#linux</a>&nbsp;
 <a href=https://p0rkjello.github.io/tags/packer/>#packer</a>&nbsp;
@@ -80,107 +80,107 @@ Like a real SATA controller, Oracle VM VirtualBox&rsquo;s virtual SATA controlle
 </span></span></code></pre></div><p>{% endraw %}</p><p>Validate the contents of the json file <code>packer validate &lt;template></code>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-console data-lang=console><span style=display:flex><span>➜  packer validate .\centos-7.7-x86_64.json
 </span></span><span style=display:flex><span>Template validated successfully.
 </span></span></code></pre></div><h2 id=centos-kickstart-file>CentOS kickstart file</h2><p><a href=https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-kickstart-syntax>Documentation</a> and <a href=https://github.com/CentOS/Community-Kickstarts>example</a> kickstart files can be found online. This file will install CentOS with configuration to fit my needs.</p><ul><li>Install a minimal set of packages</li><li>Disable firewall and SELinux</li><li>Add and configure the Vagrant user</li></ul><p><strong>Warning</strong>: Recommended for local development and lab use only. This kickstart file is insecure by default.
-{: .flash .flash-warn }</p><pre tabindex=0><code class=language-conf data-lang=conf># RHEL7 - Vagrant lab system
-# Install OS instead of upgrade
-install
-# Keyboard layouts
-keyboard &#39;us&#39;
-# After installation reboot
-reboot
-# Root password
-rootpw --plaintext vagrant
-# Use text mode install
-text
-firstboot --disable
-# Setup network interface
-network --device=eth0 --bootproto=dhcp --onboot=yes --activate
-# Install from an installation tree on a remote server
-# Required when using a miniml ISO
-url --mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os
-# Set repo to mirror.centos.org
-repo --name=&#34;CentOS&#34; --baseurl=http://mirror.centos.org/centos/$releasever/os/$basearch/ --cost=100
-repo --name=&#34;Updates&#34; --baseurl=http://mirror.centos.org/centos/$releasever/updates/$basearch/ --cost=100
-repo --name=&#34;epel&#34; --baseurl=https://download.fedoraproject.org/pub/epel/7/x86_64/ --cost=100
-# System language
-lang en_US.UTF-8
-# Logging
-logging --level=debug
-# System timezone
-timezone --utc Etc/UTC
-# Firewall
-firewall --disable
-# SELinux
-selinux --permissive
-# Accept EULA
-eula --agreed
-# Services
-services --enabled=ntpd,ntpdate
-# Add Vagrant user
-user --name=vagrant --plaintext  --password=vagrant --groups=vagrant,wheel
-# System bootloader configuration
-bootloader --location=mbr
-# Clear the Master Boot Record
-zerombr
-# Partition clearing information
-clearpart --all --initlabel
-# Automatically create partition, LVM
-autopart --type=lvm
-
-%packages --ignoremissing --excludedocs
-@core
-epel-release
-dkms
-kernel-devel
-kernel-headers
-make
-automake
-perl
-gcc
-gcc-c++
-bzip2
-which
-wget
-ntp
-ntpdate
-# mandatory packages in the @core group
--btrfs-progs
--iprutils
--kexec-tools
--plymouth
-# default packages in the @core group
--*-firmware
--dracut-config-rescue
--kernel-tools
--libsysfs
--microcode_ctl
--NetworkManager*
--postfix
--rdma
-
-%end
-
-%post
-# Apply Vagrant public key.
-echo &#34;Applying Vagrant public key&#34;
-sudo mkdir -p /home/vagrant/.ssh
-sudo curl -fsSLo /home/vagrant/.ssh/authorized_keys https://raw.githubusercontent.com/hashicorp/vagrant/master/keys/vagrant.pub
-
-# Change owner and group on SSH authorized keys file for vagrant user
-sudo chown -R vagrant:vagrant /home/vagrant/.ssh
-sudo chmod 700 /home/vagrant/.ssh
-sudo chmod 600 /home/vagrant/.ssh/authorized_keys
-
-# Configure Vagrant for no password sudo
-echo &#34;Configuring Vagrant for passwordless sudo&#34;
-sudo cat &gt; /etc/sudoers.d/vagrant &lt;&lt;&#39;EOF&#39;
-Defaults:vagrant !requiretty
-vagrant ALL=(ALL) NOPASSWD: ALL
-EOF
-
-# Change permissions on vagrant sudo file
-sudo chmod 440 /etc/sudoers.d/vagrant
-%end
-</code></pre><h2 id=project-directory>Project directory</h2><p>The project directory should resemble the outline below.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>📦centos-packer-virtualbox
+{: .flash .flash-warn }</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-conf data-lang=conf><span style=display:flex><span><span style=color:#75715e># RHEL7 - Vagrant lab system
+</span></span></span><span style=display:flex><span><span style=color:#75715e># Install OS instead of upgrade
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>install
+</span></span><span style=display:flex><span><span style=color:#75715e># Keyboard layouts
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>keyboard <span style=color:#960050;background-color:#1e0010>&#39;</span>us<span style=color:#960050;background-color:#1e0010>&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># After installation reboot
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>reboot
+</span></span><span style=display:flex><span><span style=color:#75715e># Root password
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>rootpw --plaintext vagrant
+</span></span><span style=display:flex><span><span style=color:#75715e># Use text mode install
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>text
+</span></span><span style=display:flex><span>firstboot --disable
+</span></span><span style=display:flex><span><span style=color:#75715e># Setup network interface
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>network --device<span style=color:#f92672>=</span>eth0 --bootproto<span style=color:#f92672>=</span>dhcp --onboot<span style=color:#f92672>=</span>yes --activate
+</span></span><span style=display:flex><span><span style=color:#75715e># Install from an installation tree on a remote server
+</span></span></span><span style=display:flex><span><span style=color:#75715e># Required when using a miniml ISO
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>url --mirrorlist<span style=color:#f92672>=</span>http<span style=color:#960050;background-color:#1e0010>://</span>mirrorlist.centos.org<span style=color:#960050;background-color:#1e0010>/?</span>release<span style=color:#f92672>=</span><span style=color:#960050;background-color:#1e0010>$</span>releasever<span style=color:#960050;background-color:#1e0010>&amp;</span>arch<span style=color:#f92672>=</span><span style=color:#960050;background-color:#1e0010>$</span>basearch<span style=color:#960050;background-color:#1e0010>&amp;</span>repo<span style=color:#f92672>=</span>os
+</span></span><span style=display:flex><span><span style=color:#75715e># Set repo to mirror.centos.org
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>repo --name<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;CentOS&#34;</span> --baseurl<span style=color:#f92672>=</span>http<span style=color:#960050;background-color:#1e0010>://</span>mirror.centos.org<span style=color:#960050;background-color:#1e0010>/</span>centos<span style=color:#960050;background-color:#1e0010>/$</span>releasever<span style=color:#960050;background-color:#1e0010>/</span>os<span style=color:#960050;background-color:#1e0010>/$</span>basearch<span style=color:#960050;background-color:#1e0010>/</span> --cost<span style=color:#f92672>=</span>100
+</span></span><span style=display:flex><span>repo --name<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;Updates&#34;</span> --baseurl<span style=color:#f92672>=</span>http<span style=color:#960050;background-color:#1e0010>://</span>mirror.centos.org<span style=color:#960050;background-color:#1e0010>/</span>centos<span style=color:#960050;background-color:#1e0010>/$</span>releasever<span style=color:#960050;background-color:#1e0010>/</span>updates<span style=color:#960050;background-color:#1e0010>/$</span>basearch<span style=color:#960050;background-color:#1e0010>/</span> --cost<span style=color:#f92672>=</span>100
+</span></span><span style=display:flex><span>repo --name<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;epel&#34;</span> --baseurl<span style=color:#f92672>=</span>https<span style=color:#960050;background-color:#1e0010>://</span>download.fedoraproject.org<span style=color:#960050;background-color:#1e0010>/</span>pub<span style=color:#960050;background-color:#1e0010>/</span>epel<span style=color:#960050;background-color:#1e0010>/</span>7<span style=color:#960050;background-color:#1e0010>/</span>x86_64<span style=color:#960050;background-color:#1e0010>/</span> --cost<span style=color:#f92672>=</span>100
+</span></span><span style=display:flex><span><span style=color:#75715e># System language
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>lang en_US.UTF-8
+</span></span><span style=display:flex><span><span style=color:#75715e># Logging
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>logging --level<span style=color:#f92672>=</span>debug
+</span></span><span style=display:flex><span><span style=color:#75715e># System timezone
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>timezone --utc Etc<span style=color:#960050;background-color:#1e0010>/</span>UTC
+</span></span><span style=display:flex><span><span style=color:#75715e># Firewall
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>firewall --disable
+</span></span><span style=display:flex><span><span style=color:#75715e># SELinux
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>selinux --permissive
+</span></span><span style=display:flex><span><span style=color:#75715e># Accept EULA
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>eula --agreed
+</span></span><span style=display:flex><span><span style=color:#75715e># Services
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>services --enabled<span style=color:#f92672>=</span>ntpd,ntpdate
+</span></span><span style=display:flex><span><span style=color:#75715e># Add Vagrant user
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>user --name<span style=color:#f92672>=</span>vagrant --plaintext  --password<span style=color:#f92672>=</span>vagrant --groups<span style=color:#f92672>=</span>vagrant,wheel
+</span></span><span style=display:flex><span><span style=color:#75715e># System bootloader configuration
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>bootloader --location<span style=color:#f92672>=</span>mbr
+</span></span><span style=display:flex><span><span style=color:#75715e># Clear the Master Boot Record
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>zerombr
+</span></span><span style=display:flex><span><span style=color:#75715e># Partition clearing information
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>clearpart --all --initlabel
+</span></span><span style=display:flex><span><span style=color:#75715e># Automatically create partition, LVM
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>autopart --type<span style=color:#f92672>=</span>lvm
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>%</span>packages --ignoremissing --excludedocs
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>@</span>core
+</span></span><span style=display:flex><span>epel-release
+</span></span><span style=display:flex><span>dkms
+</span></span><span style=display:flex><span>kernel-devel
+</span></span><span style=display:flex><span>kernel-headers
+</span></span><span style=display:flex><span>make
+</span></span><span style=display:flex><span>automake
+</span></span><span style=display:flex><span>perl
+</span></span><span style=display:flex><span>gcc
+</span></span><span style=display:flex><span>gcc-c<span style=color:#960050;background-color:#1e0010>++</span>
+</span></span><span style=display:flex><span>bzip2
+</span></span><span style=display:flex><span>which
+</span></span><span style=display:flex><span>wget
+</span></span><span style=display:flex><span>ntp
+</span></span><span style=display:flex><span>ntpdate
+</span></span><span style=display:flex><span><span style=color:#75715e># mandatory packages in the @core group
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>-btrfs-progs
+</span></span><span style=display:flex><span>-iprutils
+</span></span><span style=display:flex><span>-kexec-tools
+</span></span><span style=display:flex><span>-plymouth
+</span></span><span style=display:flex><span><span style=color:#75715e># default packages in the @core group
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>-<span style=color:#960050;background-color:#1e0010>*</span>-firmware
+</span></span><span style=display:flex><span>-dracut-config-rescue
+</span></span><span style=display:flex><span>-kernel-tools
+</span></span><span style=display:flex><span>-libsysfs
+</span></span><span style=display:flex><span>-microcode_ctl
+</span></span><span style=display:flex><span>-NetworkManager<span style=color:#960050;background-color:#1e0010>*</span>
+</span></span><span style=display:flex><span>-postfix
+</span></span><span style=display:flex><span>-rdma
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>%</span>end
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>%</span>post
+</span></span><span style=display:flex><span><span style=color:#75715e># Apply Vagrant public key.
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>echo <span style=color:#e6db74>&#34;Applying Vagrant public key&#34;</span>
+</span></span><span style=display:flex><span>sudo mkdir -p <span style=color:#960050;background-color:#1e0010>/</span>home<span style=color:#960050;background-color:#1e0010>/</span>vagrant<span style=color:#960050;background-color:#1e0010>/</span>.ssh
+</span></span><span style=display:flex><span>sudo curl -fsSLo <span style=color:#960050;background-color:#1e0010>/</span>home<span style=color:#960050;background-color:#1e0010>/</span>vagrant<span style=color:#960050;background-color:#1e0010>/</span>.ssh<span style=color:#960050;background-color:#1e0010>/</span>authorized_keys https<span style=color:#960050;background-color:#1e0010>://</span>raw.githubusercontent.com<span style=color:#960050;background-color:#1e0010>/</span>hashicorp<span style=color:#960050;background-color:#1e0010>/</span>vagrant<span style=color:#960050;background-color:#1e0010>/</span>master<span style=color:#960050;background-color:#1e0010>/</span>keys<span style=color:#960050;background-color:#1e0010>/</span>vagrant.pub
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Change owner and group on SSH authorized keys file for vagrant user
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>sudo chown -R vagrant<span style=color:#960050;background-color:#1e0010>:</span>vagrant <span style=color:#960050;background-color:#1e0010>/</span>home<span style=color:#960050;background-color:#1e0010>/</span>vagrant<span style=color:#960050;background-color:#1e0010>/</span>.ssh
+</span></span><span style=display:flex><span>sudo chmod 700 <span style=color:#960050;background-color:#1e0010>/</span>home<span style=color:#960050;background-color:#1e0010>/</span>vagrant<span style=color:#960050;background-color:#1e0010>/</span>.ssh
+</span></span><span style=display:flex><span>sudo chmod 600 <span style=color:#960050;background-color:#1e0010>/</span>home<span style=color:#960050;background-color:#1e0010>/</span>vagrant<span style=color:#960050;background-color:#1e0010>/</span>.ssh<span style=color:#960050;background-color:#1e0010>/</span>authorized_keys
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Configure Vagrant for no password sudo
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>echo <span style=color:#e6db74>&#34;Configuring Vagrant for passwordless sudo&#34;</span>
+</span></span><span style=display:flex><span>sudo cat <span style=color:#960050;background-color:#1e0010>&gt;</span> <span style=color:#960050;background-color:#1e0010>/</span>etc<span style=color:#960050;background-color:#1e0010>/</span>sudoers.d<span style=color:#960050;background-color:#1e0010>/</span>vagrant <span style=color:#960050;background-color:#1e0010>&lt;&lt;&#39;</span>EOF<span style=color:#960050;background-color:#1e0010>&#39;</span>
+</span></span><span style=display:flex><span>Defaults<span style=color:#960050;background-color:#1e0010>:</span>vagrant <span style=color:#960050;background-color:#1e0010>!</span>requiretty
+</span></span><span style=display:flex><span>vagrant ALL<span style=color:#f92672>=</span><span style=color:#960050;background-color:#1e0010>(</span>ALL) NOPASSWD<span style=color:#960050;background-color:#1e0010>:</span> ALL
+</span></span><span style=display:flex><span>EOF
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Change permissions on vagrant sudo file
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>sudo chmod 440 <span style=color:#960050;background-color:#1e0010>/</span>etc<span style=color:#960050;background-color:#1e0010>/</span>sudoers.d<span style=color:#960050;background-color:#1e0010>/</span>vagrant
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>%</span>end
+</span></span></code></pre></div><h2 id=project-directory>Project directory</h2><p>The project directory should resemble the outline below.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-text data-lang=text><span style=display:flex><span>📦centos-packer-virtualbox
 </span></span><span style=display:flex><span> ┃ ┣ 📂http
 </span></span><span style=display:flex><span> ┃ ┗ 📜ks.cfg
 </span></span><span style=display:flex><span> ┣ 📂scripts
@@ -209,12 +209,12 @@ sudo chmod 440 /etc/sudoers.d/vagrant
 </span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>
 </span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>==&gt; Builds finished. The artifacts of successful builds are:
 </span></span><span style=display:flex><span>--&gt; virtualbox-iso: &#39;virtualbox&#39; provider box: centos-7.7-x86_64-virtualbox.box
-</span></span></code></pre></div><h2 id=gitignore>.gitignore</h2><p>The <code>packer_cache</code> directory contains the ISO files used for building the image. The <code>*.box</code> file is the output image. These are large files that do not need to be tracked via Git. It&rsquo;s recommended to exclude these items in your <code>.gitignore</code> file.</p><pre tabindex=0><code class=language-conf data-lang=conf># Cache objects
-packer_cache/
-
-# For built boxes
-*.box
-</code></pre></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Read other posts</span><hr></div><div class=pagination__buttons><span class="button previous"><a href=https://p0rkjello.github.io/network-bonding/><span class=button__icon>←</span>
+</span></span></code></pre></div><h2 id=gitignore>.gitignore</h2><p>The <code>packer_cache</code> directory contains the ISO files used for building the image. The <code>*.box</code> file is the output image. These are large files that do not need to be tracked via Git. It&rsquo;s recommended to exclude these items in your <code>.gitignore</code> file.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-conf data-lang=conf><span style=display:flex><span><span style=color:#75715e># Cache objects
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>packer_cache<span style=color:#960050;background-color:#1e0010>/</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># For built boxes
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#960050;background-color:#1e0010>*</span>.box
+</span></span></code></pre></div></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Read other posts</span><hr></div><div class=pagination__buttons><span class="button previous"><a href=https://p0rkjello.github.io/network-bonding/><span class=button__icon>←</span>
 <span class=button__text>Network Bonding</span></a></span>
 <span class="button next"><a href=https://p0rkjello.github.io/persistent-gnome-shell-in-lucid/><span class=button__text>Persistent Gnome shell in Lucid</span>
 <span class=button__icon>→</span></a></span></div></div></div></div><footer class=footer><div class=footer__inner><a href=/ class=logo style=text-decoration:none><span class=logo__mark><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44"><path fill="none" d="M15 8l14.729 14.382L15 35.367"/></svg></span><span class=logo__text>/misc/tech/musings</span>
